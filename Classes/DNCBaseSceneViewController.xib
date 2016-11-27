@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DNCBaseSceneViewController">
+            <connections>
+                <outlet property="activityIndicatorView" destination="3GI-Y0-76i" id="G7c-ex-pw1"/>
+                <outlet property="disabledView" destination="GWC-ps-rw0" id="LLE-dJ-sLW"/>
+                <outlet property="view" destination="ZyK-ty-P4f" id="6Y2-F2-vxC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZyK-ty-P4f">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-ps-rw0" userLabel="Disabled View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GI-Y0-76i" userLabel="Spinner View" customClass="PKBActivityIndicatorView">
+                    <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="CJ3-9t-y16"/>
+                        <constraint firstAttribute="width" constant="150" id="Uqy-Ag-HyU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="GWC-ps-rw0" secondAttribute="trailing" id="7p6-KF-9X4"/>
+                <constraint firstItem="3GI-Y0-76i" firstAttribute="centerX" secondItem="ZyK-ty-P4f" secondAttribute="centerX" id="JBw-ie-JMZ"/>
+                <constraint firstItem="3GI-Y0-76i" firstAttribute="centerY" secondItem="ZyK-ty-P4f" secondAttribute="centerY" id="Mp0-QJ-8Od"/>
+                <constraint firstItem="GWC-ps-rw0" firstAttribute="leading" secondItem="ZyK-ty-P4f" secondAttribute="leading" id="Pjq-m1-pFz"/>
+                <constraint firstAttribute="bottom" secondItem="GWC-ps-rw0" secondAttribute="bottom" id="ylf-fE-Kis"/>
+                <constraint firstItem="GWC-ps-rw0" firstAttribute="top" secondItem="ZyK-ty-P4f" secondAttribute="top" id="znh-05-Wtw"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,753 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		140EB14ABAFD836743D6E01D /* Pods_DNCBaseScene.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6022CB4E0D549E217AF09E50 /* Pods_DNCBaseScene.framework */; };
+		6A18440F1DEA385F00D3D254 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A18440E1DEA385F00D3D254 /* main.m */; };
+		6A1844121DEA385F00D3D254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844111DEA385F00D3D254 /* AppDelegate.m */; };
+		6A1844151DEA385F00D3D254 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844141DEA385F00D3D254 /* ViewController.m */; };
+		6A1844181DEA385F00D3D254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1844161DEA385F00D3D254 /* Main.storyboard */; };
+		6A18441A1DEA385F00D3D254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1844191DEA385F00D3D254 /* Assets.xcassets */; };
+		6A18441D1DEA385F00D3D254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A18441B1DEA385F00D3D254 /* LaunchScreen.storyboard */; };
+		6A1844281DEA386000D3D254 /* DNCBaseSceneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844271DEA386000D3D254 /* DNCBaseSceneTests.m */; };
+		6A1844331DEA386000D3D254 /* DNCBaseSceneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844321DEA386000D3D254 /* DNCBaseSceneUITests.m */; };
+		6A1844561DEA389E00D3D254 /* DNCBaseSceneConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844441DEA389E00D3D254 /* DNCBaseSceneConfigurator.m */; };
+		6A1844571DEA389E00D3D254 /* DNCBaseSceneInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844461DEA389E00D3D254 /* DNCBaseSceneInteractor.m */; };
+		6A1844581DEA389E00D3D254 /* DNCBaseSceneModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844491DEA389E00D3D254 /* DNCBaseSceneModels.m */; };
+		6A1844591DEA389E00D3D254 /* DNCBaseScenePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A18444B1DEA389E00D3D254 /* DNCBaseScenePresenter.m */; };
+		6A18445A1DEA389E00D3D254 /* DNCBaseSceneRouter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A18444E1DEA389E00D3D254 /* DNCBaseSceneRouter.mm */; };
+		6A18445B1DEA389E00D3D254 /* DNCBaseSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844511DEA389E00D3D254 /* DNCBaseSceneViewController.m */; };
+		6A18445C1DEA389E00D3D254 /* DNCBaseSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1844521DEA389E00D3D254 /* DNCBaseSceneViewController.xib */; };
+		6A18445D1DEA389E00D3D254 /* DNCBaseSceneViewController+Routing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844541DEA389E00D3D254 /* DNCBaseSceneViewController+Routing.m */; };
+		D6622EEFF41322CB3BC44FF1 /* Pods_DNCBaseSceneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244732A808447FF47063C3C9 /* Pods_DNCBaseSceneTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A1844241DEA386000D3D254 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A1844021DEA385F00D3D254 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A1844091DEA385F00D3D254;
+			remoteInfo = DNCBaseScene;
+		};
+		6A18442F1DEA386000D3D254 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A1844021DEA385F00D3D254 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A1844091DEA385F00D3D254;
+			remoteInfo = DNCBaseScene;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EB515BD0E763C710B6F557A /* Pods-DNCBaseScene.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCBaseScene.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene.release.xcconfig"; sourceTree = "<group>"; };
+		244732A808447FF47063C3C9 /* Pods_DNCBaseSceneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNCBaseSceneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3595CB88B59DAD05B58FF0F7 /* Pods-DNCBaseSceneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCBaseSceneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests.release.xcconfig"; sourceTree = "<group>"; };
+		473F4EBE95B28CC89710E1C3 /* Pods-DNCBaseSceneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCBaseSceneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6022CB4E0D549E217AF09E50 /* Pods_DNCBaseScene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNCBaseScene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A18440A1DEA385F00D3D254 /* DNCBaseScene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNCBaseScene.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A18440E1DEA385F00D3D254 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6A1844101DEA385F00D3D254 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6A1844111DEA385F00D3D254 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6A1844131DEA385F00D3D254 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6A1844141DEA385F00D3D254 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6A1844171DEA385F00D3D254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A1844191DEA385F00D3D254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A18441C1DEA385F00D3D254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A18441E1DEA385F00D3D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1844231DEA386000D3D254 /* DNCBaseSceneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNCBaseSceneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1844271DEA386000D3D254 /* DNCBaseSceneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNCBaseSceneTests.m; sourceTree = "<group>"; };
+		6A1844291DEA386000D3D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A18442E1DEA386000D3D254 /* DNCBaseSceneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNCBaseSceneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1844321DEA386000D3D254 /* DNCBaseSceneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNCBaseSceneUITests.m; sourceTree = "<group>"; };
+		6A1844341DEA386000D3D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1844421DEA389E00D3D254 /* DNCBaseSceneCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneCommon.h; path = Classes/DNCBaseSceneCommon.h; sourceTree = "<group>"; };
+		6A1844431DEA389E00D3D254 /* DNCBaseSceneConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneConfigurator.h; path = Classes/DNCBaseSceneConfigurator.h; sourceTree = "<group>"; };
+		6A1844441DEA389E00D3D254 /* DNCBaseSceneConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseSceneConfigurator.m; path = Classes/DNCBaseSceneConfigurator.m; sourceTree = "<group>"; };
+		6A1844451DEA389E00D3D254 /* DNCBaseSceneInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneInteractor.h; path = Classes/DNCBaseSceneInteractor.h; sourceTree = "<group>"; };
+		6A1844461DEA389E00D3D254 /* DNCBaseSceneInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseSceneInteractor.m; path = Classes/DNCBaseSceneInteractor.m; sourceTree = "<group>"; };
+		6A1844471DEA389E00D3D254 /* DNCBaseSceneInteractorInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneInteractorInterface.h; path = Classes/DNCBaseSceneInteractorInterface.h; sourceTree = "<group>"; };
+		6A1844481DEA389E00D3D254 /* DNCBaseSceneModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneModels.h; path = Classes/DNCBaseSceneModels.h; sourceTree = "<group>"; };
+		6A1844491DEA389E00D3D254 /* DNCBaseSceneModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseSceneModels.m; path = Classes/DNCBaseSceneModels.m; sourceTree = "<group>"; };
+		6A18444A1DEA389E00D3D254 /* DNCBaseScenePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseScenePresenter.h; path = Classes/DNCBaseScenePresenter.h; sourceTree = "<group>"; };
+		6A18444B1DEA389E00D3D254 /* DNCBaseScenePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseScenePresenter.m; path = Classes/DNCBaseScenePresenter.m; sourceTree = "<group>"; };
+		6A18444C1DEA389E00D3D254 /* DNCBaseScenePresenterInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseScenePresenterInterface.h; path = Classes/DNCBaseScenePresenterInterface.h; sourceTree = "<group>"; };
+		6A18444D1DEA389E00D3D254 /* DNCBaseSceneRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneRouter.h; path = Classes/DNCBaseSceneRouter.h; sourceTree = "<group>"; };
+		6A18444E1DEA389E00D3D254 /* DNCBaseSceneRouter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DNCBaseSceneRouter.mm; path = Classes/DNCBaseSceneRouter.mm; sourceTree = "<group>"; };
+		6A18444F1DEA389E00D3D254 /* DNCBaseSceneRouterInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneRouterInterface.h; path = Classes/DNCBaseSceneRouterInterface.h; sourceTree = "<group>"; };
+		6A1844501DEA389E00D3D254 /* DNCBaseSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneViewController.h; path = Classes/DNCBaseSceneViewController.h; sourceTree = "<group>"; };
+		6A1844511DEA389E00D3D254 /* DNCBaseSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseSceneViewController.m; path = Classes/DNCBaseSceneViewController.m; sourceTree = "<group>"; };
+		6A1844521DEA389E00D3D254 /* DNCBaseSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DNCBaseSceneViewController.xib; path = Classes/DNCBaseSceneViewController.xib; sourceTree = "<group>"; };
+		6A1844531DEA389E00D3D254 /* DNCBaseSceneViewController+Routing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DNCBaseSceneViewController+Routing.h"; path = "Classes/DNCBaseSceneViewController+Routing.h"; sourceTree = "<group>"; };
+		6A1844541DEA389E00D3D254 /* DNCBaseSceneViewController+Routing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DNCBaseSceneViewController+Routing.m"; path = "Classes/DNCBaseSceneViewController+Routing.m"; sourceTree = "<group>"; };
+		6A1844551DEA389E00D3D254 /* DNCBaseSceneViewControllerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneViewControllerInterface.h; path = Classes/DNCBaseSceneViewControllerInterface.h; sourceTree = "<group>"; };
+		6A18445E1DEA397300D3D254 /* DNCBaseScene.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DNCBaseScene.podspec; sourceTree = "<group>"; };
+		6A1844601DEA397300D3D254 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		958CBA98E2820EBEED04610B /* Pods-DNCBaseScene.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCBaseScene.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A1844071DEA385F00D3D254 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				140EB14ABAFD836743D6E01D /* Pods_DNCBaseScene.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A1844201DEA386000D3D254 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6622EEFF41322CB3BC44FF1 /* Pods_DNCBaseSceneTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A18442B1DEA386000D3D254 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A1844011DEA385F00D3D254 = {
+			isa = PBXGroup;
+			children = (
+				6A1844401DEA386700D3D254 /* Pod */,
+				6A18440C1DEA385F00D3D254 /* DNCBaseScene */,
+				6A1844261DEA386000D3D254 /* DNCBaseSceneTests */,
+				6A1844311DEA386000D3D254 /* DNCBaseSceneUITests */,
+				6A18440B1DEA385F00D3D254 /* Products */,
+				FD7EEA71214803320D1BD964 /* Pods */,
+				F5116A8112D0A10B3D74EF38 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6A18440B1DEA385F00D3D254 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A18440A1DEA385F00D3D254 /* DNCBaseScene.app */,
+				6A1844231DEA386000D3D254 /* DNCBaseSceneTests.xctest */,
+				6A18442E1DEA386000D3D254 /* DNCBaseSceneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A18440C1DEA385F00D3D254 /* DNCBaseScene */ = {
+			isa = PBXGroup;
+			children = (
+				6A1844101DEA385F00D3D254 /* AppDelegate.h */,
+				6A1844111DEA385F00D3D254 /* AppDelegate.m */,
+				6A1844131DEA385F00D3D254 /* ViewController.h */,
+				6A1844141DEA385F00D3D254 /* ViewController.m */,
+				6A1844161DEA385F00D3D254 /* Main.storyboard */,
+				6A1844191DEA385F00D3D254 /* Assets.xcassets */,
+				6A18441B1DEA385F00D3D254 /* LaunchScreen.storyboard */,
+				6A18441E1DEA385F00D3D254 /* Info.plist */,
+				6A18440D1DEA385F00D3D254 /* Supporting Files */,
+			);
+			path = DNCBaseScene;
+			sourceTree = "<group>";
+		};
+		6A18440D1DEA385F00D3D254 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A18440E1DEA385F00D3D254 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A1844261DEA386000D3D254 /* DNCBaseSceneTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A1844271DEA386000D3D254 /* DNCBaseSceneTests.m */,
+				6A1844291DEA386000D3D254 /* Info.plist */,
+			);
+			path = DNCBaseSceneTests;
+			sourceTree = "<group>";
+		};
+		6A1844311DEA386000D3D254 /* DNCBaseSceneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6A1844321DEA386000D3D254 /* DNCBaseSceneUITests.m */,
+				6A1844341DEA386000D3D254 /* Info.plist */,
+			);
+			path = DNCBaseSceneUITests;
+			sourceTree = "<group>";
+		};
+		6A1844401DEA386700D3D254 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6A1844601DEA397300D3D254 /* README.md */,
+				6A18445E1DEA397300D3D254 /* DNCBaseScene.podspec */,
+				6A1844411DEA387000D3D254 /* Classes */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		6A1844411DEA387000D3D254 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6A1844421DEA389E00D3D254 /* DNCBaseSceneCommon.h */,
+				6A1844431DEA389E00D3D254 /* DNCBaseSceneConfigurator.h */,
+				6A1844441DEA389E00D3D254 /* DNCBaseSceneConfigurator.m */,
+				6A1844451DEA389E00D3D254 /* DNCBaseSceneInteractor.h */,
+				6A1844461DEA389E00D3D254 /* DNCBaseSceneInteractor.m */,
+				6A1844471DEA389E00D3D254 /* DNCBaseSceneInteractorInterface.h */,
+				6A1844481DEA389E00D3D254 /* DNCBaseSceneModels.h */,
+				6A1844491DEA389E00D3D254 /* DNCBaseSceneModels.m */,
+				6A18444A1DEA389E00D3D254 /* DNCBaseScenePresenter.h */,
+				6A18444B1DEA389E00D3D254 /* DNCBaseScenePresenter.m */,
+				6A18444C1DEA389E00D3D254 /* DNCBaseScenePresenterInterface.h */,
+				6A18444D1DEA389E00D3D254 /* DNCBaseSceneRouter.h */,
+				6A18444E1DEA389E00D3D254 /* DNCBaseSceneRouter.mm */,
+				6A18444F1DEA389E00D3D254 /* DNCBaseSceneRouterInterface.h */,
+				6A1844501DEA389E00D3D254 /* DNCBaseSceneViewController.h */,
+				6A1844511DEA389E00D3D254 /* DNCBaseSceneViewController.m */,
+				6A1844551DEA389E00D3D254 /* DNCBaseSceneViewControllerInterface.h */,
+				6A1844521DEA389E00D3D254 /* DNCBaseSceneViewController.xib */,
+				6A1844531DEA389E00D3D254 /* DNCBaseSceneViewController+Routing.h */,
+				6A1844541DEA389E00D3D254 /* DNCBaseSceneViewController+Routing.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		F5116A8112D0A10B3D74EF38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6022CB4E0D549E217AF09E50 /* Pods_DNCBaseScene.framework */,
+				244732A808447FF47063C3C9 /* Pods_DNCBaseSceneTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD7EEA71214803320D1BD964 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				958CBA98E2820EBEED04610B /* Pods-DNCBaseScene.debug.xcconfig */,
+				0EB515BD0E763C710B6F557A /* Pods-DNCBaseScene.release.xcconfig */,
+				473F4EBE95B28CC89710E1C3 /* Pods-DNCBaseSceneTests.debug.xcconfig */,
+				3595CB88B59DAD05B58FF0F7 /* Pods-DNCBaseSceneTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A1844091DEA385F00D3D254 /* DNCBaseScene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A1844371DEA386000D3D254 /* Build configuration list for PBXNativeTarget "DNCBaseScene" */;
+			buildPhases = (
+				FD60B8545FF22772038D9CEF /* [CP] Check Pods Manifest.lock */,
+				6A1844061DEA385F00D3D254 /* Sources */,
+				6A1844071DEA385F00D3D254 /* Frameworks */,
+				6A1844081DEA385F00D3D254 /* Resources */,
+				04C93977BDD2A70BEFAF43F9 /* [CP] Embed Pods Frameworks */,
+				33B2690BAA51EDCC73386C72 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNCBaseScene;
+			productName = DNCBaseScene;
+			productReference = 6A18440A1DEA385F00D3D254 /* DNCBaseScene.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A1844221DEA386000D3D254 /* DNCBaseSceneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A18443A1DEA386000D3D254 /* Build configuration list for PBXNativeTarget "DNCBaseSceneTests" */;
+			buildPhases = (
+				68ABB524D9154FAC9BCE54E2 /* [CP] Check Pods Manifest.lock */,
+				6A18441F1DEA386000D3D254 /* Sources */,
+				6A1844201DEA386000D3D254 /* Frameworks */,
+				6A1844211DEA386000D3D254 /* Resources */,
+				92DEB2CE6E194FF9BA1A31A5 /* [CP] Embed Pods Frameworks */,
+				3942B12F0953F9C705C55AEC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A1844251DEA386000D3D254 /* PBXTargetDependency */,
+			);
+			name = DNCBaseSceneTests;
+			productName = DNCBaseSceneTests;
+			productReference = 6A1844231DEA386000D3D254 /* DNCBaseSceneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A18442D1DEA386000D3D254 /* DNCBaseSceneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A18443D1DEA386000D3D254 /* Build configuration list for PBXNativeTarget "DNCBaseSceneUITests" */;
+			buildPhases = (
+				6A18442A1DEA386000D3D254 /* Sources */,
+				6A18442B1DEA386000D3D254 /* Frameworks */,
+				6A18442C1DEA386000D3D254 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A1844301DEA386000D3D254 /* PBXTargetDependency */,
+			);
+			name = DNCBaseSceneUITests;
+			productName = DNCBaseSceneUITests;
+			productReference = 6A18442E1DEA386000D3D254 /* DNCBaseSceneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A1844021DEA385F00D3D254 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = DoubleNode.com;
+				TargetAttributes = {
+					6A1844091DEA385F00D3D254 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = T864D3RXRZ;
+						ProvisioningStyle = Automatic;
+					};
+					6A1844221DEA386000D3D254 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = T864D3RXRZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6A1844091DEA385F00D3D254;
+					};
+					6A18442D1DEA386000D3D254 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = T864D3RXRZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6A1844091DEA385F00D3D254;
+					};
+				};
+			};
+			buildConfigurationList = 6A1844051DEA385F00D3D254 /* Build configuration list for PBXProject "DNCBaseScene" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A1844011DEA385F00D3D254;
+			productRefGroup = 6A18440B1DEA385F00D3D254 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A1844091DEA385F00D3D254 /* DNCBaseScene */,
+				6A1844221DEA386000D3D254 /* DNCBaseSceneTests */,
+				6A18442D1DEA386000D3D254 /* DNCBaseSceneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A1844081DEA385F00D3D254 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A18445C1DEA389E00D3D254 /* DNCBaseSceneViewController.xib in Resources */,
+				6A18441D1DEA385F00D3D254 /* LaunchScreen.storyboard in Resources */,
+				6A18441A1DEA385F00D3D254 /* Assets.xcassets in Resources */,
+				6A1844181DEA385F00D3D254 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A1844211DEA386000D3D254 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A18442C1DEA386000D3D254 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04C93977BDD2A70BEFAF43F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33B2690BAA51EDCC73386C72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3942B12F0953F9C705C55AEC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68ABB524D9154FAC9BCE54E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92DEB2CE6E194FF9BA1A31A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD60B8545FF22772038D9CEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A1844061DEA385F00D3D254 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1844151DEA385F00D3D254 /* ViewController.m in Sources */,
+				6A1844571DEA389E00D3D254 /* DNCBaseSceneInteractor.m in Sources */,
+				6A1844121DEA385F00D3D254 /* AppDelegate.m in Sources */,
+				6A18445D1DEA389E00D3D254 /* DNCBaseSceneViewController+Routing.m in Sources */,
+				6A18445B1DEA389E00D3D254 /* DNCBaseSceneViewController.m in Sources */,
+				6A1844561DEA389E00D3D254 /* DNCBaseSceneConfigurator.m in Sources */,
+				6A18445A1DEA389E00D3D254 /* DNCBaseSceneRouter.mm in Sources */,
+				6A18440F1DEA385F00D3D254 /* main.m in Sources */,
+				6A1844591DEA389E00D3D254 /* DNCBaseScenePresenter.m in Sources */,
+				6A1844581DEA389E00D3D254 /* DNCBaseSceneModels.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A18441F1DEA386000D3D254 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1844281DEA386000D3D254 /* DNCBaseSceneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A18442A1DEA386000D3D254 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1844331DEA386000D3D254 /* DNCBaseSceneUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A1844251DEA386000D3D254 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A1844091DEA385F00D3D254 /* DNCBaseScene */;
+			targetProxy = 6A1844241DEA386000D3D254 /* PBXContainerItemProxy */;
+		};
+		6A1844301DEA386000D3D254 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A1844091DEA385F00D3D254 /* DNCBaseScene */;
+			targetProxy = 6A18442F1DEA386000D3D254 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6A1844161DEA385F00D3D254 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A1844171DEA385F00D3D254 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A18441B1DEA385F00D3D254 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A18441C1DEA385F00D3D254 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A1844351DEA386000D3D254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A1844361DEA386000D3D254 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A1844381DEA386000D3D254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958CBA98E2820EBEED04610B /* Pods-DNCBaseScene.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCBaseScene/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseScene;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6A1844391DEA386000D3D254 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EB515BD0E763C710B6F557A /* Pods-DNCBaseScene.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCBaseScene/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseScene;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6A18443B1DEA386000D3D254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 473F4EBE95B28CC89710E1C3 /* Pods-DNCBaseSceneTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCBaseSceneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseSceneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNCBaseScene.app/DNCBaseScene";
+			};
+			name = Debug;
+		};
+		6A18443C1DEA386000D3D254 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3595CB88B59DAD05B58FF0F7 /* Pods-DNCBaseSceneTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCBaseSceneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseSceneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNCBaseScene.app/DNCBaseScene";
+			};
+			name = Release;
+		};
+		6A18443E1DEA386000D3D254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCBaseSceneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseSceneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DNCBaseScene;
+			};
+			name = Debug;
+		};
+		6A18443F1DEA386000D3D254 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = T864D3RXRZ;
+				INFOPLIST_FILE = DNCBaseSceneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseSceneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DNCBaseScene;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A1844051DEA385F00D3D254 /* Build configuration list for PBXProject "DNCBaseScene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1844351DEA386000D3D254 /* Debug */,
+				6A1844361DEA386000D3D254 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A1844371DEA386000D3D254 /* Build configuration list for PBXNativeTarget "DNCBaseScene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1844381DEA386000D3D254 /* Debug */,
+				6A1844391DEA386000D3D254 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A18443A1DEA386000D3D254 /* Build configuration list for PBXNativeTarget "DNCBaseSceneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A18443B1DEA386000D3D254 /* Debug */,
+				6A18443C1DEA386000D3D254 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A18443D1DEA386000D3D254 /* Build configuration list for PBXNativeTarget "DNCBaseSceneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A18443E1DEA386000D3D254 /* Debug */,
+				6A18443F1DEA386000D3D254 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A1844021DEA385F00D3D254 /* Project object */;
+}
