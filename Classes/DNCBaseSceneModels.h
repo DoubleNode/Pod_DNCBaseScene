@@ -44,6 +44,13 @@
 
 @end
 
+@interface DNCBaseSceneErrorResponse : __DNCBaseSceneResponse
+
+@property (strong, nonatomic)   NSString*   title;
+@property (strong, nonatomic)   NSError*    error;
+
+@end
+
 @interface DNCBaseSceneMessageResponse : __DNCBaseSceneResponse
 
 @property (strong, nonatomic)   NSString*   title;

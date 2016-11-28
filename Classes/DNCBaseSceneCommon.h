@@ -6,6 +6,7 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
+#import <DNCore/DNCUtilities.h>
 #import <UIKit/UIKit.h>
 
 #ifndef CLEAN_ROUTER_OUTPUT

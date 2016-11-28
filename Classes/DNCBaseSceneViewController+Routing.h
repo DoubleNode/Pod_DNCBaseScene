@@ -36,6 +36,6 @@
 
 #pragma mark - Utility
 
-- (DNCBaseSceneViewController*)utilityPeekSceneWithClassBaseName:(NSString*)classBaseName;
+- (DNCBaseSceneViewController*)utilityPeekScene:(NSString*)classBaseName;
 
 @end

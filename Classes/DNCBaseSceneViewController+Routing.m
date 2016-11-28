@@ -46,9 +46,9 @@
 
 #pragma mark - Utility
 
-- (DNCBaseSceneViewController*)utilityPeekSceneWithClassBaseName:(NSString*)classBaseName
+- (DNCBaseSceneViewController*)utilityPeekScene:(NSString*)classBaseName
 {
-    return [self.router utilityPeekSceneWithClassBaseName:classBaseName];
+    return [self.router utilityPeekScene:classBaseName];
 }
 
 @end

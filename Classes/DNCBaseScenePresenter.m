@@ -45,6 +45,14 @@
     [self.output displayDismiss:viewModel];
 }
 
+- (void)presentError:(DNCBaseSceneErrorResponse*)response
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [self utilityDisplayMessage:response.error.localizedDescription
+                      withTitle:response.title];
+}
+
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
@@ -94,11 +102,11 @@
           withBackgroundColor:self.paletteSecondaryBackgroundColor];
 }
 
-- (void)presentToastError:(DNCBaseSceneMessageResponse*)response
+- (void)presentToastError:(DNCBaseSceneErrorResponse*)response
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self utilityDisplayToast:response.message
+    [self utilityDisplayToast:response.error.localizedDescription
                     withTitle:response.title
                withTitleColor:[UIColor whiteColor]
              withMessageColor:[UIColor whiteColor]

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DNCBaseScene"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A base class for scenes."
 
   # This description is used to generate tags and improve search results.
@@ -143,7 +143,5 @@ Pod::Spec.new do |s|
 
   s.dependency "BFKit"
   s.dependency "CRToast"
-  s.dependency "JJMaterialTextField"
-  s.dependency "ResponsiveLabel"
 
 end

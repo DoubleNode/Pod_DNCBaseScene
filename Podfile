@@ -11,8 +11,6 @@ target ‘DNCBaseScene’ do
   # Pods for DNCBaseScene
   pod 'BFKit'
   pod 'CRToast'
-  pod 'JJMaterialTextField'
-  pod 'ResponsiveLabel'
 
   pod 'DNCDataObjects'
   pod 'DNCDisabledViewController'

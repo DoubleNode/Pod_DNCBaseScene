@@ -31,7 +31,7 @@
 
 #pragma mark - Peeking
 
-//- (UIViewController*)peekSceneAvatar    {   return [self utilityPeekSceneWithClassBaseName:self.classSceneAvatar];  }
+//- (UIViewController*)peekSceneAvatar    {   return [self utilityPeekScene:self.classSceneAvatar];  }
 
 #pragma mark - Popping
 
@@ -140,7 +140,7 @@
 
 #pragma mark - Utility
 
-- (UIViewController*)utilityPeekSceneWithClassBaseName:(NSString*)classBaseName
+- (UIViewController*)utilityPeekScene:(NSString*)classBaseName
 {
     NSString*   viewControllerClassName = [NSString stringWithFormat:@"%@ViewController", classBaseName];
     Class       viewControllerClass     = NSClassFromString(viewControllerClassName);

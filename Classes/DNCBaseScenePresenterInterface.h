@@ -11,10 +11,11 @@
 @protocol DNCBaseScenePresenterInput
 
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
+- (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response;
 - (void)presentToast:(DNCBaseSceneMessageResponse*)response;
-- (void)presentToastError:(DNCBaseSceneMessageResponse*)response;
+- (void)presentToastError:(DNCBaseSceneErrorResponse*)response;
 
 @end
 

@@ -122,6 +122,8 @@
     [DNCUtilities runOnMainThreadWithoutDeadlocking:
      ^()
      {
+         [self passDataToNextViewController:viewModel.sendData];
+         
          [self dismiss:viewModel.animated];
      }];
 }

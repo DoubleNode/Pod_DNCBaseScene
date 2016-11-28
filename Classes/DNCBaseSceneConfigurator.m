@@ -59,14 +59,14 @@
     viewController.output   = self.interactor;
     viewController.router   = self.router;
     
-    // Presenter Dependency Injection
-    self.presenter.analyticsWorker  = [WKRCrash_Analytics_Worker worker];
-    
     // Interactor Dependency Injection
-    self.interactor.analyticsWorker = [WKRCrash_Analytics_Worker worker];
+    self.interactor.analyticsWorker = WKRCrash_Analytics_Worker.worker;
+    
+    // Presenter Dependency Injection
+    self.presenter.analyticsWorker  = WKRCrash_Analytics_Worker.worker;
     
     // ViewController Dependency Injection
-    viewController.analyticsWorker  = [WKRCrash_Analytics_Worker worker];
+    viewController.analyticsWorker  = WKRCrash_Analytics_Worker.worker;
 }
 
 @end

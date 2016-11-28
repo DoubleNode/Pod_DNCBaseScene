@@ -39,6 +39,9 @@
 @implementation DNCBaseSceneDismissResponse
 @end
 
+@implementation DNCBaseSceneErrorResponse
+@end
+
 @implementation DNCBaseSceneMessageResponse
 @end
 

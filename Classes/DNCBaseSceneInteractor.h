@@ -23,6 +23,8 @@
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
 
+- (NSDictionary*)receiveAndClearData;
+
 - (void)doDidLoad:(DNCBaseSceneRequest*)request;
 - (void)doDidAppear:(DNCBaseSceneRequest*)request;
 
