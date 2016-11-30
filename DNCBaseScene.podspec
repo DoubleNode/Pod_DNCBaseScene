@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DNCBaseScene"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A base class for scenes."
 
   # This description is used to generate tags and improve search results.
@@ -108,7 +108,7 @@ Pod::Spec.new do |s|
   # s.resources = "Resources/*.png"
   s.resource_bundles =
   {
-    'DNCOnboardingEmailLogin' => ['Classes/**/*.xib']
+    'DNCBaseScene' => ['Classes/**/*.xib']
   }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
@@ -143,5 +143,6 @@ Pod::Spec.new do |s|
 
   s.dependency "BFKit"
   s.dependency "CRToast"
+  s.dependency "PodAsset"
 
 end

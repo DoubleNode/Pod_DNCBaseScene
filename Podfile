@@ -11,6 +11,7 @@ target ‘DNCBaseScene’ do
   # Pods for DNCBaseScene
   pod 'BFKit'
   pod 'CRToast'
+  pod 'PodAsset'
 
   pod 'DNCDataObjects'
   pod 'DNCDisabledViewController'

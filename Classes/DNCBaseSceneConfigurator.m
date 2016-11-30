@@ -6,6 +6,7 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
+#import <PodAsset/PodAsset.h>
 #import <WKRCrash_Workers/WKRCrash_Analytics_Worker.h>
 #import <WKRCrash_Workers/WKRCrash_User_Worker.h>
 #import <WKRCrash_Workers/WKRCrash_Validation_Worker.h>
@@ -22,6 +23,13 @@
 
 @implementation DNCBaseSceneConfigurator
 
+#pragma mark - VIP Object Class Base Names
+
++ (NSString*)classBaseInteractor        {   return @"DNCBaseScene"; }
++ (NSString*)classBasePresenter         {   return @"DNCBaseScene"; }
++ (NSString*)classBaseRouter            {   return @"DNCBaseScene"; }
++ (NSString*)classBaseViewController    {   return @"DNCBaseScene"; }
+
 #pragma mark - Object lifecycle
 
 + (instancetype)sharedInstance
@@ -35,17 +43,35 @@
     return instance;
 }
 
+#pragma mark - Scene factories
+
++ (DNCBaseSceneViewController*)viewController
+{
+    NSString*   classRoot   = self.classBaseViewController;
+    
+    NSBundle*   viewControllerBundle    = [PodAsset bundleForPod:classRoot];
+    NSString*   viewControllerClassName = [NSString stringWithFormat:@"%@ViewController", classRoot];
+    Class       ViewControllerClass     = NSClassFromString(viewControllerClassName);
+    
+    DNCBaseSceneViewController* retval  = [ViewControllerClass alloc];
+    
+    retval.configurator = self.sharedInstance;
+    
+    retval = [retval initWithNibName:viewControllerClassName
+                              bundle:viewControllerBundle];
+    NSAssert(retval, @"'%@' not found", viewControllerClassName);
+    
+    return retval;
+}
+
 #pragma mark - Configuration
 
 - (void)configure:(DNCBaseSceneViewController*)viewController
 {
     // Create VIP Objects
-    NSString*   className   = NSStringFromClass(self.class);
-    NSString*   classRoot   = [className substringToIndex:(className.length - 12)];
-    
-    Class   RouterClass     = NSClassFromString([NSString stringWithFormat:@"%@Router", classRoot]);
-    Class   PresenterClass  = NSClassFromString([NSString stringWithFormat:@"%@Presenter", classRoot]);
-    Class   InteractorClass = NSClassFromString([NSString stringWithFormat:@"%@Interactor", classRoot]);
+    Class   InteractorClass = NSClassFromString([NSString stringWithFormat:@"%@Interactor", self.class.classBaseInteractor]);
+    Class   PresenterClass  = NSClassFromString([NSString stringWithFormat:@"%@Presenter", self.class.classBasePresenter]);
+    Class   RouterClass     = NSClassFromString([NSString stringWithFormat:@"%@Router", self.class.classBaseRouter]);
     
     self.interactor = [InteractorClass interactor];
     self.presenter  = [PresenterClass presenter];

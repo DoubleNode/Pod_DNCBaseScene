@@ -30,7 +30,7 @@
 
 #pragma mark - CleanRouterOutput protocol
 
-- (id)returnTo
+- (UIViewController*)returnTo
 {
     return _returnTo;
 }

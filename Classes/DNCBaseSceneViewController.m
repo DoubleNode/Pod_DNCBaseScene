@@ -44,15 +44,6 @@
 
 - (void)configure
 {
-    if (!self.configurator)
-    {
-        NSString*   className   = NSStringFromClass(self.class);
-        NSString*   classRoot   = [className substringToIndex:(className.length - 14)];
-        
-        Class   ConfigClass     = NSClassFromString([NSString stringWithFormat:@"%@Configurator", classRoot]);
-        self.configurator       = [ConfigClass sharedInstance];
-    }
-    
     [self.configurator configure:self];
 }
 

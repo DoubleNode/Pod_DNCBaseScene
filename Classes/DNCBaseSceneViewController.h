@@ -25,6 +25,8 @@
 @property (weak, nonatomic) id<CleanViewControllerInput>    opener;
 @property (strong, nonatomic) DNCBaseSceneRouter*           router;
 
+@property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
+
 #pragma mark - Palette Colors
 
 - (UIColor*)paletteAccessoryBackgroundColor;

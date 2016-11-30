@@ -14,22 +14,29 @@
 
 @class DNCBaseSceneViewController;
 
-@protocol DNCBaseSceneConfiguratorProtocol
+@interface DNCBaseSceneConfigurator : NSObject
 
 @property (strong, nonatomic)   DNCBaseSceneInteractor* interactor;
 @property (strong, nonatomic)   DNCBaseScenePresenter*  presenter;
 @property (strong, nonatomic)   DNCBaseSceneRouter*     router;
 
-- (void)configure:(DNCBaseSceneViewController*)viewController;
+#pragma mark - VIP Object Class Base Names
 
-@end
++ (NSString*)classBaseInteractor;
++ (NSString*)classBasePresenter;
++ (NSString*)classBaseRouter;
++ (NSString*)classBaseViewController;
 
-@interface DNCBaseSceneConfigurator : NSObject<DNCBaseSceneConfiguratorProtocol>
-
-@property (strong, nonatomic)   DNCBaseSceneInteractor* interactor;
-@property (strong, nonatomic)   DNCBaseScenePresenter*  presenter;
-@property (strong, nonatomic)   DNCBaseSceneRouter*     router;
+#pragma mark - Object lifecycle
 
 + (instancetype)sharedInstance;
+
+#pragma mark - Scene factories
+
++ (DNCBaseSceneViewController*)viewController;
+
+#pragma mark - Configuration
+
+- (void)configure:(DNCBaseSceneViewController*)viewController;
 
 @end

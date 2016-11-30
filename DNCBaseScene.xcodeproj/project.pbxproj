@@ -121,7 +121,7 @@
 		6A1844011DEA385F00D3D254 = {
 			isa = PBXGroup;
 			children = (
-				6A1844401DEA386700D3D254 /* Pod */,
+				6A1844401DEA386700D3D254 /* Cocoapod */,
 				6A18440C1DEA385F00D3D254 /* DNCBaseScene */,
 				6A1844261DEA386000D3D254 /* DNCBaseSceneTests */,
 				6A1844311DEA386000D3D254 /* DNCBaseSceneUITests */,
@@ -183,14 +183,14 @@
 			path = DNCBaseSceneUITests;
 			sourceTree = "<group>";
 		};
-		6A1844401DEA386700D3D254 /* Pod */ = {
+		6A1844401DEA386700D3D254 /* Cocoapod */ = {
 			isa = PBXGroup;
 			children = (
 				6A1844601DEA397300D3D254 /* README.md */,
 				6A18445E1DEA397300D3D254 /* DNCBaseScene.podspec */,
 				6A1844411DEA387000D3D254 /* Classes */,
 			);
-			name = Pod;
+			name = Cocoapod;
 			sourceTree = "<group>";
 		};
 		6A1844411DEA387000D3D254 /* Classes */ = {

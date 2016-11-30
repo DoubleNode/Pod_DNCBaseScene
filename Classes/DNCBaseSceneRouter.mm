@@ -142,16 +142,10 @@
 
 - (UIViewController*)utilityPeekScene:(NSString*)classBaseName
 {
-    NSString*   viewControllerClassName = [NSString stringWithFormat:@"%@ViewController", classBaseName];
-    Class       viewControllerClass     = NSClassFromString(viewControllerClassName);
+    NSString*   configuratorClassName   = [NSString stringWithFormat:@"%@Configurator", classBaseName];
+    Class       ConfiguratorClass       = NSClassFromString(configuratorClassName);
     
-    UIViewController<CleanViewControllerInput>* viewController = [viewControllerClass alloc];
-    
-    viewController = [viewController initWithNibName:viewControllerClassName
-                                              bundle:nil];
-    NSAssert(viewController, @"UIViewController not found");
-    
-    return viewController;
+    return [ConfiguratorClass viewController];
 }
 
 @end
