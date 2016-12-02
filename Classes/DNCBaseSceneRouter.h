@@ -31,6 +31,7 @@
 #pragma mark - Popping
 
 - (void)popScene:(DNCBaseSceneViewController*)viewController;
+- (void)popScene:(DNCBaseSceneViewController*)viewController animated:(BOOL)animated;
 
 #pragma mark - Navigation
 

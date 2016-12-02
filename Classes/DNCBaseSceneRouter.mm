@@ -37,22 +37,21 @@
 
 - (void)popScene:(DNCBaseSceneViewController*)viewController
 {
+    [self popScene:viewController
+          animated:YES];
+}
+
+- (void)popScene:(DNCBaseSceneViewController*)viewController
+        animated:(BOOL)animated
+{
     NSAssert(viewController, @"UIViewController not found");
+ 
+    viewController.opener = self.viewController;
     
-    auto    cleanViewController = (UIViewController<CleanViewControllerInput>*)viewController;
-    
-    cleanViewController.opener = self.viewController;
-    
-    [self assignDataToViewController:cleanViewController];
-    
-    UINavigationController* navigationController    = self.viewController.navigationController;
-    
-    [navigationController setViewControllers:@[
-                                               self.viewController.navigationController.viewControllers[0],
-                                               self.viewController.navigationController.viewControllers[1],
-                                               viewController
-                                               ]
-                                    animated:YES];
+    [self assignDataToViewController:viewController];
+
+    [self.viewController.navigationController pushViewController:viewController
+                                                        animated:animated];
 }
 
 #pragma mark - Navigation
@@ -87,13 +86,17 @@
         {
             // returnTo CLEAN_RETURNTOROOT
             [self.viewController.navigationController popToRootViewControllerAnimated:animated];
+            return;
         }
         else if ([returnTo isEqualToString:CLEAN_RETURNTOSKIP])
         {
             // skip CLEAN_RETURNTOSKIP -- Do Nothing
+            return;
         }
-        
-        return;
+        else if ([returnTo isEqualToString:CLEAN_RETURNTOOPENER])
+        {
+            returnTo    = openerViewController;
+        }
     }
     
     [self assignPreviousDataToViewController:returnTo];

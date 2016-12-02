@@ -12,8 +12,9 @@
 #ifndef CLEAN_ROUTER_OUTPUT
 #define CLEAN_ROUTER_OUTPUT 1
 
-#define CLEAN_RETURNTOROOT   @"root"
-#define CLEAN_RETURNTOSKIP   @"skip"
+#define CLEAN_RETURNTOOPENER    @"opener"
+#define CLEAN_RETURNTOROOT      @"root"
+#define CLEAN_RETURNTOSKIP      @"skip"
 
 @protocol CleanRouterOutput
 
