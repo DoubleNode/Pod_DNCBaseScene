@@ -37,6 +37,13 @@
     [self.router dismiss:animated];
 }
 
+- (void)dismiss:(BOOL)animated
+         forced:(BOOL)forced
+{
+    [self.router dismiss:animated
+                  forced:forced];
+}
+
 #pragma mark - Communication
 
 - (void)passDataToNextViewController:(NSDictionary*)dataDictionary
