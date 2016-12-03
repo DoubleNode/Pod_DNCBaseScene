@@ -79,6 +79,7 @@
     
     // Connect VIP Objects
     self.interactor.output      = self.presenter;
+    self.interactor.returnTo    = viewController;
     self.presenter.output       = viewController;
     self.router.viewController  = viewController;
     

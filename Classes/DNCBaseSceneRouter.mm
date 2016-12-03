@@ -58,6 +58,13 @@
 
 - (void)dismiss:(BOOL)animated
 {
+    [self dismiss:animated
+           forced:NO];
+}
+
+- (void)dismiss:(BOOL)animated
+         forced:(BOOL)forced
+{
     id<CleanViewControllerInput>    openerViewController    = self.viewController.opener;
     id<CleanRouterOutput>           openerOutput            = openerViewController.output;
     
@@ -73,7 +80,7 @@
         return;
     }
     
-    if (!returnTo)
+    if (forced || !returnTo)
     {
         // nil returnTo
         [self.viewController.navigationController popViewControllerAnimated:animated];

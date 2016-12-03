@@ -36,6 +36,7 @@
 #pragma mark - Navigation
 
 - (void)dismiss:(BOOL)animated;
+- (void)dismiss:(BOOL)animated forced:(BOOL)forced;
 
 #pragma mark - Communication
 
