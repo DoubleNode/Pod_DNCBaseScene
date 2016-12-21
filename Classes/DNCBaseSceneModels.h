@@ -110,4 +110,7 @@
 @property (copy, nonatomic)   UIColor*      messageColor;
 @property (copy, nonatomic)   UIColor*      backgroundColor;
 
+@property (copy, nonatomic)   UIFont*       titleFont;
+@property (copy, nonatomic)   UIFont*       messageFont;
+
 @end

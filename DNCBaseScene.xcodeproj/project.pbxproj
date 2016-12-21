@@ -314,6 +314,7 @@
 					6A1844091DEA385F00D3D254 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = T864D3RXRZ;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					6A1844221DEA386000D3D254 = {
@@ -640,6 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseScene;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -653,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DoubleNode.DNCBaseScene;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

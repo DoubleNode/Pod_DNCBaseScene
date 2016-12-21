@@ -22,8 +22,19 @@
 
 #pragma mark - Palette Colors
 
-- (UIColor*)palettePrimaryTextColor;
-- (UIColor*)paletteSecondaryBackgroundColor;
+- (UIColor*)paletteToastTitleColor;
+- (UIColor*)paletteToastMessageColor;
+- (UIColor*)paletteToastBackgroundColor;
+- (UIColor*)paletteToastErrorTitleColor;
+- (UIColor*)paletteToastErrorMessageColor;
+- (UIColor*)paletteToastErrorBackgroundColor;
+
+#pragma mark - Palette Fonts
+
+- (UIFont*)paletteToastTitleFont;
+- (UIFont*)paletteToastMessageFont;
+- (UIFont*)paletteToastErrorTitleFont;
+- (UIFont*)paletteToastErrorMessageFont;
 
 #pragma mark - Presentation logic
 
