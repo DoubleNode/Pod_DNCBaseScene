@@ -48,6 +48,11 @@
 
 #pragma mark - Business logic
 
+- (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request
+{
+    
+}
+
 - (void)doDidLoad:(DNCBaseSceneRequest*)request
 {
 }

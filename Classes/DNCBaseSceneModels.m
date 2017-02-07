@@ -22,6 +22,9 @@
 @implementation DNCBaseSceneRequest
 @end
 
+@implementation DNCBaseSceneConfirmationRequest
+@end
+
 //
 // Response Models
 //
@@ -34,6 +37,9 @@
 @end
 
 @implementation DNCBaseSceneResponse
+@end
+
+@implementation DNCBaseSceneConfirmationResponse
 @end
 
 @implementation DNCBaseSceneDismissResponse
@@ -60,6 +66,9 @@
 @end
 
 @implementation DNCBaseSceneViewModel
+@end
+
+@implementation DNCBaseSceneConfirmationViewModel
 @end
 
 @implementation DNCBaseSceneDismissViewModel

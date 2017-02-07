@@ -78,6 +78,25 @@
 
 #pragma mark - Presentation logic
 
+- (void)presentConfirmation:(DNCBaseSceneConfirmationResponse*)response
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    DNCBaseSceneConfirmationViewModel* viewModel = DNCBaseSceneConfirmationViewModel.viewModel;
+    viewModel.title     = response.title;
+    viewModel.message   = response.message;
+    viewModel.button1   = response.button1;
+    viewModel.button2   = response.button2;
+    
+    viewModel.alertStyle    = response.alertStyle;
+    viewModel.button1Style  = response.button1Style;
+    viewModel.button2Style  = response.button2Style;
+    
+    viewModel.userData      = response.userData;
+    
+    [self.output displayConfirmation:viewModel];
+}
+
 - (void)presentDismiss:(DNCBaseSceneResponse*)response
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];

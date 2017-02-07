@@ -94,6 +94,15 @@
 
 #pragma mark - Event handling
 
+- (void)doConfirmation:(NSString*)selection
+          withUserData:(id)userData
+{
+    DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
+    request.selection   = selection;
+    request.userData    = userData;
+    [self.output doConfirmation:request];
+}
+
 - (void)doDidLoad
 {
     DNCBaseSceneRequest*    request = DNCBaseSceneRequest.request;
@@ -107,6 +116,41 @@
 }
 
 #pragma mark - Display logic
+
+- (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel
+{
+    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+     ^()
+     {
+         UIAlertController* alertController = [UIAlertController alertControllerWithTitle:viewModel.title
+                                                                                  message:viewModel.message
+                                                                           preferredStyle:viewModel.alertStyle];
+         
+         UIAlertAction* button1 = [UIAlertAction actionWithTitle:viewModel.button1
+                                                           style:viewModel.button1Style
+                                                         handler:
+                                   ^(UIAlertAction *action)
+                                   {
+                                       [self doConfirmation:viewModel.button1
+                                               withUserData:viewModel.userData];
+                                   }];
+         [alertController addAction:button1];
+         
+         UIAlertAction* button2 = [UIAlertAction actionWithTitle:viewModel.button2
+                                                           style:viewModel.button2Style
+                                                         handler:
+                                   ^(UIAlertAction *action)
+                                   {
+                                       [self doConfirmation:viewModel.button2
+                                               withUserData:viewModel.userData];
+                                   }];
+         [alertController addAction:button2];
+         
+         [self presentViewController:alertController
+                            animated:YES
+                          completion:nil];
+     }];
+}
 
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel
 {

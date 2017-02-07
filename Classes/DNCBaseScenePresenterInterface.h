@@ -10,6 +10,7 @@
 
 @protocol DNCBaseScenePresenterInput
 
+- (void)presentConfirmation:(DNCBaseSceneConfirmationResponse*)response;
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;
@@ -21,6 +22,7 @@
 
 @protocol DNCBaseScenePresenterOutput
 
+- (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;

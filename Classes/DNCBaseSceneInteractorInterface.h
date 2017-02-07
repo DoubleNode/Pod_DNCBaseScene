@@ -10,6 +10,7 @@
 
 @protocol DNCBaseSceneInteractorInput
 
+- (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
 - (void)doDidLoad:(DNCBaseSceneRequest*)request;
 - (void)doDidAppear:(DNCBaseSceneRequest*)request;
 
@@ -17,6 +18,7 @@
 
 @protocol DNCBaseSceneInteractorOutput
 
+- (void)presentConfirmation:(DNCBaseSceneConfirmationResponse*)response;
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;

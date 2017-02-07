@@ -23,6 +23,14 @@
 
 @end
 
+@interface DNCBaseSceneConfirmationRequest : __DNCBaseSceneRequest
+
+@property (strong, nonatomic)   NSString*   selection;
+
+@property (copy, nonatomic) id  userData;
+
+@end
+
 //
 // Response Models
 //
@@ -35,6 +43,21 @@
 @end
 
 @interface DNCBaseSceneResponse : __DNCBaseSceneResponse
+@end
+
+@interface DNCBaseSceneConfirmationResponse : __DNCBaseSceneResponse
+
+@property (copy, nonatomic) NSString*   title;
+@property (copy, nonatomic) NSString*   message;
+@property (copy, nonatomic) NSString*   button1;
+@property (copy, nonatomic) NSString*   button2;
+
+@property (assign, atomic)  UIAlertControllerStyle  alertStyle;
+@property (assign, atomic)  UIAlertActionStyle      button1Style;
+@property (assign, atomic)  UIAlertActionStyle      button2Style;
+
+@property (copy, nonatomic) id  userData;
+
 @end
 
 @interface DNCBaseSceneDismissResponse : __DNCBaseSceneResponse
@@ -78,6 +101,21 @@
 @interface DNCBaseSceneViewModel : __DNCBaseSceneViewModel
 
 @property (copy, nonatomic)   NSDictionary* sendData;
+
+@end
+
+@interface DNCBaseSceneConfirmationViewModel : __DNCBaseSceneViewModel
+
+@property (copy, nonatomic) NSString*   title;
+@property (copy, nonatomic) NSString*   message;
+@property (copy, nonatomic) NSString*   button1;
+@property (copy, nonatomic) NSString*   button2;
+
+@property (assign, atomic)  UIAlertControllerStyle  alertStyle;
+@property (assign, atomic)  UIAlertActionStyle      button1Style;
+@property (assign, atomic)  UIAlertActionStyle      button2Style;
+
+@property (copy, nonatomic) id  userData;
 
 @end
 

@@ -25,6 +25,7 @@
 
 - (NSDictionary*)receiveAndClearData;
 
+- (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
 - (void)doDidLoad:(DNCBaseSceneRequest*)request;
 - (void)doDidAppear:(DNCBaseSceneRequest*)request;
 

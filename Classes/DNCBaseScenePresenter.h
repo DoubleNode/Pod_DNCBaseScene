@@ -38,6 +38,7 @@
 
 #pragma mark - Presentation logic
 
+- (void)presentConfirmation:(DNCBaseSceneConfirmationResponse*)response;
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;

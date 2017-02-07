@@ -10,6 +10,7 @@
 
 @protocol DNCBaseSceneViewControllerInput
 
+- (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;
@@ -19,6 +20,7 @@
 
 @protocol DNCBaseSceneViewControllerOutput
 
+- (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
 - (void)doDidLoad:(DNCBaseSceneRequest*)request;
 - (void)doDidAppear:(DNCBaseSceneRequest*)request;
 
