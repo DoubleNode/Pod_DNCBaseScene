@@ -56,7 +56,7 @@
 @property (assign, atomic)  UIAlertActionStyle      button1Style;
 @property (assign, atomic)  UIAlertActionStyle      button2Style;
 
-@property (copy, nonatomic) id  userData;
+@property (strong, nonatomic) id  userData;
 
 @end
 
@@ -115,7 +115,7 @@
 @property (assign, atomic)  UIAlertActionStyle      button1Style;
 @property (assign, atomic)  UIAlertActionStyle      button2Style;
 
-@property (copy, nonatomic) id  userData;
+@property (strong, nonatomic) id  userData;
 
 @end
 
