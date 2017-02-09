@@ -152,6 +152,15 @@
     [self.output displaySpinner:viewModel];
 }
 
+- (void)presentTitle:(DNCBaseSceneTitleResponse*)response
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    DNCBaseSceneTitleViewModel* viewModel = DNCBaseSceneTitleViewModel.viewModel;
+    viewModel.title = response.title;
+    [self.output displayTitle:viewModel];
+}
+
 - (void)presentToast:(DNCBaseSceneMessageResponse*)response
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];

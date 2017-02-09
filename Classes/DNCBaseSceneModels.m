@@ -54,6 +54,9 @@
 @implementation DNCBaseSceneSpinnerResponse
 @end
 
+@implementation DNCBaseSceneTitleResponse
+@end
+
 //
 // ViewModel Models
 //
@@ -78,6 +81,9 @@
 @end
 
 @implementation DNCBaseSceneSpinnerViewModel
+@end
+
+@implementation DNCBaseSceneTitleViewModel
 @end
 
 @implementation DNCBaseSceneToastViewModel

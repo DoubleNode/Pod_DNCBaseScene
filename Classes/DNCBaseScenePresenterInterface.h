@@ -15,6 +15,7 @@
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response;
+- (void)presentTitle:(DNCBaseSceneTitleResponse*)response;
 - (void)presentToast:(DNCBaseSceneMessageResponse*)response;
 - (void)presentToastError:(DNCBaseSceneErrorResponse*)response;
 
@@ -26,6 +27,7 @@
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;
+- (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel;
 - (void)displayToast:(DNCBaseSceneToastViewModel*)viewModel;
 
 @end

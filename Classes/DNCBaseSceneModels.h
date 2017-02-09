@@ -87,6 +87,12 @@
 
 @end
 
+@interface DNCBaseSceneTitleResponse : __DNCBaseSceneResponse
+
+@property (strong, nonatomic)   NSString*   title;
+
+@end
+
 //
 // ViewModel Models
 //
@@ -136,6 +142,12 @@
 @interface DNCBaseSceneSpinnerViewModel : __DNCBaseSceneViewModel
 
 @property (assign, atomic)  BOOL    show;
+
+@end
+
+@interface DNCBaseSceneTitleViewModel : __DNCBaseSceneViewModel
+
+@property (strong, nonatomic)   NSString*   title;
 
 @end
 

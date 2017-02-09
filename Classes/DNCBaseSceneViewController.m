@@ -14,6 +14,8 @@
 
 @interface DNCBaseSceneViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel*   titleLabel;
+
 @end
 
 @implementation DNCBaseSceneViewController
@@ -189,6 +191,16 @@
      ^()
      {
          [super displaySpinner:viewModel.show];
+     }];
+}
+
+- (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel
+{
+    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+     ^()
+     {
+         self.title             = viewModel.title;
+         self.titleLabel.text   = viewModel.title;
      }];
 }
 

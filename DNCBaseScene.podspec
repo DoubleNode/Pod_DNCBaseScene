@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DNCBaseScene"
-  s.version      = "0.0.11"
+  s.version      = "0.0.12"
   s.summary      = "A base class for scenes."
 
   # This description is used to generate tags and improve search results.
