@@ -16,11 +16,11 @@
 
 @class DNCBaseSceneRouter;
 
-@interface DNCBaseSceneViewController : DNCDisabledViewController<CleanViewControllerInput, DNCBaseSceneViewControllerInput, DNCBaseScenePresenterOutput>
+@interface DNCBaseSceneViewController : DNCDisabledViewController<DNCBaseSceneViewControllerInput, DNCBaseScenePresenterOutput>
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
 
-@property (strong, nonatomic) id<CleanRouterOutput, DNCBaseSceneViewControllerOutput> output;
+@property (strong, nonatomic) id<DNCBaseSceneViewControllerOutput> output;
 
 @property (weak, nonatomic) id<CleanViewControllerInput>    opener;
 @property (strong, nonatomic) DNCBaseSceneRouter*           router;

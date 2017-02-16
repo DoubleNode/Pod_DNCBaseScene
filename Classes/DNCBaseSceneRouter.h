@@ -14,7 +14,7 @@
 
 + (instancetype)router;
 
-@property (weak, nonatomic) DNCBaseSceneViewController* viewController;
+@property (weak, nonatomic) UIViewController<CleanViewControllerInput>* viewController;
 
 #pragma mark - ViewController Class Names
 

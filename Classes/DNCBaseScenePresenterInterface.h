@@ -21,7 +21,7 @@
 
 @end
 
-@protocol DNCBaseScenePresenterOutput
+@protocol DNCBaseScenePresenterOutput<CleanViewControllerInput>
 
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;

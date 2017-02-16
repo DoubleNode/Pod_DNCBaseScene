@@ -8,7 +8,7 @@
 
 #import "DNCBaseSceneModels.h"
 
-@protocol DNCBaseSceneInteractorInput
+@protocol DNCBaseSceneInteractorInput<CleanRouterOutput>
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
 - (void)doDidLoad:(DNCBaseSceneRequest*)request;
@@ -16,7 +16,7 @@
 
 @end
 
-@protocol DNCBaseSceneInteractorOutput
+@protocol DNCBaseSceneInteractorOutput<CleanPresenterInput>
 
 - (void)presentConfirmation:(DNCBaseSceneConfirmationResponse*)response;
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;

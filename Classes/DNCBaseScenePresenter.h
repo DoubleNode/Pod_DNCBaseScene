@@ -12,11 +12,11 @@
 #import "DNCBaseSceneInteractorInterface.h"
 #import "DNCBaseScenePresenterInterface.h"
 
-@interface DNCBaseScenePresenter : NSObject<CleanPresenterInput, DNCBaseScenePresenterInput, DNCBaseSceneInteractorOutput>
+@interface DNCBaseScenePresenter : NSObject<DNCBaseScenePresenterInput, DNCBaseSceneInteractorOutput>
 
 + (instancetype)presenter;
 
-@property (weak, nonatomic) id<CleanViewControllerInput, DNCBaseScenePresenterOutput> output;
+@property (weak, nonatomic) id<DNCBaseScenePresenterOutput> output;
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
 

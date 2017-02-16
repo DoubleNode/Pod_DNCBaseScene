@@ -8,7 +8,7 @@
 
 #import "DNCBaseSceneModels.h"
 
-@protocol DNCBaseSceneViewControllerInput
+@protocol DNCBaseSceneViewControllerInput<CleanViewControllerInput>
 
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
@@ -19,7 +19,7 @@
 
 @end
 
-@protocol DNCBaseSceneViewControllerOutput
+@protocol DNCBaseSceneViewControllerOutput<CleanRouterOutput>
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
 - (void)doDidLoad:(DNCBaseSceneRequest*)request;

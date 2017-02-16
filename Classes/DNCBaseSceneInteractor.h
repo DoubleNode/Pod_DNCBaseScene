@@ -12,11 +12,11 @@
 #import "DNCBaseSceneInteractorInterface.h"
 #import "DNCBaseSceneViewControllerInterface.h"
 
-@interface DNCBaseSceneInteractor : NSObject<CleanRouterOutput, DNCBaseSceneInteractorInput, DNCBaseSceneViewControllerOutput>
+@interface DNCBaseSceneInteractor : NSObject<DNCBaseSceneInteractorInput, DNCBaseSceneViewControllerOutput>
 
 + (instancetype)interactor;
 
-@property (strong, nonatomic)   id<CleanPresenterInput, DNCBaseSceneInteractorOutput>   output;
+@property (strong, nonatomic)   id<DNCBaseSceneInteractorOutput>   output;
 
 @property (copy, nonatomic)     NSDictionary*       receivedData;
 @property (weak, nonatomic)     UIViewController*   returnTo;
