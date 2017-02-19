@@ -28,6 +28,10 @@
 #pragma mark - Routing
 
 //- (void)routeToSceneAvatar  {   [self popScene:self.peekSceneAvatar];       }
+- (void)routeToRoot
+{
+    [((UIViewController*)self.viewController).navigationController popToRootViewControllerAnimated:YES];
+}
 
 #pragma mark - Peeking
 

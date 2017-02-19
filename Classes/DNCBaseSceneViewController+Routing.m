@@ -18,6 +18,7 @@
 #pragma mark - Routing
 
 //- (void)routeToSceneAvatar  {   [self.baseRouter routeToSceneAvatar];   }
+- (void)routeToRoot {   [self.router routeToRoot];  }
 
 #pragma mark - Peeking
 

@@ -47,6 +47,7 @@
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
+- (void)displayRoot:(DNCBaseSceneViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;
 - (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel;
 - (void)displayToast:(DNCBaseSceneToastViewModel*)viewModel;
