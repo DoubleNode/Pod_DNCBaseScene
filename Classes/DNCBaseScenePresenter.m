@@ -97,11 +97,12 @@
     [self.output displayConfirmation:viewModel];
 }
 
-- (void)presentDismiss:(DNCBaseSceneResponse*)response
+- (void)presentDismiss:(DNCBaseSceneDismissResponse*)response
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     DNCBaseSceneDismissViewModel* viewModel = [DNCBaseSceneDismissViewModel viewModel];
+    viewModel.sendData  = response.sendData;
     viewModel.animated  = YES;
     [self.output displayDismiss:viewModel];
 }
