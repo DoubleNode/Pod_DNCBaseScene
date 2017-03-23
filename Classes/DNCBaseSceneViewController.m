@@ -220,14 +220,14 @@
     [DNCUtilities runOnMainThreadWithoutDeadlocking:
      ^()
      {
-         NSArray*   responders  = @[ [CRToastInteractionResponder interactionResponderWithInteractionType:CRToastInteractionTypeTap
+         NSArray*   responders  = @[ [CRToastInteractionResponder interactionResponderWithInteractionType:CRToastInteractionTypeAll
                                                                                      automaticallyDismiss:YES
                                                                                                     block:nil] ];
          
          NSDictionary*  options = @{
                                     kCRToastNotificationTypeKey         : @(CRToastTypeNavigationBar),
                                     kCRToastInteractionRespondersKey    : responders,
-                                    kCRToastTimeIntervalKey             : @(10.0f),
+                                    kCRToastTimeIntervalKey             : @(6.0f),
                                     kCRToastTextKey                     : viewModel.title,
                                     kCRToastTextAlignmentKey            : @(NSTextAlignmentCenter),
                                     kCRToastTextColorKey                : viewModel.titleColor,
@@ -238,8 +238,8 @@
                                     kCRToastBackgroundColorKey          : viewModel.backgroundColor,
                                     kCRToastAnimationInTypeKey          : @(CRToastAnimationTypeGravity),
                                     kCRToastAnimationOutTypeKey         : @(CRToastAnimationTypeGravity),
-                                    kCRToastAnimationInDirectionKey     : @(CRToastAnimationDirectionLeft),
-                                    kCRToastAnimationOutDirectionKey    : @(CRToastAnimationDirectionRight)
+                                    kCRToastAnimationInDirectionKey     : @(CRToastAnimationDirectionTop),
+                                    kCRToastAnimationOutDirectionKey    : @(CRToastAnimationDirectionTop)
                                     };
          
          [CRToastManager showNotificationWithOptions:options
