@@ -51,10 +51,14 @@
 @property (copy, nonatomic) NSString*   message;
 @property (copy, nonatomic) NSString*   button1;
 @property (copy, nonatomic) NSString*   button2;
+@property (copy, nonatomic) NSString*   button3;
+@property (copy, nonatomic) NSString*   button4;
 
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
 @property (assign, atomic)  UIAlertActionStyle      button1Style;
 @property (assign, atomic)  UIAlertActionStyle      button2Style;
+@property (assign, atomic)  UIAlertActionStyle      button3Style;
+@property (assign, atomic)  UIAlertActionStyle      button4Style;
 
 @property (strong, nonatomic)   id  userData;
 
@@ -116,10 +120,14 @@
 @property (copy, nonatomic) NSString*   message;
 @property (copy, nonatomic) NSString*   button1;
 @property (copy, nonatomic) NSString*   button2;
+@property (copy, nonatomic) NSString*   button3;
+@property (copy, nonatomic) NSString*   button4;
 
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
 @property (assign, atomic)  UIAlertActionStyle      button1Style;
 @property (assign, atomic)  UIAlertActionStyle      button2Style;
+@property (assign, atomic)  UIAlertActionStyle      button3Style;
+@property (assign, atomic)  UIAlertActionStyle      button4Style;
 
 @property (strong, nonatomic)   id  userData;
 

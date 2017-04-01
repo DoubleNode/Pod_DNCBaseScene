@@ -87,10 +87,14 @@
     viewModel.message   = response.message;
     viewModel.button1   = response.button1;
     viewModel.button2   = response.button2;
+    viewModel.button3   = response.button3;
+    viewModel.button4   = response.button4;
     
     viewModel.alertStyle    = response.alertStyle;
     viewModel.button1Style  = response.button1Style;
     viewModel.button2Style  = response.button2Style;
+    viewModel.button3Style  = response.button3Style;
+    viewModel.button4Style  = response.button4Style;
     
     viewModel.userData      = response.userData;
     

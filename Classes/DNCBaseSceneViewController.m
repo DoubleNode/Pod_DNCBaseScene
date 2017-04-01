@@ -128,26 +128,58 @@
                                                                                   message:viewModel.message
                                                                            preferredStyle:viewModel.alertStyle];
          
-         UIAlertAction* button1 = [UIAlertAction actionWithTitle:viewModel.button1
-                                                           style:viewModel.button1Style
-                                                         handler:
-                                   ^(UIAlertAction *action)
-                                   {
-                                       [self doConfirmation:viewModel.button1
-                                               withUserData:viewModel.userData];
-                                   }];
-         [alertController addAction:button1];
+         if (viewModel.button1.length)
+         {
+             UIAlertAction* button1 = [UIAlertAction actionWithTitle:viewModel.button1
+                                                               style:viewModel.button1Style
+                                                             handler:
+                                       ^(UIAlertAction *action)
+                                       {
+                                           [self doConfirmation:viewModel.button1
+                                                   withUserData:viewModel.userData];
+                                       }];
+             [alertController addAction:button1];
+         }
          
-         UIAlertAction* button2 = [UIAlertAction actionWithTitle:viewModel.button2
-                                                           style:viewModel.button2Style
-                                                         handler:
-                                   ^(UIAlertAction *action)
-                                   {
-                                       [self doConfirmation:viewModel.button2
-                                               withUserData:viewModel.userData];
-                                   }];
-         [alertController addAction:button2];
+         if (viewModel.button2.length)
+         {
+             UIAlertAction* button2 = [UIAlertAction actionWithTitle:viewModel.button2
+                                                               style:viewModel.button2Style
+                                                             handler:
+                                       ^(UIAlertAction *action)
+                                       {
+                                           [self doConfirmation:viewModel.button2
+                                                   withUserData:viewModel.userData];
+                                       }];
+             [alertController addAction:button2];
+         }
          
+         if (viewModel.button3.length)
+         {
+             UIAlertAction* button3 = [UIAlertAction actionWithTitle:viewModel.button3
+                                                               style:viewModel.button3Style
+                                                             handler:
+                                       ^(UIAlertAction *action)
+                                       {
+                                           [self doConfirmation:viewModel.button3
+                                                   withUserData:viewModel.userData];
+                                       }];
+             [alertController addAction:button3];
+         }
+         
+         if (viewModel.button4.length)
+         {
+             UIAlertAction* button4 = [UIAlertAction actionWithTitle:viewModel.button4
+                                                               style:viewModel.button4Style
+                                                             handler:
+                                       ^(UIAlertAction *action)
+                                       {
+                                           [self doConfirmation:viewModel.button4
+                                                   withUserData:viewModel.userData];
+                                       }];
+             [alertController addAction:button4];
+         }
+
          [self presentViewController:alertController
                             animated:YES
                           completion:nil];
