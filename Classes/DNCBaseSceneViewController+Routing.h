@@ -18,6 +18,7 @@
 
 //- (void)routeToSceneAvatar;
 - (void)routeToRoot;
+- (void)routeToScene:(NSString*)scene;
 
 #pragma mark - Peeking
 

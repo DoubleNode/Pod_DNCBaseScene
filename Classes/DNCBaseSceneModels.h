@@ -43,6 +43,9 @@
 @end
 
 @interface DNCBaseSceneResponse : __DNCBaseSceneResponse
+
+@property (copy, nonatomic) NSString*   scene;
+
 @end
 
 @interface DNCBaseSceneConfirmationResponse : __DNCBaseSceneResponse
@@ -110,7 +113,8 @@
 
 @interface DNCBaseSceneViewModel : __DNCBaseSceneViewModel
 
-@property (copy, nonatomic)   NSDictionary* sendData;
+@property (copy, nonatomic) NSDictionary*   sendData;
+@property (copy, nonatomic) NSString*       scene;
 
 @end
 

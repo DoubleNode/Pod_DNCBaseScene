@@ -226,6 +226,15 @@
      }];
 }
 
+- (void)displayScene:(DNCBaseSceneViewModel*)viewModel
+{
+    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+     ^()
+     {
+         [self routeToScene:viewModel.scene];
+     }];
+}
+
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel
 {
     [DNCUtilities runOnMainThreadWithoutDeadlocking:

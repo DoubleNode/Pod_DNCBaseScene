@@ -135,6 +135,15 @@
     [self.output displayRoot:viewModel];
 }
 
+- (void)presentScene:(DNCBaseSceneResponse*)response
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    DNCBaseSceneViewModel* viewModel = DNCBaseSceneViewModel.viewModel;
+    viewModel.scene = response.scene;
+    [self.output displayScene:viewModel];
+}
+
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];

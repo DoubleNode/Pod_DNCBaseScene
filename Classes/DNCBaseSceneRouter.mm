@@ -33,6 +33,8 @@
     [((UIViewController*)self.viewController).navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (void)routeToScene:(NSString*)scene   {    [self popScene:[self utilityPeekScene:scene]];  }
+
 #pragma mark - Peeking
 
 //- (UIViewController*)peekSceneAvatar    {   return [self utilityPeekScene:self.classSceneAvatar];  }
