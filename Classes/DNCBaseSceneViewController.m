@@ -135,7 +135,7 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
-                                           [self doConfirmation:viewModel.button1
+                                           [self doConfirmation:viewModel.button1Code
                                                    withUserData:viewModel.userData];
                                        }];
              [alertController addAction:button1];
@@ -143,7 +143,7 @@
          
          if (viewModel.button2.length)
          {
-             UIAlertAction* button2 = [UIAlertAction actionWithTitle:viewModel.button2
+             UIAlertAction* button2 = [UIAlertAction actionWithTitle:viewModel.button2Code
                                                                style:viewModel.button2Style
                                                              handler:
                                        ^(UIAlertAction *action)
@@ -156,7 +156,7 @@
          
          if (viewModel.button3.length)
          {
-             UIAlertAction* button3 = [UIAlertAction actionWithTitle:viewModel.button3
+             UIAlertAction* button3 = [UIAlertAction actionWithTitle:viewModel.button3Code
                                                                style:viewModel.button3Style
                                                              handler:
                                        ^(UIAlertAction *action)
@@ -169,7 +169,7 @@
          
          if (viewModel.button4.length)
          {
-             UIAlertAction* button4 = [UIAlertAction actionWithTitle:viewModel.button4
+             UIAlertAction* button4 = [UIAlertAction actionWithTitle:viewModel.button4Code
                                                                style:viewModel.button4Style
                                                              handler:
                                        ^(UIAlertAction *action)

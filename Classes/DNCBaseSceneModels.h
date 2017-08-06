@@ -50,17 +50,24 @@
 
 @interface DNCBaseSceneConfirmationResponse : __DNCBaseSceneResponse
 
-@property (copy, nonatomic) NSString*   title;
-@property (copy, nonatomic) NSString*   message;
-@property (copy, nonatomic) NSString*   button1;
-@property (copy, nonatomic) NSString*   button2;
-@property (copy, nonatomic) NSString*   button3;
-@property (copy, nonatomic) NSString*   button4;
-
+@property (copy, nonatomic) NSString*               title;
+@property (copy, nonatomic) NSString*               message;
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
+
+@property (copy, nonatomic) NSString*               button1;
+@property (copy, nonatomic) NSString*               button1Code;
 @property (assign, atomic)  UIAlertActionStyle      button1Style;
+
+@property (copy, nonatomic) NSString*               button2;
+@property (copy, nonatomic) NSString*               button2Code;
 @property (assign, atomic)  UIAlertActionStyle      button2Style;
+
+@property (copy, nonatomic) NSString*               button3;
+@property (copy, nonatomic) NSString*               button3Code;
 @property (assign, atomic)  UIAlertActionStyle      button3Style;
+
+@property (copy, nonatomic) NSString*               button4;
+@property (copy, nonatomic) NSString*               button4Code;
 @property (assign, atomic)  UIAlertActionStyle      button4Style;
 
 @property (strong, nonatomic)   id  userData;
@@ -120,17 +127,24 @@
 
 @interface DNCBaseSceneConfirmationViewModel : __DNCBaseSceneViewModel
 
-@property (copy, nonatomic) NSString*   title;
-@property (copy, nonatomic) NSString*   message;
-@property (copy, nonatomic) NSString*   button1;
-@property (copy, nonatomic) NSString*   button2;
-@property (copy, nonatomic) NSString*   button3;
-@property (copy, nonatomic) NSString*   button4;
-
+@property (copy, nonatomic) NSString*               title;
+@property (copy, nonatomic) NSString*               message;
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
+
+@property (copy, nonatomic) NSString*               button1;
+@property (copy, nonatomic) NSString*               button1Code;
 @property (assign, atomic)  UIAlertActionStyle      button1Style;
+
+@property (copy, nonatomic) NSString*               button2;
+@property (copy, nonatomic) NSString*               button2Code;
 @property (assign, atomic)  UIAlertActionStyle      button2Style;
+
+@property (copy, nonatomic) NSString*               button3;
+@property (copy, nonatomic) NSString*               button3Code;
 @property (assign, atomic)  UIAlertActionStyle      button3Style;
+
+@property (copy, nonatomic) NSString*               button4;
+@property (copy, nonatomic) NSString*               button4Code;
 @property (assign, atomic)  UIAlertActionStyle      button4Style;
 
 @property (strong, nonatomic)   id  userData;
