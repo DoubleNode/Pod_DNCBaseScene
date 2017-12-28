@@ -1,6 +1,7 @@
 Steps to Update Pod
--------------------
-For New Install Only:
+------------------------
+0. For New Install Only:
+pod repo add DoubleNodeSpecs https://github.com/DoubleNode/SpecsPrivateRepo.git
 pod repo update DoubleNodeSpecs
 
 1. Check local files
@@ -15,8 +16,9 @@ pod spec lint --sources=git@github.com:DoubleNode/SpecsPrivateRepo.git,master --
 pod repo push DoubleNodeSpecs DNCBaseScene.podspec --allow-warnings
 
 
-Steps to Resource Podfile Pods
-------------------------------
+Steps to Reset Podfile Pods
+--------------------------------
 When changing pod's "path" to/from development mode:
 
 rm Pods/Manifest.lock && rm Podfile.lock && pod install
+
