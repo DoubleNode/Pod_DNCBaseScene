@@ -8,14 +8,14 @@ Pod::Spec.new do |s|
                     A base class which defines common methods/properties for scenes.
                    DESC
 
-  s.homepage     = "https://github.com/DoubleNode/Pod_DNCBaseScene"
+  s.homepage     = "https://github.com/Four23Creative/Pod_DNCBaseScene"
   s.license      = { :type => "PRIVATE", :file => "README.md" }
 
   s.author             = { "Darren Ehlers" => "me@darrenehlers.com" }
   s.social_media_url   = "http://twitter.com/ehlersd"
 
   s.platform     = :ios, "9.0"
-  s.source      = { :git => "https://github.com/DoubleNode/Pod_DNCBaseScene.git", :tag => "#{s.version}" }
+  s.source      = { :git => "https://github.com/Four23Creative/Pod_DNCBaseScene.git", :tag => "#{s.version}" }
 
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
