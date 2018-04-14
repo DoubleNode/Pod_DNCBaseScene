@@ -121,7 +121,7 @@
 
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel
 {
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          UIAlertController* alertController = [UIAlertController alertControllerWithTitle:viewModel.title
@@ -188,7 +188,7 @@
 
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel
 {
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          [self passDataToNextViewController:viewModel.sendData];
@@ -199,7 +199,7 @@
 
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel
 {
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          UIAlertController* alertController = [UIAlertController alertControllerWithTitle:viewModel.title
@@ -219,7 +219,7 @@
 
 - (void)displayRoot:(DNCBaseSceneViewModel*)viewModel
 {
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          [self routeToRoot];
@@ -228,7 +228,7 @@
 
 - (void)displayScene:(DNCBaseSceneViewModel*)viewModel
 {
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          [self routeToScene:viewModel.scene];
@@ -237,7 +237,7 @@
 
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel
 {
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          [super displaySpinner:viewModel.show];
@@ -246,7 +246,7 @@
 
 - (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel
 {
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          self.title             = viewModel.title;
@@ -258,7 +258,7 @@
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [DNCUtilities runOnMainThreadWithoutDeadlocking:
+    [DNCUIThread run:
      ^()
      {
          NSArray*   responders  = @[ [CRToastInteractionResponder interactionResponderWithInteractionType:CRToastInteractionTypeAll

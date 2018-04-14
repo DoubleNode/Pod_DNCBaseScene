@@ -6,8 +6,10 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <DNCDisabledViewController/DNCDisabledViewController.h>
 #import <DNCProtocols/PTCLAnalytics_Protocol.h>
+
+#import "DNCDisabledViewController.h"
+#import "DNCCoordinator.h"
 
 #import "DNCBaseSceneCommon.h"
 #import "DNCBaseSceneConfigurator.h"
@@ -19,6 +21,7 @@
 @interface DNCBaseSceneViewController : DNCDisabledViewController<DNCBaseSceneViewControllerInput, DNCBaseScenePresenterOutput>
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
+@property (weak, nonatomic)   DNCCoordinator*           coordinatorDelegate;
 
 @property (strong, nonatomic) id<DNCBaseSceneViewControllerOutput> output;
 
