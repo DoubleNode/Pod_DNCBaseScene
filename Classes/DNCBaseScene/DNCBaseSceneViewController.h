@@ -57,3 +57,5 @@
 - (void)displayToast:(DNCBaseSceneToastViewModel*)viewModel;
 
 @end
+
+#import "DNCBaseSceneViewController+Routing.h"

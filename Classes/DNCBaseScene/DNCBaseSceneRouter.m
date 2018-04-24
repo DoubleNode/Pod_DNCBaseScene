@@ -13,6 +13,8 @@
 {
     NSDictionary*   _sendingData;
     NSDictionary*   _previousSendingData;
+    
+    DNCUtilitiesBlock   _dismissBlock;
 }
 
 @end
@@ -62,6 +64,11 @@
 
 #pragma mark - Navigation
 
+- (void)whenDismissedRun:(DNCUtilitiesBlock)block
+{
+    _dismissBlock = block;
+}
+
 - (void)dismiss:(BOOL)animated
 {
     [self dismiss:animated
@@ -82,7 +89,11 @@
     {
         // Not in NavController
         [self.viewController dismissViewControllerAnimated:animated
-                                                completion:nil];
+                                                completion:
+         ^()
+         {
+             self->_dismissBlock ? self->_dismissBlock() : (void)nil;
+         }];
         return;
     }
     
@@ -90,6 +101,7 @@
     {
         // nil returnTo
         [self.viewController.navigationController popViewControllerAnimated:animated];
+        self->_dismissBlock ? self->_dismissBlock() : (void)nil;
         return;
     }
     
@@ -99,11 +111,13 @@
         {
             // returnTo CLEAN_RETURNTOROOT
             [self.viewController.navigationController popToRootViewControllerAnimated:animated];
+            self->_dismissBlock ? self->_dismissBlock() : (void)nil;
             return;
         }
         else if ([returnTo isEqualToString:CLEAN_RETURNTOSKIP])
         {
             // skip CLEAN_RETURNTOSKIP -- Do Nothing
+            self->_dismissBlock ? self->_dismissBlock() : (void)nil;
             return;
         }
         else if ([returnTo isEqualToString:CLEAN_RETURNTOOPENER])
@@ -116,6 +130,7 @@
     
     [self.viewController.navigationController popToViewController:returnTo
                                                          animated:animated];
+    self->_dismissBlock ? self->_dismissBlock() : (void)nil;
 }
 
 #pragma mark - Communication

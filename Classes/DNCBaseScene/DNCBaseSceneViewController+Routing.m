@@ -34,6 +34,11 @@
 
 #pragma mark - Navigation
 
+- (void)whenDismissedRun:(DNCUtilitiesBlock)block
+{
+    [self.router whenDismissedRun:block];
+}
+
 - (void)dismiss:(BOOL)animated
 {
     [self.router dismiss:animated];
