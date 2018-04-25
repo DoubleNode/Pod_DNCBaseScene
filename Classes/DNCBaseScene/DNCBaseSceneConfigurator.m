@@ -53,13 +53,19 @@
     NSString*   viewControllerClassName = [NSString stringWithFormat:@"%@ViewController", classRoot];
     Class       ViewControllerClass     = NSClassFromString(viewControllerClassName);
     
-    DNCBaseSceneViewController* retval  = [ViewControllerClass alloc];
+    __block DNCBaseSceneViewController* retval;
     
-    retval.configurator = self.sharedInstance;
-    
-    retval = [retval initWithNibName:viewControllerClassName
-                              bundle:viewControllerBundle];
-    NSAssert(retval, @"'%@' not found", viewControllerClassName);
+    [DNCUIThread run:
+     ^()
+     {
+         retval  = [ViewControllerClass alloc];
+         
+         retval.configurator = self.sharedInstance;
+         
+         retval = [retval initWithNibName:viewControllerClassName
+                                   bundle:viewControllerBundle];
+         NSAssert(retval, @"'%@' not found", viewControllerClassName);
+     }];
     
     return retval;
 }

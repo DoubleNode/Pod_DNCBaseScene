@@ -63,13 +63,21 @@
     if (forceAsRoot ||
         !self.navigationController.viewControllers.count)
     {
-        [self.navigationController setViewControllers:@[ viewController ]
-                                             animated:YES];
+        [DNCUIThread run:
+         ^()
+         {
+             [self.navigationController setViewControllers:@[ viewController ]
+                                                  animated:YES];
+         }];
         return;
     }
     
-    [self.navigationController pushViewController:viewController
-                                         animated:YES];
+    [DNCUIThread run:
+     ^()
+     {
+         [self.navigationController pushViewController:viewController
+                                              animated:YES];
+     }];
 }
 
 @end
