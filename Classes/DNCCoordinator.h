@@ -25,5 +25,7 @@
 - (void)start;
 
 - (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController;
+- (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController
+                                               forceAsRoot:(BOOL)forceAsRoot;
 
 @end

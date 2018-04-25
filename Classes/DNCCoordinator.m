@@ -50,9 +50,18 @@
 
 - (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController
 {
+    [self utilityPresentViewControllerOnNavigationController:viewController
+                                                 forceAsRoot:NO];
+}
+
+- (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController
+                                               forceAsRoot:(BOOL)forceAsRoot
+
+{
     viewController.coordinatorDelegate  = self;
     
-    if (!self.navigationController.viewControllers.count)
+    if (forceAsRoot ||
+        !self.navigationController.viewControllers.count)
     {
         [self.navigationController setViewControllers:@[ viewController ]
                                              animated:YES];
