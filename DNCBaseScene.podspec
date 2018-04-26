@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DNCBaseScene"
-  s.version      = "0.2.4"
+  s.version      = "0.2.5"
   s.summary      = "A base class for scenes."
 
   s.description  = <<-DESC

@@ -39,6 +39,11 @@
     [self.router whenDismissedRun:block];
 }
 
+- (void)runDismissBlock
+{
+    [self.router runDismissBlock];
+}
+
 - (void)dismiss:(BOOL)animated
 {
     [self.router dismiss:animated];

@@ -31,6 +31,8 @@
 #pragma mark - Navigation
 
 - (void)whenDismissedRun:(DNCUtilitiesBlock)block;
+- (void)runDismissBlock;
+
 - (void)dismiss:(BOOL)animated;
 - (void)dismiss:(BOOL)animated forced:(BOOL)forced;
 

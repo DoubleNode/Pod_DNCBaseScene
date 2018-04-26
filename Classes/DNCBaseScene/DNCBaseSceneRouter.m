@@ -69,6 +69,12 @@
     _dismissBlock = block;
 }
 
+- (void)runDismissBlock
+{
+    self->_dismissBlock ? self->_dismissBlock() : (void)nil;
+    self->_dismissBlock = nil;
+}
+
 - (void)dismiss:(BOOL)animated
 {
     [self dismiss:animated
@@ -92,7 +98,7 @@
                                                 completion:
          ^()
          {
-             self->_dismissBlock ? self->_dismissBlock() : (void)nil;
+             [self runDismissBlock];
          }];
         return;
     }
@@ -101,7 +107,7 @@
     {
         // nil returnTo
         [self.viewController.navigationController popViewControllerAnimated:animated];
-        self->_dismissBlock ? self->_dismissBlock() : (void)nil;
+        [self runDismissBlock];
         return;
     }
     
@@ -111,13 +117,13 @@
         {
             // returnTo CLEAN_RETURNTOROOT
             [self.viewController.navigationController popToRootViewControllerAnimated:animated];
-            self->_dismissBlock ? self->_dismissBlock() : (void)nil;
+            [self runDismissBlock];
             return;
         }
         else if ([returnTo isEqualToString:CLEAN_RETURNTOSKIP])
         {
             // skip CLEAN_RETURNTOSKIP -- Do Nothing
-            self->_dismissBlock ? self->_dismissBlock() : (void)nil;
+            [self runDismissBlock];
             return;
         }
         else if ([returnTo isEqualToString:CLEAN_RETURNTOOPENER])
@@ -130,7 +136,7 @@
     
     [self.viewController.navigationController popToViewController:returnTo
                                                          animated:animated];
-    self->_dismissBlock ? self->_dismissBlock() : (void)nil;
+    [self runDismissBlock];
 }
 
 #pragma mark - Communication

@@ -94,6 +94,13 @@
     [self doDidAppear];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [self runDismissBlock];
+}
+
 #pragma mark - Event handling
 
 - (void)doConfirmation:(NSString*)selection
