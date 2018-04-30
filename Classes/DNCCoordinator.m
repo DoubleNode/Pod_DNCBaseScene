@@ -75,6 +75,11 @@
     [DNCUIThread run:
      ^()
      {
+         if ([self.navigationController.viewControllers.lastObject isKindOfClass:viewController.class])
+         {
+             return;
+         }
+         
          [self.navigationController pushViewController:viewController
                                               animated:YES];
      }];
