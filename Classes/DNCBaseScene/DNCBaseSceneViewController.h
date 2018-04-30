@@ -21,7 +21,7 @@
 @interface DNCBaseSceneViewController : DNCDisabledViewController<DNCBaseSceneViewControllerInput, DNCBaseScenePresenterOutput>
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
-@property (weak, nonatomic)   DNCCoordinator*           coordinatorDelegate;
+@property (strong, nonatomic) DNCCoordinator*           coordinatorDelegate;
 
 @property (strong, nonatomic) id<DNCBaseSceneViewControllerOutput> output;
 
