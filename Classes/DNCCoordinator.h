@@ -23,6 +23,7 @@
 - (void)removeChildCoordinatorForKey:(nonnull NSString*)key;
 
 - (void)start;
+- (void)stop;
 
 - (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController;
 - (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController

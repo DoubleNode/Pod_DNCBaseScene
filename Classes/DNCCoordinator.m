@@ -13,6 +13,8 @@
 @interface DNCCoordinator()
 {
     NSMutableDictionary<NSString*, DNCCoordinator*>*    _childCoordinators;
+    
+    NSArray<UIViewController*>* _savedViewControllers;
 }
 
 @end
@@ -33,6 +35,13 @@
 
 - (void)start
 {
+    _savedViewControllers   = self.navigationController.viewControllers;
+}
+
+- (void)stop
+{
+    [self.navigationController setViewControllers:_savedViewControllers
+                                         animated:YES];
 }
 
 - (void)addChildCoordinator:(nonnull DNCCoordinator*)childCoordinator
