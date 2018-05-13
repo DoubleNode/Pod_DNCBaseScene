@@ -53,11 +53,11 @@
         animated:(BOOL)animated
 {
     NSAssert(viewController, @"UIViewController not found");
- 
+    
     viewController.opener = self.viewController;
     
     [self assignDataToViewController:viewController];
-
+    
     [self.viewController.navigationController pushViewController:viewController
                                                         animated:animated];
 }
@@ -176,6 +176,19 @@
 }
 
 #pragma mark - Utility
+
+- (void)utilityCallToCoordinator:(NSString*)selectorString
+{
+    SEL   selector = NSSelectorFromString(selectorString);
+    id    delegate = self.viewController.coordinatorDelegate;
+    
+    if (delegate && [delegate respondsToSelector:selector])
+    {
+        IMP imp = [delegate methodForSelector:selector];
+        void (*func)(id, SEL, DNCBaseSceneViewController*) = (void *)imp;
+        func(delegate, selector, self.viewController);
+    }
+}
 
 - (UIViewController*)utilityPeekScene:(NSString*)classBaseName
 {

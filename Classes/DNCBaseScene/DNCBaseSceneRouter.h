@@ -49,6 +49,7 @@
 
 #pragma mark - Utility
 
+- (void)utilityCallToCoordinator:(NSString*)selectorString;
 - (DNCBaseSceneViewController*)utilityPeekScene:(NSString*)classBaseName;
 
 @end
