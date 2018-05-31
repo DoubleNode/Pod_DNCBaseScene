@@ -35,16 +35,40 @@
 
 - (void)start
 {
+    switch (self.runState)
+    {
+        case DNCCoordinatorStateNotStarted:
+        {
+            self.runState   = DNCCoordinatorStateStarted;
+            break;
+        }
+
+        case DNCCoordinatorStateStarted:
+        {
+            [self reset];
+            break;
+        }
+
+        case DNCCoordinatorStateTerminated:
+        default:
+        {
+            NSAssert(NO, @"%@ : Coordinator terminated and cannot be restarted", NSStringFromClass(self.class));
+            return;
+        }
+    }
+    
     _savedViewControllers   = self.navigationController.viewControllers;
 }
 
 - (void)reset
 {
-    
+    self.runState   = DNCCoordinatorStateNotStarted;
 }
 
 - (void)stop
 {
+    self.runState   = DNCCoordinatorStateTerminated;
+
     [self.navigationController setViewControllers:_savedViewControllers
                                          animated:YES];
 }

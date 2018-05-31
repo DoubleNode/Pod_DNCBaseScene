@@ -8,11 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, DNCCoordinatorState)
+{
+    DNCCoordinatorStateNotStarted = 0,
+    DNCCoordinatorStateStarted,
+    DNCCoordinatorStateTerminated,
+
+    DNCCoordinatorState_Count
+};
+
 @class DNCBaseSceneViewController;
 
 @interface DNCCoordinator : NSObject
 
 @property (weak, nonatomic) id _Nullable  delegate;
+
+@property (assign, nonatomic) DNCCoordinatorState   runState;
 
 @property (strong, nonatomic)   UINavigationController* _Nullable navigationController;
 
