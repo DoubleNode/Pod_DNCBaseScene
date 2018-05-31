@@ -38,6 +38,11 @@
     _savedViewControllers   = self.navigationController.viewControllers;
 }
 
+- (void)reset
+{
+    
+}
+
 - (void)stop
 {
     [self.navigationController setViewControllers:_savedViewControllers
