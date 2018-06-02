@@ -182,12 +182,21 @@
     SEL   selector = NSSelectorFromString(selectorString);
     id    delegate = self.viewController.coordinatorDelegate;
     
-    if (delegate && [delegate respondsToSelector:selector])
+    if (!delegate)
     {
-        IMP imp = [delegate methodForSelector:selector];
-        void (*func)(id, SEL, DNCBaseSceneViewController*) = (void *)imp;
-        func(delegate, selector, self.viewController);
+        NSAssert(delegate, @"UIViewController.coordinatorDelegate is nil");
+        return;
     }
+    
+    if (![delegate respondsToSelector:selector])
+    {
+        NSAssert(delegate, @"UIViewController.coordinatorDelegate missing method: %@", selectorString);
+        return;
+    }
+    
+    IMP imp = [delegate methodForSelector:selector];
+    void (*func)(id, SEL, DNCBaseSceneViewController*) = (void *)imp;
+    func(delegate, selector, self.viewController);
 }
 
 - (UIViewController*)utilityPeekScene:(NSString*)classBaseName
