@@ -37,6 +37,10 @@
 
 #pragma mark - Configuration
 
+- (void)setDataKey:(NSString*)key
+         withValue:(id)value;
+- (id)valueForDataKey:(NSString*)key;
+
 - (void)configure:(DNCBaseSceneViewController*)viewController;
 
 @end

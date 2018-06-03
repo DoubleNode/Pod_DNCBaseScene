@@ -8,13 +8,23 @@
 
 #import "DNCBaseSceneRouterInterface.h"
 
+#import "DNCBaseSceneConfigurator.h"
+
 @class DNCBaseSceneViewController;
 
 @interface DNCBaseSceneRouter : NSObject<DNCBaseSceneRouterInput>
 
 + (instancetype)router;
 
+@property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
+
 @property (weak, nonatomic) DNCBaseSceneViewController* viewController;
+
+#pragma mark - Configuration
+
+- (void)setConfigDataKey:(NSString*)key
+               withValue:(id)value;
+- (id)valueForConfigDataKey:(NSString*)key;
 
 #pragma mark - ViewController Class Names
 

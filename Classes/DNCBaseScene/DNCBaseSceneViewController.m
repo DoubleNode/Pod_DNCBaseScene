@@ -20,6 +20,20 @@
 
 @implementation DNCBaseSceneViewController
 
+#pragma mark - Configuration
+
+- (void)setConfigDataKey:(NSString*)key
+               withValue:(id)value
+{
+    [self.configurator setDataKey:key
+                        withValue:value];
+}
+
+- (id)valueForConfigDataKey:(NSString*)key
+{
+    return [self.configurator valueForDataKey:key];
+}
+
 #pragma mark - Palette Colors
 
 - (UIColor*)paletteAccessoryBackgroundColor

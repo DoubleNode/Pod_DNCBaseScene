@@ -28,6 +28,20 @@
     return self;
 }
 
+#pragma mark - Configuration
+
+- (void)setConfigDataKey:(NSString*)key
+               withValue:(id)value
+{
+    [self.configurator setDataKey:key
+                        withValue:value];
+}
+
+- (id)valueForConfigDataKey:(NSString*)key
+{
+    return [self.configurator valueForDataKey:key];
+}
+
 #pragma mark - CleanRouterOutput protocol
 
 - (UIViewController*)returnTo

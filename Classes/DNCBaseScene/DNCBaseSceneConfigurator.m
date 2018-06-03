@@ -18,6 +18,9 @@
 #import "DNCBaseSceneViewController.h"
 
 @interface DNCBaseSceneConfigurator ()
+{
+    NSMutableDictionary*    _data;
+}
 
 @end
 
@@ -70,7 +73,45 @@
     return retval;
 }
 
+- (instancetype)init
+{
+    self = super.init;
+    if (self)
+    {
+        _data   = NSMutableDictionary.dictionary;
+    }
+    
+    return self;
+}
+
 #pragma mark - Configuration
+
+- (void)setDataKey:(NSString*)key
+         withValue:(id)value
+{
+    if (!key.length)
+    {
+        return;
+    }
+    
+    if (!value || [value isKindOfClass:NSNull.class])
+    {
+        [_data removeObjectForKey:key];
+        return;
+    }
+    
+    _data[key] = value;
+}
+
+- (id)valueForDataKey:(NSString*)key
+{
+    if (!key.length)
+    {
+        return nil;
+    }
+    
+    return _data[key];
+}
 
 - (void)configure:(DNCBaseSceneViewController*)viewController
 {
@@ -79,9 +120,9 @@
     Class   PresenterClass  = NSClassFromString([NSString stringWithFormat:@"%@Presenter", self.class.classBasePresenter]);
     Class   RouterClass     = NSClassFromString([NSString stringWithFormat:@"%@Router", self.class.classBaseRouter]);
     
-    self.interactor = [InteractorClass interactor];
-    self.presenter  = [PresenterClass presenter];
-    self.router     = [RouterClass router];
+    self.interactor = [InteractorClass interactor];     self.interactor.configurator    = self;
+    self.presenter  = [PresenterClass presenter];       self.presenter.configurator     = self;
+    self.router     = [RouterClass router];             self.router.configurator        = self;
     
     // Connect VIP Objects
     self.interactor.output      = self.presenter;

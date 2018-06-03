@@ -30,6 +30,12 @@
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
 
+#pragma mark - Configuration
+
+- (void)setConfigDataKey:(NSString*)key
+               withValue:(id)value;
+- (id)valueForConfigDataKey:(NSString*)key;
+
 #pragma mark - Palette Colors
 
 - (UIColor*)paletteAccessoryBackgroundColor;

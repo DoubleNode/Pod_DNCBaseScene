@@ -237,10 +237,10 @@
 				6ACAC393207D832C00160740 /* DNCBaseSceneRouterInterface.h */,
 				6ACAC391207D832C00160740 /* DNCBaseSceneViewController.h */,
 				6ACAC38C207D832C00160740 /* DNCBaseSceneViewController.m */,
+				6ACAC38E207D832C00160740 /* DNCBaseSceneViewControllerInterface.h */,
 				6ACAC38D207D832C00160740 /* DNCBaseSceneViewController.xib */,
 				6ACAC388207D832C00160740 /* DNCBaseSceneViewController+Routing.h */,
 				6ACAC390207D832C00160740 /* DNCBaseSceneViewController+Routing.m */,
-				6ACAC38E207D832C00160740 /* DNCBaseSceneViewControllerInterface.h */,
 			);
 			name = DNCBaseScene;
 			sourceTree = "<group>";

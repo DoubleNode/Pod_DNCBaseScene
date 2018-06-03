@@ -9,6 +9,7 @@
 #import <DNCProtocols/PTCLAnalytics_Protocol.h>
 
 #import "DNCBaseSceneCommon.h"
+#import "DNCBaseSceneConfigurator.h"
 #import "DNCBaseSceneInteractorInterface.h"
 #import "DNCBaseScenePresenterInterface.h"
 
@@ -16,9 +17,17 @@
 
 + (instancetype)presenter;
 
+@property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
+
 @property (weak, nonatomic) id<DNCBaseScenePresenterOutput> output;
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
+
+#pragma mark - Configuration
+
+- (void)setConfigDataKey:(NSString*)key
+               withValue:(id)value;
+- (id)valueForConfigDataKey:(NSString*)key;
 
 #pragma mark - Palette Colors
 

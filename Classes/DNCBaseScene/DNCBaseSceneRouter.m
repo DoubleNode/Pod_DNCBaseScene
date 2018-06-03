@@ -23,6 +23,20 @@
 
 + (instancetype)router   {   return [[[self class] alloc] init]; }
 
+#pragma mark - Configuration
+
+- (void)setConfigDataKey:(NSString*)key
+               withValue:(id)value
+{
+    [self.configurator setDataKey:key
+                        withValue:value];
+}
+
+- (id)valueForConfigDataKey:(NSString*)key
+{
+    return [self.configurator valueForDataKey:key];
+}
+
 #pragma mark - ViewController Class Names
 
 //- (NSString*)classSceneAvatar   {   return @"DNCOnboardingAvatar";      }
