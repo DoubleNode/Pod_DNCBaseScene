@@ -86,8 +86,8 @@
 
 #pragma mark - Configuration
 
-- (void)setDataKey:(NSString*)key
-         withValue:(id)value
+- (void)setValue:(id)value
+      forDataKey:(NSString*)key
 {
     if (!key.length)
     {

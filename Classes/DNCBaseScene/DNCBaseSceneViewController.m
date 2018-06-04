@@ -22,11 +22,11 @@
 
 #pragma mark - Configuration
 
-- (void)setConfigDataKey:(NSString*)key
-               withValue:(id)value
+- (void)setValue:(id)value
+forConfigDataKey:(NSString*)key
 {
-    [self.configurator setDataKey:key
-                        withValue:value];
+    [self.configurator setValue:value
+                     forDataKey:key];
 }
 
 - (id)valueForConfigDataKey:(NSString*)key

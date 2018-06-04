@@ -32,8 +32,8 @@
 
 #pragma mark - Configuration
 
-- (void)setConfigDataKey:(NSString*)key
-               withValue:(id)value;
+- (void)setValue:(id)value
+forConfigDataKey:(NSString*)key;
 - (id)valueForConfigDataKey:(NSString*)key;
 
 #pragma mark - Palette Colors
