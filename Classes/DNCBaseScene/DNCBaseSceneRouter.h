@@ -60,6 +60,8 @@ forConfigDataKey:(NSString*)key;
 #pragma mark - Utility
 
 - (void)utilityCallToCoordinator:(NSString*)selectorString;
+- (void)utilityCallToCoordinator:(NSString*)selectorString
+                   withParameter:(id)parameter;
 - (DNCBaseSceneViewController*)utilityPeekScene:(NSString*)classBaseName;
 
 @end

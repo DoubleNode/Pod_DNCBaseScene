@@ -194,11 +194,11 @@ forConfigDataKey:(NSString*)key
 - (void)utilityCallToCoordinator:(NSString*)selectorString
 {
     [self utilityCallToCoordinator:selectorString
-                    withParameters:nil];
+                     withParameter:nil];
 }
 
 - (void)utilityCallToCoordinator:(NSString*)selectorString
-                  withParameters:(id)parameter
+                   withParameter:(id)parameter
 {
     SEL   selector = NSSelectorFromString(selectorString);
     id    delegate = self.viewController.coordinatorDelegate;
