@@ -205,13 +205,13 @@ forConfigDataKey:(NSString*)key
     
     if (!delegate)
     {
-        NSAssert(delegate, @"UIViewController.coordinatorDelegate is nil");
+        NSAssert(nil, @"UIViewController.coordinatorDelegate is nil");
         return;
     }
     
     if (![delegate respondsToSelector:selector])
     {
-        NSAssert(delegate, @"UIViewController.coordinatorDelegate missing method: %@", selectorString);
+        NSAssert(nil, @"UIViewController.coordinatorDelegate missing method: %@", selectorString);
         return;
     }
     
