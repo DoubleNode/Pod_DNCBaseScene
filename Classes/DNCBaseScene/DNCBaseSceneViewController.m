@@ -138,10 +138,62 @@ forConfigDataKey:(NSString*)key
     [self.output doDidAppear:request];
 }
 
+#pragma mark - Lifecycle Methods
+
+- (void)startScene:(DNCBaseSceneStartViewModel*)viewModel
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    switch (viewModel.displayType)
+    {
+        case DNCBaseSceneDisplayTypeModel:
+        {
+            break;
+        }
+            
+        case DNCBaseSceneDisplayTypeNavBarPush:
+        {
+            [DNCUIThread run:
+             ^()
+             {
+                 if (!self.configurator.navigationController.viewControllers.count)
+                 {
+                     [self.configurator.navigationController setViewControllers:@[ self ]
+                                                                       animated:YES];
+                     return;
+                 }
+                 if (self.configurator.navigationController.viewControllers.lastObject == self)
+                 {
+                     return;
+                 }
+                 
+                 [self.configurator.navigationController pushViewController:self
+                                                                   animated:YES];
+             }];
+            break;
+        }
+            
+        case DNCBaseSceneDisplayTypeNavBarRoot:
+        default:
+        {
+            [DNCUIThread run:
+             ^()
+             {
+                 [self.configurator.navigationController setViewControllers:@[ self ]
+                                                                   animated:YES];
+             }];
+            
+            break;
+        }
+    }
+}
+
 #pragma mark - Display logic
 
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [DNCUIThread run:
      ^()
      {
@@ -209,6 +261,8 @@ forConfigDataKey:(NSString*)key
 
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [DNCUIThread run:
      ^()
      {
@@ -220,6 +274,8 @@ forConfigDataKey:(NSString*)key
 
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [DNCUIThread run:
      ^()
      {
@@ -240,6 +296,8 @@ forConfigDataKey:(NSString*)key
 
 - (void)displayRoot:(DNCBaseSceneViewModel*)viewModel
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [DNCUIThread run:
      ^()
      {
@@ -249,6 +307,8 @@ forConfigDataKey:(NSString*)key
 
 - (void)displayScene:(DNCBaseSceneViewModel*)viewModel
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [DNCUIThread run:
      ^()
      {
@@ -258,6 +318,8 @@ forConfigDataKey:(NSString*)key
 
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [DNCUIThread run:
      ^()
      {
@@ -267,6 +329,8 @@ forConfigDataKey:(NSString*)key
 
 - (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [DNCUIThread run:
      ^()
      {

@@ -51,6 +51,8 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(void);
 
 #pragma mark - Configuration
 
+- (UINavigationController*)navigationController;
+
 - (void)setValue:(id)value
       forDataKey:(NSString*)key;
 - (id)valueForDataKey:(NSString*)key;

@@ -10,6 +10,12 @@
 
 @protocol DNCBaseSceneViewControllerInput<CleanViewControllerInput>
 
+#pragma mark - Lifecycle Methods
+
+- (void)startScene:(DNCBaseSceneStartViewModel*)viewModel;
+
+#pragma mark - Display logic
+
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;

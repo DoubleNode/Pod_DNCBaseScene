@@ -32,6 +32,8 @@
 
 - (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     DNCBaseSceneStartResponse*  response = DNCBaseSceneStartResponse.response;
     response.displayType    = displayType;
     [self.output startScene:response];
@@ -39,6 +41,8 @@
 
 - (void)endScene
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [self.configurator endScene];
 }
 

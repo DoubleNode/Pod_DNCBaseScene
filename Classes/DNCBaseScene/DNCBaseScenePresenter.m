@@ -11,6 +11,8 @@
 
 #import "DNCBaseScenePresenter.h"
 
+#import "DNCCoordinator.h"
+
 @interface DNCBaseScenePresenter ()
 {
     NSInteger   _spinnerCount;
@@ -26,24 +28,11 @@
 
 - (void)startScene:(DNCBaseSceneStartResponse*)response
 {
-    switch (response.displayType)
-    {
-        case DNCBaseSceneDisplayTypeModel:
-        {
-            break;
-        }
-
-        case DNCBaseSceneDisplayTypeNavBarPush:
-        {
-            break;
-        }
-
-        case DNCBaseSceneDisplayTypeNavBarRoot:
-        default:
-        {
-            break;
-        }
-    }
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    DNCBaseSceneStartViewModel* viewModel = DNCBaseSceneStartViewModel.viewModel;
+    viewModel.displayType   = response.displayType;
+    [self.output startScene:viewModel];
 }
 
 #pragma mark - Configuration

@@ -133,6 +133,12 @@
 
 @end
 
+@interface DNCBaseSceneStartViewModel : __DNCBaseSceneViewModel
+
+@property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
+
+@end
+
 @interface DNCBaseSceneConfirmationViewModel : __DNCBaseSceneViewModel
 
 @property (copy, nonatomic) NSString*               title;

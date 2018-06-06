@@ -20,7 +20,8 @@
 @interface DNCBaseSceneConfigurator ()
 {
     NSMutableDictionary*    _data;
-
+    DNCCoordinator*         _coordinator;
+    
     DNCBaseSceneConfiguratorBlock   _coordinatorEndBlock;
 }
 
@@ -107,6 +108,11 @@
 }
 
 #pragma mark - Configuration
+
+- (UINavigationController*)navigationController
+{
+    return _coordinator.navigationController;
+}
 
 - (void)setValue:(id)value
       forDataKey:(NSString*)key
