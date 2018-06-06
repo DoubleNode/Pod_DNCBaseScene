@@ -193,6 +193,13 @@ forConfigDataKey:(NSString*)key
 
 - (void)utilityCallToCoordinator:(NSString*)selectorString
 {
+    [self utilityCallToCoordinator:selectorString
+                    withParameters:nil];
+}
+
+- (void)utilityCallToCoordinator:(NSString*)selectorString
+                  withParameters:(id)parameter
+{
     SEL   selector = NSSelectorFromString(selectorString);
     id    delegate = self.viewController.coordinatorDelegate;
     
@@ -209,6 +216,14 @@ forConfigDataKey:(NSString*)key
     }
     
     IMP imp = [delegate methodForSelector:selector];
+    
+    if (parameter)
+    {
+        void (*func)(id, SEL, DNCBaseSceneViewController*, id) = (void *)imp;
+        func(delegate, selector, self.viewController, parameter);
+        return;
+    }
+
     void (*func)(id, SEL, DNCBaseSceneViewController*) = (void *)imp;
     func(delegate, selector, self.viewController);
 }
