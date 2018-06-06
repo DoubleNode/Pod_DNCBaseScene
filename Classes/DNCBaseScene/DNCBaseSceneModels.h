@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DNCBaseSceneCommon.h"
+
 //
 // Request Models
 //
@@ -45,6 +47,12 @@
 @interface DNCBaseSceneResponse : __DNCBaseSceneResponse
 
 @property (copy, nonatomic) NSString*   scene;
+
+@end
+
+@interface DNCBaseSceneStartResponse : __DNCBaseSceneResponse
+
+@property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
 
 @end
 

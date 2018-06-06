@@ -20,6 +20,8 @@
 @interface DNCBaseSceneConfigurator ()
 {
     NSMutableDictionary*    _data;
+
+    DNCBaseSceneConfiguratorBlock   _coordinatorEndBlock;
 }
 
 @end
@@ -44,6 +46,26 @@
                       instance = [[self alloc] init];
                   });
     return instance;
+}
+
+#pragma mark - Scene lifecycle
+
+- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                 andDisplayType:(DNCBaseSceneDisplayType)displayType
+                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+{
+    _coordinatorEndBlock = endBlock;
+    
+    DNCBaseSceneViewController* viewController = self.class.viewController;
+    
+    viewController.coordinatorDelegate  = coordinator;
+    
+    [self.interactor startSceneWithDisplayType:DNCBaseSceneDisplayTypeNavBarPush];
+}
+
+- (void)endScene
+{
+    _coordinatorEndBlock ? _coordinatorEndBlock() : (void)nil;
 }
 
 #pragma mark - Scene factories
@@ -120,9 +142,9 @@
     Class   PresenterClass  = NSClassFromString([NSString stringWithFormat:@"%@Presenter", self.class.classBasePresenter]);
     Class   RouterClass     = NSClassFromString([NSString stringWithFormat:@"%@Router", self.class.classBaseRouter]);
     
-    self.interactor = [InteractorClass interactor];     self.interactor.configurator    = self;
-    self.presenter  = [PresenterClass presenter];       self.presenter.configurator     = self;
-    self.router     = [RouterClass router];             self.router.configurator        = self;
+    if (!self.interactor)   {   self.interactor = [InteractorClass interactor]; }   self.interactor.configurator    = self;
+    if (!self.presenter)    {   self.presenter  = [PresenterClass presenter];   }   self.presenter.configurator     = self;
+    if (!self.router)       {   self.router     = [RouterClass router];         }   self.router.configurator        = self;
     
     // Connect VIP Objects
     self.interactor.output      = self.presenter;

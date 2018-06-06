@@ -23,6 +23,10 @@
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
 
+#pragma mark - Lifecycle Methods
+
+- (void)startScene:(DNCBaseSceneStartResponse*)response;
+
 #pragma mark - Configuration
 
 - (void)setValue:(id)value

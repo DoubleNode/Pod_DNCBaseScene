@@ -16,6 +16,16 @@
 #define CLEAN_RETURNTOROOT      @"root"
 #define CLEAN_RETURNTOSKIP      @"skip"
 
+typedef NS_ENUM(NSUInteger, DNCBaseSceneDisplayType)
+{
+    DNCBaseSceneDisplayType_None,
+    DNCBaseSceneDisplayTypeModel,
+    DNCBaseSceneDisplayTypeNavBarPush,
+    DNCBaseSceneDisplayTypeNavBarRoot,
+
+    DNCBaseSceneDisplayType_Count
+};
+
 @protocol CleanRouterOutput
 
 @property (copy, nonatomic) NSDictionary*       receivedData;

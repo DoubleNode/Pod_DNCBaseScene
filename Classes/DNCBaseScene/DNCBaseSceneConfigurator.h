@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DNCBaseSceneCommon.h"
+
+@class DNCCoordinator;
+
 @class DNCBaseSceneInteractor;
 @class DNCBaseScenePresenter;
 @class DNCBaseSceneRouter;
 
 @class DNCBaseSceneViewController;
+
+typedef void (^DNCBaseSceneConfiguratorBlock)(void);
 
 @interface DNCBaseSceneConfigurator : NSObject
 
@@ -34,6 +40,14 @@
 #pragma mark - Scene factories
 
 + (DNCBaseSceneViewController*)viewController;
+
+#pragma mark - Lifecycle Methods
+
+- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                 andDisplayType:(DNCBaseSceneDisplayType)displayType
+                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+
+- (void)endScene;
 
 #pragma mark - Configuration
 

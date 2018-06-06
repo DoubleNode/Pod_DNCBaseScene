@@ -22,6 +22,30 @@
 
 + (instancetype)presenter   {   return [[[self class] alloc] init]; }
 
+#pragma mark - Lifecycle Methods
+
+- (void)startScene:(DNCBaseSceneStartResponse*)response
+{
+    switch (response.displayType)
+    {
+        case DNCBaseSceneDisplayTypeModel:
+        {
+            break;
+        }
+
+        case DNCBaseSceneDisplayTypeNavBarPush:
+        {
+            break;
+        }
+
+        case DNCBaseSceneDisplayTypeNavBarRoot:
+        default:
+        {
+            break;
+        }
+    }
+}
+
 #pragma mark - Configuration
 
 - (void)setValue:(id)value

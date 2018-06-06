@@ -28,6 +28,20 @@
     return self;
 }
 
+#pragma mark - Lifecycle Methods
+
+- (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
+{
+    DNCBaseSceneStartResponse*  response = DNCBaseSceneStartResponse.response;
+    response.displayType    = displayType;
+    [self.output startScene:response];
+}
+
+- (void)endScene
+{
+    [self.configurator endScene];
+}
+
 #pragma mark - Configuration
 
 - (void)setValue:(id)value
