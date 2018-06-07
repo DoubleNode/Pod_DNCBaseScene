@@ -49,26 +49,6 @@
     return instance;
 }
 
-#pragma mark - Scene lifecycle
-
-- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
-                 andDisplayType:(DNCBaseSceneDisplayType)displayType
-                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
-{
-    _coordinatorEndBlock = endBlock;
-    
-    DNCBaseSceneViewController* viewController = self.class.viewController;
-    
-    viewController.coordinatorDelegate  = coordinator;
-    
-    [self.interactor startSceneWithDisplayType:DNCBaseSceneDisplayTypeNavBarPush];
-}
-
-- (void)endScene
-{
-    _coordinatorEndBlock ? _coordinatorEndBlock() : (void)nil;
-}
-
 #pragma mark - Scene factories
 
 + (DNCBaseSceneViewController*)viewController
@@ -107,6 +87,36 @@
     return self;
 }
 
+#pragma mark - Scene lifecycle
+
+- (void)initSceneWithCoordinator:(DNCCoordinator*)coordinator
+                  andDisplayType:(DNCBaseSceneDisplayType)displayType
+                         thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+{
+    _coordinatorEndBlock    = endBlock;
+    _coordinator            = coordinator;
+    
+    DNCBaseSceneViewController* viewController = self.class.viewController;
+    
+    viewController.coordinatorDelegate  = coordinator;
+}
+
+- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                 andDisplayType:(DNCBaseSceneDisplayType)displayType
+                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+{
+    [self initSceneWithCoordinator:coordinator
+                    andDisplayType:displayType
+                           thenRun:endBlock];
+    
+    [self.interactor startSceneWithDisplayType:displayType];
+}
+
+- (void)endScene
+{
+    _coordinatorEndBlock ? _coordinatorEndBlock() : (void)nil;
+}
+
 #pragma mark - Configuration
 
 - (UINavigationController*)navigationController
@@ -143,6 +153,8 @@
 
 - (void)configure:(DNCBaseSceneViewController*)viewController
 {
+    self.viewController = viewController;
+    
     // Create VIP Objects
     Class   InteractorClass = NSClassFromString([NSString stringWithFormat:@"%@Interactor", self.class.classBaseInteractor]);
     Class   PresenterClass  = NSClassFromString([NSString stringWithFormat:@"%@Presenter", self.class.classBasePresenter]);

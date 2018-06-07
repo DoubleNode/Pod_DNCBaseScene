@@ -144,6 +144,8 @@ forConfigDataKey:(NSString*)key
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
+    _displayType = viewModel.displayType;
+    
     switch (viewModel.displayType)
     {
         case DNCBaseSceneDisplayTypeModel:

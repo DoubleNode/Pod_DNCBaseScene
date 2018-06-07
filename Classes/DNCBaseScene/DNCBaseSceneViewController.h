@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
 @property (strong, nonatomic) DNCCoordinator*           coordinatorDelegate;
+@property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
 
 @property (strong, nonatomic) id<DNCBaseSceneViewControllerOutput> output;
 

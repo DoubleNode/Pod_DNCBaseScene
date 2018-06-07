@@ -22,9 +22,10 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(void);
 
 @interface DNCBaseSceneConfigurator : NSObject
 
-@property (strong, nonatomic)   DNCBaseSceneInteractor* interactor;
-@property (strong, nonatomic)   DNCBaseScenePresenter*  presenter;
-@property (strong, nonatomic)   DNCBaseSceneRouter*     router;
+@property (strong, nonatomic)   DNCBaseSceneInteractor*     interactor;
+@property (strong, nonatomic)   DNCBaseScenePresenter*      presenter;
+@property (strong, nonatomic)   DNCBaseSceneRouter*         router;
+@property (strong, nonatomic)   DNCBaseSceneViewController* viewController;
 
 #pragma mark - VIP Object Class Base Names
 
@@ -43,6 +44,9 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(void);
 
 #pragma mark - Lifecycle Methods
 
+- (void)initSceneWithCoordinator:(DNCCoordinator*)coordinator
+                  andDisplayType:(DNCBaseSceneDisplayType)displayType
+                         thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
 - (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
                  andDisplayType:(DNCBaseSceneDisplayType)displayType
                         thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
