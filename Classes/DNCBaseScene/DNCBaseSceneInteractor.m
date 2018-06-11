@@ -78,19 +78,28 @@ forConfigDataKey:(NSString*)key
     return retval;
 }
 
-#pragma mark - Business logic
+#pragma mark - Scene Lifecycle
 
-- (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request
+- (void)sceneDidLoad:(DNCBaseSceneRequest*)request
 {
     
 }
 
-- (void)doDidLoad:(DNCBaseSceneRequest*)request
+- (void)sceneDidAppear:(DNCBaseSceneRequest*)request
 {
+    
 }
 
-- (void)doDidAppear:(DNCBaseSceneRequest*)request
+- (void)sceneDidDisappear:(DNCBaseSceneRequest*)request
 {
+    
+}
+
+#pragma mark - Business Logic
+
+- (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request
+{
+    
 }
 
 @end

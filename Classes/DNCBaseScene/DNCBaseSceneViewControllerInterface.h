@@ -29,8 +29,14 @@
 
 @protocol DNCBaseSceneViewControllerOutput<CleanRouterOutput>
 
+#pragma mark - Scene Lifecycle
+
+- (void)sceneDidLoad:(DNCBaseSceneRequest*)request;
+- (void)sceneDidAppear:(DNCBaseSceneRequest*)request;
+- (void)sceneDidDisappear:(DNCBaseSceneRequest*)request;
+
+#pragma mark - Event Actions
+
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
-- (void)doDidLoad:(DNCBaseSceneRequest*)request;
-- (void)doDidAppear:(DNCBaseSceneRequest*)request;
 
 @end

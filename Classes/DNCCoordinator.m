@@ -57,7 +57,12 @@
         }
     }
     
-    _savedViewControllers   = self.navigationController.viewControllers;
+    [DNCUIThread run:
+     ^()
+     {
+         _savedViewControllers   = self.navigationController.viewControllers;
+     }];
+    
 }
 
 - (void)reset
@@ -69,9 +74,13 @@
 {
     self.runState   = DNCCoordinatorStateNotStarted;
 
-    [self.navigationController setViewControllers:_savedViewControllers
-                                         animated:YES];
-    
+    [DNCUIThread run:
+     ^()
+     {
+         [self.navigationController setViewControllers:_savedViewControllers
+                                              animated:YES];
+     }];
+
     _savedViewControllers = nil;
 }
 

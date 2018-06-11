@@ -91,7 +91,7 @@ forConfigDataKey:(NSString*)key
 {
     [super viewDidLoad];
     
-    [self doDidLoad];
+    [self sceneDidLoad];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -105,17 +105,36 @@ forConfigDataKey:(NSString*)key
 {
     [super viewDidAppear:animated];
     
-    [self doDidAppear];
+    [self sceneDidAppear];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     
+    [self sceneDidDisappear];
+    
     [self runDismissBlock];
 }
 
-#pragma mark - Event handling
+#pragma mark - Scene Lifecycle
+
+- (void)sceneDidLoad
+{
+    [self.output sceneDidLoad:DNCBaseSceneRequest.request];
+}
+
+- (void)sceneDidAppear
+{
+    [self.output sceneDidAppear:DNCBaseSceneRequest.request];
+}
+
+- (void)sceneDidDisappear
+{
+    [self.output sceneDidDisappear:DNCBaseSceneRequest.request];
+}
+
+#pragma mark - Event Handling
 
 - (void)doConfirmation:(NSString*)selection
           withUserData:(id)userData
@@ -126,18 +145,6 @@ forConfigDataKey:(NSString*)key
     [self.output doConfirmation:request];
 }
 
-- (void)doDidLoad
-{
-    DNCBaseSceneRequest*    request = DNCBaseSceneRequest.request;
-    [self.output doDidLoad:request];
-}
-
-- (void)doDidAppear
-{
-    DNCBaseSceneRequest*    request = DNCBaseSceneRequest.request;
-    [self.output doDidAppear:request];
-}
-
 #pragma mark - Lifecycle Methods
 
 - (void)startScene:(DNCBaseSceneStartViewModel*)viewModel
@@ -146,10 +153,17 @@ forConfigDataKey:(NSString*)key
     
     _displayType = viewModel.displayType;
     
-    switch (viewModel.displayType)
+    switch (_displayType)
     {
-        case DNCBaseSceneDisplayTypeModel:
+        case DNCBaseSceneDisplayTypeModal:
         {
+            [DNCUIThread run:
+             ^()
+             {
+                 [DNCUtilities.appDelegate.rootViewController presentViewController:self
+                                                                           animated:YES
+                                                                         completion:nil];
+             }];
             break;
         }
             
@@ -270,8 +284,38 @@ forConfigDataKey:(NSString*)key
      {
          [self passDataToNextViewController:viewModel.sendData];
          
-         [self dismiss:viewModel.animated];
+         //[self dismiss:viewModel.animated];
      }];
+    
+    switch (_displayType)
+    {
+        case DNCBaseSceneDisplayTypeModal:
+        {
+            [DNCUIThread run:
+             ^()
+             {
+                 [self dismissViewControllerAnimated:viewModel.animated
+                                          completion:nil];
+             }];
+            break;
+        }
+            
+        case DNCBaseSceneDisplayTypeNavBarPush:
+        {
+            [DNCUIThread run:
+             ^()
+             {
+                 [self.configurator.navigationController popViewControllerAnimated:YES];
+             }];
+            break;
+        }
+            
+        case DNCBaseSceneDisplayTypeNavBarRoot:
+        default:
+        {
+            break;
+        }
+    }
 }
 
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel

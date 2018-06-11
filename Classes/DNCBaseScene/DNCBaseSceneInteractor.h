@@ -41,10 +41,14 @@ forConfigDataKey:(NSString*)key;
 
 - (NSDictionary*)receiveAndClearData;
 
-#pragma mark - Business logic
+#pragma mark - Scene Lifecycle
+
+- (void)sceneDidLoad:(DNCBaseSceneRequest*)request;
+- (void)sceneDidAppear:(DNCBaseSceneRequest*)request;
+- (void)sceneDidDisappear:(DNCBaseSceneRequest*)request;
+
+#pragma mark - Business Logic
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
-- (void)doDidLoad:(DNCBaseSceneRequest*)request;
-- (void)doDidAppear:(DNCBaseSceneRequest*)request;
 
 @end
