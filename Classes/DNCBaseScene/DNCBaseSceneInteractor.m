@@ -43,14 +43,18 @@
     [self.output startScene:response];
 }
 
-- (BOOL)sceneEndedAlready
+- (BOOL)shouldEndScene
 {
-    return _sceneEnded;
+    BOOL    shouldEndSceneFlag = !_sceneEnded;
+    
+    _sceneEnded = YES;
+    
+    return shouldEndSceneFlag;
 }
 
 - (void)endScene
 {
-    if (self.sceneEndedAlready)
+    if (!self.shouldEndScene)
     {
         return;
     }

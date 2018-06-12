@@ -29,7 +29,7 @@
 #pragma mark - Lifecycle Methods
 
 - (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
-- (BOOL)sceneEndedAlready;
+- (BOOL)shouldEndScene;
 - (void)endScene;
 
 #pragma mark - Configuration
