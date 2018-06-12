@@ -67,7 +67,9 @@
 
 - (void)reset
 {
-    [self stop];
+    self.runState   = DNCCoordinatorStateNotStarted;
+    
+    _savedViewControllers = nil;
 }
 
 - (void)stop

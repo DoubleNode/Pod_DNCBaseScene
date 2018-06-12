@@ -121,16 +121,22 @@ forConfigDataKey:(NSString*)key
 
 - (void)sceneDidLoad
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [self.output sceneDidLoad:DNCBaseSceneRequest.request];
 }
 
 - (void)sceneDidAppear
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [self.output sceneDidAppear:DNCBaseSceneRequest.request];
 }
 
 - (void)sceneDidDisappear
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
     [self.output sceneDidDisappear:DNCBaseSceneRequest.request];
 }
 

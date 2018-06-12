@@ -82,16 +82,19 @@ forConfigDataKey:(NSString*)key
 
 - (void)sceneDidLoad:(DNCBaseSceneRequest*)request
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
 }
 
 - (void)sceneDidAppear:(DNCBaseSceneRequest*)request
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
 }
 
 - (void)sceneDidDisappear:(DNCBaseSceneRequest*)request
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
 }
 
@@ -99,6 +102,7 @@ forConfigDataKey:(NSString*)key
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request
 {
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
 }
 
