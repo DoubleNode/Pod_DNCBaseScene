@@ -11,6 +11,9 @@
 #import "DNCBaseSceneInteractor.h"
 
 @interface DNCBaseSceneInteractor ()
+{
+    BOOL    _sceneEnded;
+}
 
 @end
 
@@ -23,6 +26,7 @@
     self = [super init];
     if (self)
     {
+        _sceneEnded = NO;
     }
     
     return self;
@@ -39,8 +43,18 @@
     [self.output startScene:response];
 }
 
+- (BOOL)sceneEndedAlready
+{
+    return _sceneEnded;
+}
+
 - (void)endScene
 {
+    if (self.sceneEndedAlready)
+    {
+        return;
+    }
+    
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     [self.configurator endScene];
@@ -90,6 +104,7 @@ forConfigDataKey:(NSString*)key
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
+    _sceneEnded = NO;
 }
 
 - (void)sceneDidDisappear:(DNCBaseSceneRequest*)request
