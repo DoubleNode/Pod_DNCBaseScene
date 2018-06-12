@@ -98,6 +98,18 @@ forConfigDataKey:(NSString*)key
     
 }
 
+- (void)sceneDidHide:(DNCBaseSceneRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+}
+
+- (void)sceneDidClose:(DNCBaseSceneRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+}
+
 #pragma mark - Business Logic
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request

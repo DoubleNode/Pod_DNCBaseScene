@@ -47,6 +47,9 @@ forConfigDataKey:(NSString*)key;
 - (void)sceneDidAppear:(DNCBaseSceneRequest*)request;
 - (void)sceneDidDisappear:(DNCBaseSceneRequest*)request;
 
+- (void)sceneDidHide:(DNCBaseSceneRequest*)request;
+- (void)sceneDidClose:(DNCBaseSceneRequest*)request;
+
 #pragma mark - Business Logic
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;

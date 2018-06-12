@@ -115,6 +115,17 @@ forConfigDataKey:(NSString*)key
     [self sceneDidDisappear];
     
     [self runDismissBlock];
+
+    if (self.navigationController)
+    {
+        if ([self.navigationController.viewControllers containsObject:self])
+        {
+            [self sceneDidHide];
+            return;
+        }
+    }
+    
+    [self sceneDidClose];
 }
 
 #pragma mark - Scene Lifecycle
@@ -138,6 +149,20 @@ forConfigDataKey:(NSString*)key
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     [self.output sceneDidDisappear:DNCBaseSceneRequest.request];
+}
+
+- (void)sceneDidHide
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [self.output sceneDidHide:DNCBaseSceneRequest.request];
+}
+
+- (void)sceneDidClose
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [self.output sceneDidClose:DNCBaseSceneRequest.request];
 }
 
 #pragma mark - Event Handling

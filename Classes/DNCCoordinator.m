@@ -60,7 +60,7 @@
     [DNCUIThread run:
      ^()
      {
-         _savedViewControllers   = self.navigationController.viewControllers;
+         self->_savedViewControllers   = self.navigationController.viewControllers;
      }];
     
 }
@@ -79,7 +79,7 @@
     [DNCUIThread run:
      ^()
      {
-         [self.navigationController setViewControllers:_savedViewControllers
+         [self.navigationController setViewControllers:self->_savedViewControllers
                                               animated:YES];
      }];
 
