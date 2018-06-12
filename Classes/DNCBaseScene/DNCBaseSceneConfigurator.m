@@ -116,9 +116,10 @@
     return retval;
 }
 
-- (void)endScene
+- (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
+                     andDataChanged:(BOOL)dataChanged
 {
-    _coordinatorEndBlock ? _coordinatorEndBlock() : (void)nil;
+    _coordinatorEndBlock ? _coordinatorEndBlock(suggestedAction, dataChanged) : (void)nil;
 }
 
 #pragma mark - Configuration

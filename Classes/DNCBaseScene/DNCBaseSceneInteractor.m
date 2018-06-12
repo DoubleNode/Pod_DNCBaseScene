@@ -52,7 +52,8 @@
     return shouldEndSceneFlag;
 }
 
-- (void)endScene
+- (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
+                     andDataChanged:(BOOL)dataChanged
 {
     if (!self.shouldEndScene)
     {
@@ -61,7 +62,8 @@
     
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self.configurator endScene];
+    [self.configurator endSceneWithSuggestedAction:suggestedAction
+                                    andDataChanged:dataChanged];
 }
 
 #pragma mark - Configuration

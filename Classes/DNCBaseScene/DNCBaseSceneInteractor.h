@@ -30,7 +30,8 @@
 
 - (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
 - (BOOL)shouldEndScene;
-- (void)endScene;
+- (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
+                     andDataChanged:(BOOL)dataChanged;
 
 #pragma mark - Configuration
 

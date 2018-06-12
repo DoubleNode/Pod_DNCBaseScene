@@ -18,7 +18,7 @@
 
 @class DNCBaseSceneViewController;
 
-typedef void (^DNCBaseSceneConfiguratorBlock)(void);
+typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* suggestedAction, BOOL dataChanged);
 
 @interface DNCBaseSceneConfigurator : NSObject
 
@@ -51,7 +51,8 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(void);
                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
 
-- (void)endScene;
+- (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
+                     andDataChanged:(BOOL)dataChanged;
 
 #pragma mark - Configuration
 
