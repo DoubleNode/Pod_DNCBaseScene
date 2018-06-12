@@ -44,12 +44,12 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(void);
 
 #pragma mark - Lifecycle Methods
 
-- (void)initSceneWithCoordinator:(DNCCoordinator*)coordinator
-                  andDisplayType:(DNCBaseSceneDisplayType)displayType
-                         thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
-- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
-                 andDisplayType:(DNCBaseSceneDisplayType)displayType
-                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+- (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+- (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                        andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
 
 - (void)endScene;
 

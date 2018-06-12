@@ -18,7 +18,7 @@
 
 typedef NS_ENUM(NSUInteger, DNCBaseSceneDisplayType)
 {
-    DNCBaseSceneDisplayType_None,
+    DNCBaseSceneDisplayTypeNone,
     DNCBaseSceneDisplayTypeModal,
     DNCBaseSceneDisplayTypeNavBarPush,
     DNCBaseSceneDisplayTypeNavBarRoot,

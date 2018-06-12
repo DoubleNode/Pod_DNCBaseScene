@@ -161,6 +161,11 @@ forConfigDataKey:(NSString*)key
     
     switch (_displayType)
     {
+        case DNCBaseSceneDisplayTypeNone:
+        {
+            break;
+        }
+            
         case DNCBaseSceneDisplayTypeModal:
         {
             [DNCUIThread run:
@@ -295,6 +300,11 @@ forConfigDataKey:(NSString*)key
     
     switch (_displayType)
     {
+        case DNCBaseSceneDisplayTypeNone:
+        {
+            break;
+        }
+            
         case DNCBaseSceneDisplayTypeModal:
         {
             [DNCUIThread run:
