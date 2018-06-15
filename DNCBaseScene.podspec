@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DNCBaseScene"
-  s.version      = "0.2.28"
+  s.version      = "0.2.29"
   s.summary      = "A base class for scenes."
 
   s.description  = <<-DESC
@@ -32,8 +32,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "DNCDataObjects"
-  s.dependency "DNCDisabledViewController"
-
+  
   s.dependency "WKRCrash_Workers"
 
   s.dependency "BFKit"
