@@ -14,7 +14,6 @@
 
 @class DNCBaseSceneInteractor;
 @class DNCBaseScenePresenter;
-@class DNCBaseSceneRouter;
 
 @class DNCBaseSceneViewController;
 
@@ -24,14 +23,12 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* suggestedAction, BOOL da
 
 @property (strong, nonatomic)   DNCBaseSceneInteractor*     interactor;
 @property (strong, nonatomic)   DNCBaseScenePresenter*      presenter;
-@property (strong, nonatomic)   DNCBaseSceneRouter*         router;
 @property (strong, nonatomic)   DNCBaseSceneViewController* viewController;
 
 #pragma mark - VIP Object Class Base Names
 
 + (NSString*)classBaseInteractor;
 + (NSString*)classBasePresenter;
-+ (NSString*)classBaseRouter;
 + (NSString*)classBaseViewController;
 
 #pragma mark - Object lifecycle
@@ -57,10 +54,6 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* suggestedAction, BOOL da
 #pragma mark - Configuration
 
 - (UINavigationController*)navigationController;
-
-- (void)setValue:(id)value
-      forDataKey:(NSString*)key;
-- (id)valueForDataKey:(NSString*)key;
 
 - (void)configure:(DNCBaseSceneViewController*)viewController;
 

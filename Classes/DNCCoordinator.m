@@ -97,44 +97,5 @@
     [_childCoordinators removeObjectForKey:key];
 }
 
-#pragma mark - Utility methods
-
-- (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController
-{
-    [self utilityPresentViewControllerOnNavigationController:viewController
-                                                 forceAsRoot:NO];
-}
-
-- (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController
-                                               forceAsRoot:(BOOL)forceAsRoot
-
-{
-    viewController.coordinatorDelegate  = self;
-    
-    if (forceAsRoot ||
-        !self.navigationController.viewControllers.count)
-    {
-        [DNCUIThread run:
-         ^()
-         {
-             [self.navigationController setViewControllers:@[ viewController ]
-                                                  animated:YES];
-         }];
-        return;
-    }
-    
-    [DNCUIThread run:
-     ^()
-     {
-         if ([self.navigationController.viewControllers.lastObject isKindOfClass:viewController.class])
-         {
-             return;
-         }
-         
-         [self.navigationController pushViewController:viewController
-                                              animated:YES];
-     }];
-}
-
 @end
 

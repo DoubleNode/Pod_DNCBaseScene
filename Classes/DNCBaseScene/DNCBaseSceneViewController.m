@@ -10,7 +10,6 @@
 #import <DNCore/DNCUtilities.h>
 
 #import "DNCBaseSceneViewController.h"
-#import "DNCBaseSceneViewController+Routing.h"
 
 @interface DNCBaseSceneViewController ()
 
@@ -19,20 +18,6 @@
 @end
 
 @implementation DNCBaseSceneViewController
-
-#pragma mark - Configuration
-
-- (void)setValue:(id)value
-forConfigDataKey:(NSString*)key
-{
-    [self.configurator setValue:value
-                     forDataKey:key];
-}
-
-- (id)valueForConfigDataKey:(NSString*)key
-{
-    return [self.configurator valueForDataKey:key];
-}
 
 #pragma mark - Palette Colors
 
@@ -114,8 +99,6 @@ forConfigDataKey:(NSString*)key
     
     [self sceneDidDisappear];
     
-    [self runDismissBlock];
-
     if (self.navigationController)
     {
         if ([self.navigationController.viewControllers containsObject:self])
@@ -315,14 +298,6 @@ forConfigDataKey:(NSString*)key
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [DNCUIThread run:
-     ^()
-     {
-         [self passDataToNextViewController:viewModel.sendData];
-         
-         //[self dismiss:viewModel.animated];
-     }];
-    
     switch (_displayType)
     {
         case DNCBaseSceneDisplayTypeNone:
@@ -378,28 +353,6 @@ forConfigDataKey:(NSString*)key
          [self presentViewController:alertController
                             animated:YES
                           completion:nil];
-     }];
-}
-
-- (void)displayRoot:(DNCBaseSceneViewModel*)viewModel
-{
-    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
-    
-    [DNCUIThread run:
-     ^()
-     {
-         [self routeToRoot];
-     }];
-}
-
-- (void)displayScene:(DNCBaseSceneViewModel*)viewModel
-{
-    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
-    
-    [DNCUIThread run:
-     ^()
-     {
-         [self routeToScene:viewModel.scene];
      }];
 }
 

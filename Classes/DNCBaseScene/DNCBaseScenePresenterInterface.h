@@ -20,8 +20,6 @@
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;
-- (void)presentRoot:(DNCBaseSceneResponse*)response;
-- (void)presentScene:(DNCBaseSceneResponse*)response;
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response;
 - (void)presentTitle:(DNCBaseSceneTitleResponse*)response;
 - (void)presentToast:(DNCBaseSceneMessageResponse*)response;
@@ -40,8 +38,6 @@
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
-- (void)displayRoot:(DNCBaseSceneViewModel*)viewModel;
-- (void)displayScene:(DNCBaseSceneViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;
 - (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel;
 - (void)displayToast:(DNCBaseSceneToastViewModel*)viewModel;

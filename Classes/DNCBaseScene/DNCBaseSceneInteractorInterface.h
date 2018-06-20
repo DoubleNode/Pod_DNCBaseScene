@@ -8,7 +8,7 @@
 
 #import "DNCBaseSceneModels.h"
 
-@protocol DNCBaseSceneInteractorInput<CleanRouterOutput>
+@protocol DNCBaseSceneInteractorInput
 
 #pragma mark - Scene Lifecycle
 
@@ -37,8 +37,6 @@
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;
-- (void)presentRoot:(DNCBaseSceneResponse*)response;
-- (void)presentScene:(DNCBaseSceneResponse*)response;
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response;
 - (void)presentTitle:(DNCBaseSceneTitleResponse*)response;
 - (void)presentToast:(DNCBaseSceneMessageResponse*)response;

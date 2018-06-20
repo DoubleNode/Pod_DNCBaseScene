@@ -37,8 +37,4 @@ typedef NS_ENUM(NSUInteger, DNCCoordinatorState)
 - (void)reset;
 - (void)stop;
 
-- (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController;
-- (void)utilityPresentViewControllerOnNavigationController:(nonnull DNCBaseSceneViewController*)viewController
-                                               forceAsRoot:(BOOL)forceAsRoot;
-
 @end

@@ -9,8 +9,8 @@
 #import <DNCore/DNCUtilities.h>
 #import <UIKit/UIKit.h>
 
-#ifndef CLEAN_ROUTER_OUTPUT
-#define CLEAN_ROUTER_OUTPUT 1
+#ifndef CLEAN_COMMON
+#define CLEAN_COMMON 1
 
 #define CLEAN_RETURNTOOPENER    @"opener"
 #define CLEAN_RETURNTOROOT      @"root"
@@ -26,17 +26,7 @@ typedef NS_ENUM(NSUInteger, DNCBaseSceneDisplayType)
     DNCBaseSceneDisplayType_Count
 };
 
-@protocol CleanRouterOutput
-
-@property (copy, nonatomic) NSDictionary*       receivedData;
-@property (weak, nonatomic) UIViewController*   returnTo;
-
-@end
-
 @protocol CleanViewControllerInput
-
-@property (strong, nonatomic)   id<CleanRouterOutput>           output;
-@property (weak, nonatomic)     id<CleanViewControllerInput>    opener;
 
 @end
 
@@ -46,4 +36,4 @@ typedef NS_ENUM(NSUInteger, DNCBaseSceneDisplayType)
 
 @end
 
-#endif // CLEAN_ROUTER_OUTPUT
+#endif // CLEAN_COMMON

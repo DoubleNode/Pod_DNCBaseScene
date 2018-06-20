@@ -16,8 +16,6 @@
 #import "DNCBaseScenePresenterInterface.h"
 #import "DNCBaseSceneViewControllerInterface.h"
 
-@class DNCBaseSceneRouter;
-
 @interface DNCBaseSceneViewController : DNCDisabledViewController<DNCBaseSceneViewControllerInput, DNCBaseScenePresenterOutput>
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
@@ -26,16 +24,7 @@
 
 @property (strong, nonatomic) id<DNCBaseSceneViewControllerOutput> output;
 
-@property (weak, nonatomic) id<CleanViewControllerInput>    opener;
-@property (strong, nonatomic) DNCBaseSceneRouter*           router;
-
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
-
-#pragma mark - Configuration
-
-- (void)setValue:(id)value
-forConfigDataKey:(NSString*)key;
-- (id)valueForConfigDataKey:(NSString*)key;
 
 #pragma mark - Palette Colors
 
@@ -61,12 +50,8 @@ forConfigDataKey:(NSString*)key;
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
-- (void)displayRoot:(DNCBaseSceneViewModel*)viewModel;
-- (void)displayScene:(DNCBaseSceneViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;
 - (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel;
 - (void)displayToast:(DNCBaseSceneToastViewModel*)viewModel;
 
 @end
-
-#import "DNCBaseSceneViewController+Routing.h"

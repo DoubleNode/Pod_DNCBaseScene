@@ -19,15 +19,13 @@
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
-- (void)displayRoot:(DNCBaseSceneViewModel*)viewModel;
-- (void)displayScene:(DNCBaseSceneViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;
 - (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel;
 - (void)displayToast:(DNCBaseSceneToastViewModel*)viewModel;
 
 @end
 
-@protocol DNCBaseSceneViewControllerOutput<CleanRouterOutput>
+@protocol DNCBaseSceneViewControllerOutput
 
 #pragma mark - Scene Lifecycle
 

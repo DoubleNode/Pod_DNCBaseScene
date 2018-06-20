@@ -14,12 +14,10 @@
 #import "DNCBaseSceneConfigurator.h"
 #import "DNCBaseSceneInteractor.h"
 #import "DNCBaseScenePresenter.h"
-#import "DNCBaseSceneRouter.h"
 #import "DNCBaseSceneViewController.h"
 
 @interface DNCBaseSceneConfigurator ()
 {
-    NSMutableDictionary*    _data;
     DNCCoordinator*         _coordinator;
     
     DNCBaseSceneConfiguratorBlock   _coordinatorEndBlock;
@@ -33,7 +31,6 @@
 
 + (NSString*)classBaseInteractor        {   return @"DNCBaseScene"; }
 + (NSString*)classBasePresenter         {   return @"DNCBaseScene"; }
-+ (NSString*)classBaseRouter            {   return @"DNCBaseScene"; }
 + (NSString*)classBaseViewController    {   return @"DNCBaseScene"; }
 
 #pragma mark - Object lifecycle
@@ -81,7 +78,6 @@
     self = super.init;
     if (self)
     {
-        _data   = NSMutableDictionary.dictionary;
     }
     
     return self;
@@ -129,33 +125,6 @@
     return _coordinator.navigationController;
 }
 
-- (void)setValue:(id)value
-      forDataKey:(NSString*)key
-{
-    if (!key.length)
-    {
-        return;
-    }
-    
-    if (!value || [value isKindOfClass:NSNull.class])
-    {
-        [_data removeObjectForKey:key];
-        return;
-    }
-    
-    _data[key] = value;
-}
-
-- (id)valueForDataKey:(NSString*)key
-{
-    if (!key.length)
-    {
-        return nil;
-    }
-    
-    return _data[key];
-}
-
 - (void)configure:(DNCBaseSceneViewController*)viewController
 {
     self.viewController = viewController;
@@ -163,20 +132,15 @@
     // Create VIP Objects
     Class   InteractorClass = NSClassFromString([NSString stringWithFormat:@"%@Interactor", self.class.classBaseInteractor]);
     Class   PresenterClass  = NSClassFromString([NSString stringWithFormat:@"%@Presenter", self.class.classBasePresenter]);
-    Class   RouterClass     = NSClassFromString([NSString stringWithFormat:@"%@Router", self.class.classBaseRouter]);
     
     if (!self.interactor)   {   self.interactor = [InteractorClass interactor]; }   self.interactor.configurator    = self;
     if (!self.presenter)    {   self.presenter  = [PresenterClass presenter];   }   self.presenter.configurator     = self;
-    if (!self.router)       {   self.router     = [RouterClass router];         }   self.router.configurator        = self;
     
     // Connect VIP Objects
     self.interactor.output      = self.presenter;
-    self.interactor.returnTo    = viewController;
     self.presenter.output       = viewController;
-    self.router.viewController  = viewController;
     
     viewController.output   = self.interactor;
-    viewController.router   = self.router;
     
     // Interactor Dependency Injection
     self.interactor.analyticsWorker = WKRCrash_Analytics_Worker.worker;

@@ -35,20 +35,6 @@
     [self.output startScene:viewModel];
 }
 
-#pragma mark - Configuration
-
-- (void)setValue:(id)value
-forConfigDataKey:(NSString*)key
-{
-    [self.configurator setValue:value
-                     forDataKey:key];
-}
-
-- (id)valueForConfigDataKey:(NSString*)key
-{
-    return [self.configurator valueForDataKey:key];
-}
-
 #pragma mark - Palette Colors
 
 - (UIColor*)paletteToastTitleColor
@@ -159,23 +145,6 @@ forConfigDataKey:(NSString*)key
     
     [self utilityDisplayMessage:response.message
                       withTitle:response.title];
-}
-
-- (void)presentRoot:(DNCBaseSceneResponse*)response
-{
-    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
-    
-    DNCBaseSceneViewModel* viewModel = DNCBaseSceneViewModel.viewModel;
-    [self.output displayRoot:viewModel];
-}
-
-- (void)presentScene:(DNCBaseSceneResponse*)response
-{
-    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
-    
-    DNCBaseSceneViewModel* viewModel = DNCBaseSceneViewModel.viewModel;
-    viewModel.scene = response.scene;
-    [self.output displayScene:viewModel];
 }
 
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response

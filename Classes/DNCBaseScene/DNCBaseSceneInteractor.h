@@ -21,9 +21,6 @@
 
 @property (strong, nonatomic)   id<DNCBaseSceneInteractorOutput>   output;
 
-@property (copy, nonatomic)     NSDictionary*       receivedData;
-@property (weak, nonatomic)     UIViewController*   returnTo;
-
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
 
 #pragma mark - Lifecycle Methods
@@ -32,16 +29,6 @@
 - (BOOL)shouldEndScene;
 - (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
                      andDataChanged:(BOOL)dataChanged;
-
-#pragma mark - Configuration
-
-- (void)setValue:(id)value
-forConfigDataKey:(NSString*)key;
-- (id)valueForConfigDataKey:(NSString*)key;
-
-#pragma mark - Incoming Data
-
-- (NSDictionary*)receiveAndClearData;
 
 #pragma mark - Scene Lifecycle
 

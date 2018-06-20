@@ -27,12 +27,6 @@
 
 - (void)startScene:(DNCBaseSceneStartResponse*)response;
 
-#pragma mark - Configuration
-
-- (void)setValue:(id)value
-forConfigDataKey:(NSString*)key;
-- (id)valueForConfigDataKey:(NSString*)key;
-
 #pragma mark - Palette Colors
 
 - (UIColor*)paletteToastTitleColor;
@@ -55,8 +49,6 @@ forConfigDataKey:(NSString*)key;
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;
-- (void)presentRoot:(DNCBaseSceneResponse*)response;
-- (void)presentScene:(DNCBaseSceneResponse*)response;
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response;
 - (void)presentTitle:(DNCBaseSceneTitleResponse*)response;
 - (void)presentToast:(DNCBaseSceneMessageResponse*)response;

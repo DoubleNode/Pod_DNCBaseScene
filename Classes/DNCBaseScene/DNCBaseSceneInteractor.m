@@ -19,7 +19,7 @@
 
 @implementation DNCBaseSceneInteractor
 
-+ (instancetype)interactor   {   return [[[self class] alloc] init]; }
++ (instancetype)interactor   {   return [self.class.alloc init];    }
 
 - (id)init
 {
@@ -64,38 +64,6 @@
     
     [self.configurator endSceneWithSuggestedAction:suggestedAction
                                     andDataChanged:dataChanged];
-}
-
-#pragma mark - Configuration
-
-- (void)setValue:(id)value
-forConfigDataKey:(NSString*)key
-{
-    [self.configurator setValue:value
-                     forDataKey:key];
-}
-
-- (id)valueForConfigDataKey:(NSString*)key
-{
-    return [self.configurator valueForDataKey:key];
-}
-
-#pragma mark - CleanRouterOutput protocol
-
-- (UIViewController*)returnTo
-{
-    return _returnTo;
-}
-
-#pragma mark - Incoming Data
-
-- (NSDictionary*)receiveAndClearData
-{
-    NSDictionary*   retval  = self.receivedData;
-    
-    self.receivedData   = nil;
-    
-    return retval;
 }
 
 #pragma mark - Scene Lifecycle
