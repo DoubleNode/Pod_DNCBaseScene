@@ -187,14 +187,17 @@
         }
             
         case DNCBaseSceneDisplayTypeNavBarPush:
+        case DNCBaseSceneDisplayTypeNavBarPushInstant:
         {
+            BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
+            
             [DNCUIThread run:
              ^()
              {
                  if (!self.configurator.navigationController.viewControllers.count)
                  {
                      [self.configurator.navigationController setViewControllers:@[ self ]
-                                                                       animated:YES];
+                                                                       animated:animated];
                      return;
                  }
                  if (self.configurator.navigationController.viewControllers.lastObject == self)
@@ -203,19 +206,22 @@
                  }
                  
                  [self.configurator.navigationController pushViewController:self
-                                                                   animated:YES];
+                                                                   animated:animated];
              }];
             break;
         }
             
         case DNCBaseSceneDisplayTypeNavBarRoot:
+        case DNCBaseSceneDisplayTypeNavBarRootInstant:
         default:
         {
+            BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarRoot);
+            
             [DNCUIThread run:
              ^()
              {
                  [self.configurator.navigationController setViewControllers:@[ self ]
-                                                                   animated:YES];
+                                                                   animated:animated];
              }];
             
             break;
@@ -317,18 +323,23 @@
         }
             
         case DNCBaseSceneDisplayTypeNavBarPush:
+        case DNCBaseSceneDisplayTypeNavBarPushInstant:
         {
+            BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
+            
             [DNCUIThread run:
              ^()
              {
-                 [self.configurator.navigationController popViewControllerAnimated:YES];
+                 [self.configurator.navigationController popViewControllerAnimated:animated];
              }];
             break;
         }
             
         case DNCBaseSceneDisplayTypeNavBarRoot:
+        case DNCBaseSceneDisplayTypeNavBarRootInstant:
         default:
         {
+            //BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarRoot);
             break;
         }
     }
