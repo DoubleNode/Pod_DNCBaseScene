@@ -21,10 +21,13 @@
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
 @property (strong, nonatomic) DNCCoordinator*           coordinatorDelegate;
 @property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
+@property (strong, nonatomic) NSString*                 sceneTitle;
 
 @property (strong, nonatomic) id<DNCBaseSceneViewControllerOutput> output;
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
+
+@property (strong, nonatomic) IBOutlet UILabel* titleLabel;
 
 #pragma mark - Palette Colors
 
