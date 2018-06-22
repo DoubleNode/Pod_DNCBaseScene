@@ -70,6 +70,12 @@
     self.runState   = DNCCoordinatorStateNotStarted;
     
     _savedViewControllers = nil;
+
+    [self forAllChildCoordinatorsRunBlock:
+     ^(DNCCoordinator* block)
+     {
+         [block reset];
+     }];
 }
 
 - (void)stop
