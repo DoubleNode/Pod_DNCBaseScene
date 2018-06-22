@@ -63,7 +63,8 @@
      {
          retval  = [ViewControllerClass alloc];
          
-         retval.configurator = self.sharedInstance;
+         retval.configurator    = self.sharedInstance;
+         retval.sceneTitle      = classRoot;
          
          retval = [retval initWithNibName:viewControllerClassName
                                    bundle:viewControllerBundle];

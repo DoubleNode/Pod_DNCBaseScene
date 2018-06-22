@@ -13,8 +13,6 @@
 
 @interface DNCBaseSceneViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel*   titleLabel;
-
 @end
 
 @implementation DNCBaseSceneViewController
@@ -48,6 +46,33 @@
     [self.configurator configure:self];
 }
 
+- (void)setSceneTitle:(NSString*)sceneTitle
+{
+    if ([sceneTitle isEqualToString:_sceneTitle])
+    {
+        return;
+    }
+    
+    _sceneTitle = sceneTitle;
+    if (!_sceneTitle)
+    {
+        return;
+    }
+    
+    [self updateSceneTitle];
+}
+
+- (void)updateSceneTitle
+{
+    [DNCUIThread run:
+     ^()
+     {
+         self.title                         = self->_sceneTitle;
+         self.navigationController.title    = self->_sceneTitle;
+         self.titleLabel.text               = self->_sceneTitle;
+     }];
+}
+
 #pragma mark - Object lifecycle
 
 - (void)awakeFromNib
@@ -76,6 +101,7 @@
 {
     [super viewDidLoad];
     
+    [self updateSceneTitle];
     [self sceneDidLoad];
 }
 
@@ -382,12 +408,7 @@
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [DNCUIThread run:
-     ^()
-     {
-         self.title             = viewModel.title;
-         self.titleLabel.text   = viewModel.title;
-     }];
+    self.sceneTitle = viewModel.title;
 }
 
 - (void)displayToast:(DNCBaseSceneToastViewModel*)viewModel
