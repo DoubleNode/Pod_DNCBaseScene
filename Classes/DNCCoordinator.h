@@ -17,6 +17,10 @@ typedef NS_ENUM(NSUInteger, DNCCoordinatorState)
     DNCCoordinatorState_Count
 };
 
+@class DNCCoordinator;
+
+typedef void (^DNCCoordinatorChildCoordinatorBlock)(DNCCoordinator* block);
+
 @class DNCBaseSceneViewController;
 
 @interface DNCCoordinator : NSObject
@@ -29,12 +33,13 @@ typedef NS_ENUM(NSUInteger, DNCCoordinatorState)
 
 - (nullable instancetype)initWithNavigationController:(nonnull UINavigationController*)navigationController;
 
-- (void)addChildCoordinator:(nonnull DNCCoordinator*)childCoordinator
-                     forKey:(nonnull NSString*)key;
-- (void)removeChildCoordinatorForKey:(nonnull NSString*)key;
-
 - (void)start;
 - (void)reset;
 - (void)stop;
+
+- (void)addChildCoordinator:(nonnull DNCCoordinator*)childCoordinator
+                     forKey:(nonnull NSString*)key;
+- (void)removeChildCoordinatorForKey:(nonnull NSString*)key;
+- (void)forAllChildCoordinatorsRunBlock:(DNCCoordinatorChildCoordinatorBlock)block;
 
 @end

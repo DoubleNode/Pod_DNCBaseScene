@@ -97,5 +97,13 @@
     [_childCoordinators removeObjectForKey:key];
 }
 
+- (void)forAllChildCoordinatorsRunBlock:(DNCCoordinatorChildCoordinatorBlock)block
+{
+    for (DNCCoordinator* coordinator in _childCoordinators)
+    {
+        block ? block(coordinator) : (void)nil;
+    }
+}
+
 @end
 
