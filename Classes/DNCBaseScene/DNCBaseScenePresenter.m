@@ -127,7 +127,7 @@
     
     DNCBaseSceneDismissViewModel* viewModel = [DNCBaseSceneDismissViewModel viewModel];
     viewModel.sendData  = response.sendData;
-    viewModel.animated  = YES;
+    viewModel.animated  = response.animated;
     [self.output displayDismiss:viewModel];
 }
 

@@ -351,7 +351,7 @@
         case DNCBaseSceneDisplayTypeNavBarPush:
         case DNCBaseSceneDisplayTypeNavBarPushInstant:
         {
-            BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
+            BOOL    animated = viewModel.animated && (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
             
             [DNCUIThread run:
              ^()

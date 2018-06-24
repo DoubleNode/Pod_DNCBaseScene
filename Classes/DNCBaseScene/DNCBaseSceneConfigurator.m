@@ -16,6 +16,8 @@
 #import "DNCBaseScenePresenter.h"
 #import "DNCBaseSceneViewController.h"
 
+#import "DNCCoordinator.h"
+
 @interface DNCBaseSceneConfigurator ()
 {
     DNCCoordinator*         _coordinator;
