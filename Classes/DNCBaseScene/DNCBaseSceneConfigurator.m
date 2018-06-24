@@ -88,31 +88,27 @@
 
 #pragma mark - Scene lifecycle
 
-- (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
-                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
-                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+- (void)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
+                  andDisplayType:(DNCBaseSceneDisplayType)displayType
+                         thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
 {
     _coordinatorEndBlock    = endBlock;
     _coordinator            = coordinator;
     
-    DNCBaseSceneViewController* retval = self.class.viewController;
+    DNCBaseSceneViewController* viewController = self.class.viewController;
     
-    retval.coordinatorDelegate  = coordinator;
-    
-    return retval;
+    viewController.coordinatorDelegate  = coordinator;
 }
 
-- (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
-                                        andDisplayType:(DNCBaseSceneDisplayType)displayType
-                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                 andDisplayType:(DNCBaseSceneDisplayType)displayType
+                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
 {
-    DNCBaseSceneViewController* retval = [self loadSceneWithCoordinator:coordinator
-                                                         andDisplayType:displayType
-                                                                thenRun:endBlock];
+    [self loadSceneWithCoordinator:coordinator
+                    andDisplayType:displayType
+                           thenRun:endBlock];
 
     [self.interactor startSceneWithDisplayType:displayType];
-    
-    return retval;
 }
 
 - (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
