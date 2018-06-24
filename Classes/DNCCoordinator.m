@@ -76,6 +76,8 @@
      {
          [block reset];
      }];
+    
+    _childCoordinators      = NSMutableDictionary.dictionary;
 }
 
 - (void)stop
