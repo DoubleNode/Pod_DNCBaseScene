@@ -97,20 +97,28 @@
 - (void)addChildCoordinator:(nonnull DNCCoordinator*)childCoordinator
                      forKey:(nonnull NSString*)key
 {
+    NSAssert([childCoordinator isKindOfClass:DNCCoordinator.class], @"childCoordinator is NOT a DNCCoordinator.class!");
+    NSAssert([key isKindOfClass:NSString.class], @"key is NOT a NSString.class!");
+
     _childCoordinators[key] = childCoordinator;
 }
 
 - (void)removeChildCoordinatorForKey:(nonnull NSString*)key
 {
+    NSAssert([key isKindOfClass:NSString.class], @"key is NOT a NSString.class!");
+
     [_childCoordinators removeObjectForKey:key];
 }
 
 - (void)forAllChildCoordinatorsRunBlock:(DNCCoordinatorChildCoordinatorBlock)block
 {
-    for (DNCCoordinator* coordinator in _childCoordinators)
-    {
-        block ? block(coordinator) : (void)nil;
-    }
+    [_childCoordinators enumerateKeysAndObjectsUsingBlock:
+     ^(NSString* _Nonnull key, DNCCoordinator* _Nonnull childCoordinator, BOOL* _Nonnull stop)
+     {
+         NSAssert([childCoordinator isKindOfClass:DNCCoordinator.class], @"childCoordinator is NOT a DNCCoordinator.class!");
+
+         block ? block(childCoordinator) : (void)nil;
+     }];
 }
 
 @end

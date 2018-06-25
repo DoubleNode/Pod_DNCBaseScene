@@ -28,6 +28,18 @@
 
 #pragma mark - Object lifecycle
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    if (self.tapToDismissView)
+    {
+        UITapGestureRecognizer* tapRecognizer = [UITapGestureRecognizer.alloc initWithTarget:self
+                                                                                      action:@selector(tapToDismiss:)];
+        [self.tapToDismissView addGestureRecognizer:tapRecognizer];
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -175,6 +187,13 @@
     [self.view endEditing:YES];
     
     return YES;
+}
+
+#pragma mark - Gesture Recognizer methods
+
+- (void)tapToDismiss:(UITapGestureRecognizer*)recognizer
+{
+    [self.lastVisibleView resignFirstResponder];
 }
 
 @end

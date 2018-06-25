@@ -12,7 +12,8 @@
 
 @interface DNCVisibleViewController : UIViewController<UITextFieldDelegate>
 
-@property (nonatomic, strong) UIView*   lastVisibleView;
+@property (nonatomic, weak) UIView*   lastVisibleView;
+@property (nonatomic, weak) UIView*   tapToDismissView;
 
 @property (nonatomic) CGFloat visibleMargin;
 @property (nonatomic) CGRect  keyboardBounds;
@@ -22,5 +23,7 @@
 - (void)keyboardWillHide:(NSNotification*)note;
 #elif TARGET_OS_OSX || TARGET_OS_TV || TARGET_OS_WATCH
 #endif // TARGET_OS_IOS
+
+- (void)tapToDismiss:(UITapGestureRecognizer*)recognizer;
 
 @end
