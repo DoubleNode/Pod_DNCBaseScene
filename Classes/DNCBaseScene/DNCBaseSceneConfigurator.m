@@ -88,9 +88,9 @@
 
 #pragma mark - Scene lifecycle
 
-- (void)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
-                  andDisplayType:(DNCBaseSceneDisplayType)displayType
-                         thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+- (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
 {
     _coordinatorEndBlock    = endBlock;
     _coordinator            = coordinator;
@@ -98,17 +98,21 @@
     DNCBaseSceneViewController* viewController = self.class.viewController;
     
     viewController.coordinatorDelegate  = coordinator;
+    
+    return viewController;
 }
 
-- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
-                 andDisplayType:(DNCBaseSceneDisplayType)displayType
-                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+- (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                        andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
 {
-    [self loadSceneWithCoordinator:coordinator
-                    andDisplayType:displayType
-                           thenRun:endBlock];
+    DNCBaseSceneViewController* viewController = [self loadSceneWithCoordinator:coordinator
+                                                                 andDisplayType:displayType
+                                                                        thenRun:endBlock];
 
     [self.interactor startSceneWithDisplayType:displayType];
+    
+    return viewController;
 }
 
 - (void)endSceneWithSuggestedAction:(NSString*)suggestedAction

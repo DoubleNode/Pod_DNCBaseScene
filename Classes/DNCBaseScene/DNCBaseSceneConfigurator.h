@@ -41,12 +41,12 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* suggestedAction, BOOL da
 
 #pragma mark - Lifecycle Methods
 
-- (void)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
-                  andDisplayType:(DNCBaseSceneDisplayType)displayType
-                         thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
-- (void)runSceneWithCoordinator:(DNCCoordinator*)coordinator
-                 andDisplayType:(DNCBaseSceneDisplayType)displayType
-                        thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+- (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+- (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                        andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
 
 - (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
                      andDataChanged:(BOOL)dataChanged;
