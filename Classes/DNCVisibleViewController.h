@@ -12,8 +12,9 @@
 
 @interface DNCVisibleViewController : UIViewController<UITextFieldDelegate>
 
+@property (nonatomic, weak) IBOutlet UIView*   tapToDismissView;
+
 @property (nonatomic, weak) UIView*   lastVisibleView;
-@property (nonatomic, weak) UIView*   tapToDismissView;
 
 @property (nonatomic) CGFloat visibleMargin;
 @property (nonatomic) CGRect  keyboardBounds;
