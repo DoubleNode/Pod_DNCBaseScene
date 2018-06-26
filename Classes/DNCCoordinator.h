@@ -6,7 +6,8 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import DNCore;
+@import UIKit;
 
 typedef NS_ENUM(NSUInteger, DNCCoordinatorState)
 {
@@ -41,5 +42,12 @@ typedef void (^DNCCoordinatorChildCoordinatorBlock)(DNCCoordinator* block);
                      forKey:(nonnull NSString*)key;
 - (void)removeChildCoordinatorForKey:(nonnull NSString*)key;
 - (void)forAllChildCoordinatorsRunBlock:(DNCCoordinatorChildCoordinatorBlock)block;
+
+typedef NSDictionary<NSString*, DNCUtilitiesBlock>  DNCCoordinatorActions;
+
+- (void)forSuggestedAction:(NSString*)suggestedAction
+       runBlockFromActions:(const DNCCoordinatorActions*)actions
+               unlessBlank:(DNCUtilitiesBlock)blankBlock
+                 orNoMatch:(DNCUtilitiesBlock)noMatchBlock;
 
 @end

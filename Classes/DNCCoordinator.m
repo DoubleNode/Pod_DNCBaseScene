@@ -121,5 +121,39 @@
      }];
 }
 
+- (void)forSuggestedAction:(NSString*)suggestedAction
+       runBlockFromActions:(const DNCCoordinatorActions*)actions
+               unlessBlank:(DNCUtilitiesBlock)blankBlock
+                 orNoMatch:(DNCUtilitiesBlock)noMatchBlock
+{
+    if (!suggestedAction.length)
+    {
+        blankBlock ? blankBlock() : (void)nil;
+        return;
+    }
+    
+    __block BOOL    matchFound = NO;
+    
+    [actions enumerateKeysAndObjectsUsingBlock:
+     ^(NSString* _Nonnull key, DNCUtilitiesBlock _Nonnull block, BOOL* _Nonnull stop)
+     {
+         if ([suggestedAction isEqualToString:key])
+         {
+             matchFound = YES;
+             
+             block ? block() : (void)nil;
+             *stop = YES;
+             return;
+         }
+     }];
+    
+    if (matchFound)
+    {
+        return;
+    }
+    
+    noMatchBlock ? noMatchBlock() : (void)nil;
+}
+
 @end
 
