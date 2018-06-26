@@ -97,6 +97,8 @@
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
+    [self endSceneWithSuggestedAction:@""
+                       andDataChanged:NO];
 }
 
 #pragma mark - Business Logic
