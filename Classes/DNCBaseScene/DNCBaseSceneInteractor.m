@@ -109,4 +109,14 @@
     
 }
 
+- (void)doErrorOccurred:(DNCBaseSceneErrorRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+
+    DNCBaseSceneErrorResponse*  response = DNCBaseSceneErrorResponse.response;
+    response.title  = request.title;
+    response.error  = request.error;
+    [self.output presentError:response];
+}
+
 @end

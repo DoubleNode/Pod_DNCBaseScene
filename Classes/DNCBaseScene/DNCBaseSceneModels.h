@@ -25,6 +25,13 @@
 
 @end
 
+@interface DNCBaseSceneErrorRequest : __DNCBaseSceneRequest
+
+@property (strong, nonatomic)   NSString*   title;
+@property (strong, nonatomic)   NSError*    error;
+
+@end
+
 @interface DNCBaseSceneConfirmationRequest : __DNCBaseSceneRequest
 
 @property (strong, nonatomic)   NSString*   selection;

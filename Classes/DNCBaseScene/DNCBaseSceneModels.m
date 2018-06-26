@@ -22,6 +22,9 @@
 @implementation DNCBaseSceneRequest
 @end
 
+@implementation DNCBaseSceneErrorRequest
+@end
+
 @implementation DNCBaseSceneConfirmationRequest
 @end
 

@@ -39,5 +39,6 @@
 #pragma mark - Event Actions
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
+- (void)doErrorOccurred:(DNCBaseSceneErrorRequest*)request;
 
 @end

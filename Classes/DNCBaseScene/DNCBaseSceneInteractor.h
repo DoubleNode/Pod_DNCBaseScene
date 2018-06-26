@@ -42,5 +42,6 @@
 #pragma mark - Business Logic
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
+- (void)doErrorOccurred:(DNCBaseSceneErrorRequest*)request;
 
 @end

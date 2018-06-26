@@ -174,17 +174,6 @@
     [self.output sceneDidClose:DNCBaseSceneRequest.request];
 }
 
-#pragma mark - Event Handling
-
-- (void)doConfirmation:(NSString*)selection
-          withUserData:(id)userData
-{
-    DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
-    request.selection   = selection;
-    request.userData    = userData;
-    [self.output doConfirmation:request];
-}
-
 #pragma mark - Lifecycle Methods
 
 - (void)startScene:(DNCBaseSceneStartViewModel*)viewModel
@@ -275,8 +264,10 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
-                                           [self doConfirmation:viewModel.button1Code
-                                                   withUserData:viewModel.userData];
+                                           DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
+                                           request.selection   = viewModel.button1Code;
+                                           request.userData    = viewModel.userData;
+                                           [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button1];
          }
@@ -288,8 +279,10 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
-                                           [self doConfirmation:viewModel.button2Code
-                                                   withUserData:viewModel.userData];
+                                           DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
+                                           request.selection   = viewModel.button2Code;
+                                           request.userData    = viewModel.userData;
+                                           [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button2];
          }
@@ -301,8 +294,10 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
-                                           [self doConfirmation:viewModel.button3Code
-                                                   withUserData:viewModel.userData];
+                                           DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
+                                           request.selection   = viewModel.button3Code;
+                                           request.userData    = viewModel.userData;
+                                           [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button3];
          }
@@ -314,8 +309,10 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
-                                           [self doConfirmation:viewModel.button4Code
-                                                   withUserData:viewModel.userData];
+                                           DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
+                                           request.selection   = viewModel.button4Code;
+                                           request.userData    = viewModel.userData;
+                                           [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button4];
          }
