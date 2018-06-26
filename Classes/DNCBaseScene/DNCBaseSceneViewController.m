@@ -105,13 +105,6 @@
     [self sceneDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self setNeedsStatusBarAppearanceUpdate];
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -137,20 +130,36 @@
     [self sceneDidClose];
 }
 
-#pragma mark - Scene Lifecycle
-
-- (void)sceneDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    [super viewWillAppear:animated];
     
-    [self.output sceneDidLoad:DNCBaseSceneRequest.request];
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+    [self sceneWillAppear];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self sceneWillDisappear];
+}
+
+#pragma mark - Scene Lifecycle
 
 - (void)sceneDidAppear
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     [self.output sceneDidAppear:DNCBaseSceneRequest.request];
+}
+
+- (void)sceneDidClose
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [self.output sceneDidClose:DNCBaseSceneRequest.request];
 }
 
 - (void)sceneDidDisappear
@@ -167,11 +176,25 @@
     [self.output sceneDidHide:DNCBaseSceneRequest.request];
 }
 
-- (void)sceneDidClose
+- (void)sceneDidLoad
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self.output sceneDidClose:DNCBaseSceneRequest.request];
+    [self.output sceneDidLoad:DNCBaseSceneRequest.request];
+}
+
+- (void)sceneWillAppear
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [self.output sceneWillAppear:DNCBaseSceneRequest.request];
+}
+
+- (void)sceneWillDisappear
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [self.output sceneWillDisappear:DNCBaseSceneRequest.request];
 }
 
 #pragma mark - Lifecycle Methods

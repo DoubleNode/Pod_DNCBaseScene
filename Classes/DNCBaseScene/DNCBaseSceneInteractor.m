@@ -68,17 +68,19 @@
 
 #pragma mark - Scene Lifecycle
 
-- (void)sceneDidLoad:(DNCBaseSceneRequest*)request
-{
-    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
-    
-}
-
 - (void)sceneDidAppear:(DNCBaseSceneRequest*)request
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     _sceneEnded = NO;
+}
+
+- (void)sceneDidClose:(DNCBaseSceneRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [self endSceneWithSuggestedAction:@""
+                       andDataChanged:NO];
 }
 
 - (void)sceneDidDisappear:(DNCBaseSceneRequest*)request
@@ -93,12 +95,22 @@
     
 }
 
-- (void)sceneDidClose:(DNCBaseSceneRequest*)request
+- (void)sceneDidLoad:(DNCBaseSceneRequest*)request
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self endSceneWithSuggestedAction:@""
-                       andDataChanged:NO];
+}
+
+- (void)sceneWillAppear:(DNCBaseSceneRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+}
+
+- (void)sceneWillDisappear:(DNCBaseSceneRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
 }
 
 #pragma mark - Business Logic

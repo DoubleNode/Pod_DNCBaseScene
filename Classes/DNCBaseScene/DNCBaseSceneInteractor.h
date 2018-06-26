@@ -32,12 +32,13 @@
 
 #pragma mark - Scene Lifecycle
 
-- (void)sceneDidLoad:(DNCBaseSceneRequest*)request;
 - (void)sceneDidAppear:(DNCBaseSceneRequest*)request;
-- (void)sceneDidDisappear:(DNCBaseSceneRequest*)request;
-
-- (void)sceneDidHide:(DNCBaseSceneRequest*)request;
 - (void)sceneDidClose:(DNCBaseSceneRequest*)request;
+- (void)sceneDidDisappear:(DNCBaseSceneRequest*)request;
+- (void)sceneDidHide:(DNCBaseSceneRequest*)request;
+- (void)sceneDidLoad:(DNCBaseSceneRequest*)request;
+- (void)sceneWillAppear:(DNCBaseSceneRequest*)request;
+- (void)sceneWillDisappear:(DNCBaseSceneRequest*)request;
 
 #pragma mark - Business Logic
 
