@@ -8,7 +8,7 @@
 
 #import "DNCVisibleViewController.h"
 
-@interface DNCVisibleViewController ()
+@interface DNCVisibleViewController ()<UITextFieldDelegate, UITextViewDelegate>
 {
     BOOL    _keyboardShowing;
 }
@@ -182,11 +182,23 @@
 
 #pragma mark - UITextFieldDelegate
 
+- (void)textFieldDidBeginEditing:(UITextField*)textField
+{
+    self.lastVisibleView    = textField;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField*)textField
-{   
+{
     [self.view endEditing:YES];
     
     return YES;
+}
+
+#pragma mark - UITextViewDelegate
+
+- (void)textViewDidBeginEditing:(UITextView*)textView
+{
+    self.lastVisibleView    = textView;
 }
 
 #pragma mark - Gesture Recognizer methods
