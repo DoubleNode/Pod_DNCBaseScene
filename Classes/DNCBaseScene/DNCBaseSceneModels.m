@@ -9,6 +9,20 @@
 #import "DNCBaseSceneModels.h"
 
 //
+// DataObject Models
+//
+#pragma mark - DataObject Models
+
+@implementation __DNCBaseSceneDataObject
+
++ (instancetype)dataObject  {   return [[self.class alloc] init]; }
+
+@end
+
+@implementation DNCBaseSceneDataObject
+@end
+
+//
 // Request Models
 //
 #pragma mark - Request Models

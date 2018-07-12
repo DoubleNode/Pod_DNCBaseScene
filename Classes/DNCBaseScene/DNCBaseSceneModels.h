@@ -11,6 +11,21 @@
 #import "DNCBaseSceneCommon.h"
 
 //
+// DataObject Models
+//
+#pragma mark - DataObject Models
+
+@interface __DNCBaseSceneDataObject : NSObject
+
++ (instancetype)dataObject;
+
+@end
+
+@interface DNCBaseSceneDataObject : __DNCBaseSceneDataObject
+
+@end
+
+//
 // Request Models
 //
 #pragma mark - Request Models
