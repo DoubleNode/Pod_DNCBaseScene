@@ -36,6 +36,8 @@
     {
         UITapGestureRecognizer* tapRecognizer = [UITapGestureRecognizer.alloc initWithTarget:self
                                                                                       action:@selector(tapToDismiss:)];
+        tapRecognizer.cancelsTouchesInView  = NO;
+
         [self.tapToDismissView addGestureRecognizer:tapRecognizer];
     }
 }
