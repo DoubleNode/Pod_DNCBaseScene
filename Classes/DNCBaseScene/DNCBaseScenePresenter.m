@@ -30,6 +30,8 @@
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
+    _spinnerCount = 0;
+    
     DNCBaseSceneStartViewModel* viewModel = DNCBaseSceneStartViewModel.viewModel;
     viewModel.displayType   = response.displayType;
     [self.output startScene:viewModel];
