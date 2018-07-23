@@ -55,9 +55,21 @@
 - (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
                      andDataChanged:(BOOL)dataChanged
 {
+    [self endSceneConditionally:NO
+            withSuggestedAction:@""
+                 andDataChanged:NO];
+}
+
+- (void)endSceneConditionally:(BOOL)conditionally
+          withSuggestedAction:(NSString*)suggestedAction
+               andDataChanged:(BOOL)dataChanged
+{
     if (!self.shouldEndScene)
     {
-        return;
+        if (conditionally)
+        {
+            return;
+        }
     }
     
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
@@ -79,8 +91,9 @@
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self endSceneWithSuggestedAction:@""
-                       andDataChanged:NO];
+    [self endSceneConditionally:YES
+            withSuggestedAction:@""
+                 andDataChanged:NO];
 }
 
 - (void)sceneDidDisappear:(DNCBaseSceneRequest*)request
