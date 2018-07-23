@@ -6,8 +6,8 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <CRToast/CRToast.h>
-#import <DNCore/DNCUtilities.h>
+@import CRToast;
+@import DNCore;
 
 #import "DNCBaseSceneViewController.h"
 

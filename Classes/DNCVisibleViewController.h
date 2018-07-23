@@ -6,9 +6,8 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#import <DNCore/UIView+DNCPending.h>
+@import DNCore;
+@import UIKit;
 
 @interface DNCVisibleViewController : UIViewController<UITextFieldDelegate>
 

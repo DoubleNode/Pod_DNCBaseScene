@@ -6,8 +6,8 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <BFKit/UIColor+BFKit.h>
-#import <DNCore/NSDate+DNCPrettyDate.h>
+@import BFKit;
+@import DNCore;
 
 #import "DNCBaseScenePresenter.h"
 

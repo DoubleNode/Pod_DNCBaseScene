@@ -6,8 +6,8 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <DNCore/DNCUtilities.h>
-#import <UIKit/UIKit.h>
+@import DNCore;
+@import UIKit;
 
 #ifndef CLEAN_COMMON
 #define CLEAN_COMMON 1

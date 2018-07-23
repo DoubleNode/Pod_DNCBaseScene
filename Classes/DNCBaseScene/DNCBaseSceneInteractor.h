@@ -6,7 +6,7 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <DNCProtocols/PTCLAnalytics_Protocol.h>
+@import DNCProtocols;
 
 #import "DNCBaseSceneCommon.h"
 #import "DNCBaseSceneConfigurator.h"

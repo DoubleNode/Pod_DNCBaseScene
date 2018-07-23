@@ -6,10 +6,8 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <PodAsset/PodAsset.h>
-#import <WKRCrash_Workers/WKRCrash_Analytics_Worker.h>
-#import <WKRCrash_Workers/WKRCrash_User_Worker.h>
-#import <WKRCrash_Workers/WKRCrash_Validation_Worker.h>
+@import PodAsset;
+@import WKRCrash_Workers;
 
 #import "DNCBaseSceneConfigurator.h"
 #import "DNCBaseSceneInteractor.h"

@@ -6,8 +6,6 @@
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import <DNCDataObjects/DAOUser.h>
-
 #import "DNCBaseSceneInteractor.h"
 
 @interface DNCBaseSceneInteractor ()
