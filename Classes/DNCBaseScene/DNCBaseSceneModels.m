@@ -94,6 +94,9 @@
 @implementation DNCBaseSceneStartViewModel
 @end
 
+@implementation DNCBaseSceneEndViewModel
+@end
+
 @implementation DNCBaseSceneConfirmationViewModel
 @end
 

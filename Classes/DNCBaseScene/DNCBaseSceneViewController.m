@@ -218,7 +218,7 @@
              ^()
              {
                  [DNCUtilities.appDelegate.rootViewController presentViewController:self
-                                                                           animated:YES
+                                                                           animated:viewModel.animated
                                                                          completion:nil];
              }];
             break;
@@ -227,7 +227,7 @@
         case DNCBaseSceneDisplayTypeNavBarPush:
         case DNCBaseSceneDisplayTypeNavBarPushInstant:
         {
-            BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
+            BOOL    animated = (viewModel.animated && (_displayType == DNCBaseSceneDisplayTypeNavBarPush));
             
             [DNCUIThread run:
              ^()
@@ -262,6 +262,53 @@
                                                                    animated:animated];
              }];
             
+            break;
+        }
+    }
+}
+
+- (void)endScene:(DNCBaseSceneEndViewModel*)viewModel
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    _displayType = viewModel.displayType;
+    
+    switch (_displayType)
+    {
+        case DNCBaseSceneDisplayTypeNone:
+        {
+            break;
+        }
+            
+        case DNCBaseSceneDisplayTypeModal:
+        {
+            [DNCUIThread run:
+             ^()
+             {
+                 [self dismissViewControllerAnimated:viewModel.animated
+                                          completion:nil];
+             }];
+            break;
+        }
+            
+        case DNCBaseSceneDisplayTypeNavBarPush:
+        case DNCBaseSceneDisplayTypeNavBarPushInstant:
+        {
+            BOOL    animated = viewModel.animated && (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
+            
+            [DNCUIThread run:
+             ^()
+             {
+                 [self.configurator.navigationController popViewControllerAnimated:animated];
+             }];
+            break;
+        }
+            
+        case DNCBaseSceneDisplayTypeNavBarRoot:
+        case DNCBaseSceneDisplayTypeNavBarRootInstant:
+        default:
+        {
+            //BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarRoot);
             break;
         }
     }
@@ -350,45 +397,10 @@
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    switch (_displayType)
-    {
-        case DNCBaseSceneDisplayTypeNone:
-        {
-            break;
-        }
-            
-        case DNCBaseSceneDisplayTypeModal:
-        {
-            [DNCUIThread run:
-             ^()
-             {
-                 [self dismissViewControllerAnimated:viewModel.animated
-                                          completion:nil];
-             }];
-            break;
-        }
-            
-        case DNCBaseSceneDisplayTypeNavBarPush:
-        case DNCBaseSceneDisplayTypeNavBarPushInstant:
-        {
-            BOOL    animated = viewModel.animated && (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
-            
-            [DNCUIThread run:
-             ^()
-             {
-                 [self.configurator.navigationController popViewControllerAnimated:animated];
-             }];
-            break;
-        }
-            
-        case DNCBaseSceneDisplayTypeNavBarRoot:
-        case DNCBaseSceneDisplayTypeNavBarRootInstant:
-        default:
-        {
-            //BOOL    animated = (_displayType == DNCBaseSceneDisplayTypeNavBarRoot);
-            break;
-        }
-    }
+    DNCBaseSceneEndViewModel*   endViewModel = DNCBaseSceneEndViewModel.viewModel;
+    endViewModel.displayType    = _displayType;
+    endViewModel.animated       = viewModel.animated;
+    [self endScene:endViewModel];
 }
 
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel

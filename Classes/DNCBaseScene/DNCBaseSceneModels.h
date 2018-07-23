@@ -157,7 +157,15 @@
 
 @interface DNCBaseSceneStartViewModel : __DNCBaseSceneViewModel
 
-@property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
+@property (assign, nonatomic)   DNCBaseSceneDisplayType     displayType;
+@property (assign, atomic)      BOOL                        animated;
+
+@end
+
+@interface DNCBaseSceneEndViewModel : __DNCBaseSceneViewModel
+
+@property (assign, nonatomic)   DNCBaseSceneDisplayType     displayType;
+@property (assign, atomic)      BOOL                        animated;
 
 @end
 

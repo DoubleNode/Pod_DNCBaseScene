@@ -44,9 +44,20 @@
 - (id)initWithNibName:(NSString*)nibNameOrNil
                bundle:(NSBundle*)nibBundleOrNil;
 
+#pragma mark - Scene Lifecycle
+
+- (void)sceneDidAppear;
+- (void)sceneDidClose;
+- (void)sceneDidDisappear;
+- (void)sceneDidHide;
+- (void)sceneDidLoad;
+- (void)sceneWillAppear;
+- (void)sceneWillDisappear;
+
 #pragma mark - Lifecycle Methods
 
 - (void)startScene:(DNCBaseSceneStartViewModel*)viewModel;
+- (void)endScene:(DNCBaseSceneEndViewModel*)viewModel;
 
 #pragma mark - Display logic
 
