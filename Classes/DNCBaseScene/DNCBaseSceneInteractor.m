@@ -56,8 +56,8 @@
                      andDataChanged:(BOOL)dataChanged
 {
     [self endSceneConditionally:NO
-            withSuggestedAction:@""
-                 andDataChanged:NO];
+            withSuggestedAction:suggestedAction
+                 andDataChanged:dataChanged];
 }
 
 - (void)endSceneConditionally:(BOOL)conditionally
