@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		140EB14ABAFD836743D6E01D /* Pods_DNCBaseScene.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6022CB4E0D549E217AF09E50 /* Pods_DNCBaseScene.framework */; };
+		6A041BD321067E84007CD5DC /* DNCDisabledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A041BD121067E84007CD5DC /* DNCDisabledTableViewCell.m */; };
+		6A041BD421067E84007CD5DC /* DNCDisabledCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A041BD221067E84007CD5DC /* DNCDisabledCollectionViewCell.m */; };
 		6A18440F1DEA385F00D3D254 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A18440E1DEA385F00D3D254 /* main.m */; };
 		6A1844121DEA385F00D3D254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844111DEA385F00D3D254 /* AppDelegate.m */; };
 		6A1844151DEA385F00D3D254 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844141DEA385F00D3D254 /* ViewController.m */; };
@@ -51,6 +53,10 @@
 		3595CB88B59DAD05B58FF0F7 /* Pods-DNCBaseSceneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCBaseSceneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests.release.xcconfig"; sourceTree = "<group>"; };
 		473F4EBE95B28CC89710E1C3 /* Pods-DNCBaseSceneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNCBaseSceneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6022CB4E0D549E217AF09E50 /* Pods_DNCBaseScene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNCBaseScene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A041BCF21067E84007CD5DC /* DNCDisabledCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCDisabledCollectionViewCell.h; path = Classes/DNCDisabledCollectionViewCell.h; sourceTree = "<group>"; };
+		6A041BD021067E84007CD5DC /* DNCDisabledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCDisabledTableViewCell.h; path = Classes/DNCDisabledTableViewCell.h; sourceTree = "<group>"; };
+		6A041BD121067E84007CD5DC /* DNCDisabledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCDisabledTableViewCell.m; path = Classes/DNCDisabledTableViewCell.m; sourceTree = "<group>"; };
+		6A041BD221067E84007CD5DC /* DNCDisabledCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCDisabledCollectionViewCell.m; path = Classes/DNCDisabledCollectionViewCell.m; sourceTree = "<group>"; };
 		6A18440A1DEA385F00D3D254 /* DNCBaseScene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNCBaseScene.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A18440E1DEA385F00D3D254 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A1844101DEA385F00D3D254 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 			children = (
 				6ACAC37A207D830D00160740 /* DNCCoordinator.h */,
 				6ACAC37D207D830D00160740 /* DNCCoordinator.m */,
+				6A041BCF21067E84007CD5DC /* DNCDisabledCollectionViewCell.h */,
+				6A041BD221067E84007CD5DC /* DNCDisabledCollectionViewCell.m */,
+				6A041BD021067E84007CD5DC /* DNCDisabledTableViewCell.h */,
+				6A041BD121067E84007CD5DC /* DNCDisabledTableViewCell.m */,
 				6ACAC379207D830D00160740 /* DNCDisabledViewController.h */,
 				6ACAC37F207D830D00160740 /* DNCDisabledViewController.m */,
 				6ACAC37C207D830D00160740 /* DNCVisibleViewController.h */,
@@ -495,12 +505,14 @@
 				6ACAC39B207D832C00160740 /* DNCBaseSceneViewController.m in Sources */,
 				6ACAC399207D832C00160740 /* DNCBaseScenePresenter.m in Sources */,
 				6ACAC381207D830D00160740 /* DNCCoordinator.m in Sources */,
+				6A041BD421067E84007CD5DC /* DNCDisabledCollectionViewCell.m in Sources */,
 				6ACAC382207D830D00160740 /* DNCVisibleViewController.m in Sources */,
 				6A1844151DEA385F00D3D254 /* ViewController.m in Sources */,
 				6ACAC39E207D832C00160740 /* DNCBaseSceneConfigurator.m in Sources */,
 				6A1844121DEA385F00D3D254 /* AppDelegate.m in Sources */,
 				6ACAC3A0207D832C00160740 /* DNCBaseSceneInteractor.m in Sources */,
 				6A18440F1DEA385F00D3D254 /* main.m in Sources */,
+				6A041BD321067E84007CD5DC /* DNCDisabledTableViewCell.m in Sources */,
 				6ACAC383207D830D00160740 /* DNCDisabledViewController.m in Sources */,
 				6ACAC39A207D832C00160740 /* DNCBaseSceneModels.m in Sources */,
 			);

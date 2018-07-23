@@ -1,25 +1,55 @@
 //
-//  DNCDisabledViewController.m
+//  DNCDisabledTableViewCell.h
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
 //  Copyright © 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
-#import "DNCDisabledViewController.h"
+#import "DNCDisabledTableViewCell.h"
 
-@interface DNCDisabledViewController ()
+@interface DNCDisabledTableViewCell ()
 
 @end
 
-@implementation DNCDisabledViewController
+@implementation DNCDisabledTableViewCell
+
+#pragma mark - Static Cell Type methods
+
++ (NSString*)reuseIdentifier
+{
+    return @"DNCDisabledTableViewCell";
+}
+
++ (CGSize)suggestedSize
+{
+    return (CGSize){ 100.0f, 100.0f };
+}
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
+- (void)awakeFromNib
 {
-    [super viewDidLoad];
+    [super awakeFromNib];
     
+    [self cellDidLoad];
+    [self cellWillAppear];
+}
+
+- (void)cellDidLoad
+{
+    
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    
+    [self cellWillAppear];
+}
+
+- (void)cellWillAppear
+{
     [self initializeActivityIndicator];
 }
 
@@ -41,10 +71,12 @@
 
 - (void)displaySpinner:(BOOL)show
 {
-    if (self.activityIndicatorView)
+    if (!self.activityIndicatorView)
     {
-        [self displaySpinnerActivityIndicator:show];
+        return;
     }
+    
+    [self displaySpinnerActivityIndicator:show];
 }
 
 - (void)displaySpinnerActivityIndicator:(BOOL)show
