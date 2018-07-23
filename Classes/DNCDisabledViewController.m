@@ -30,8 +30,9 @@
 {
     self.activityIndicatorView.tintColor    = UIColor.whiteColor;
     
-    self.activityIndicatorView.alpha    = 0.5f;
-    self.activityIndicatorView.hidden   = YES;
+    self.activityIndicatorView.alpha    = 1.0f;
+    self.activityIndicatorView.hidden   = NO;
+    [self.activityIndicatorView stopAnimating];
 }
 
 #pragma mark - Display logic
@@ -48,8 +49,6 @@
 {
     if (show)
     {
-        self.activityIndicatorView.alpha    = 0.0f;
-        self.activityIndicatorView.hidden   = NO;
         [self.activityIndicatorView startAnimating];
         
         [UIView animateWithDuration:0.3f
@@ -58,8 +57,7 @@
                          animations:
          ^()
          {
-             self.activityIndicatorView.alpha   = 1.0f;
-             self.disabledView.alpha            = 0.6f;
+             self.disabledView.alpha    = 1.0f;
          }
                          completion:nil];
     }
@@ -71,15 +69,12 @@
                          animations:
          ^()
          {
-             self.activityIndicatorView.alpha   = 0.0f;
-             self.disabledView.alpha            = 0.0f;
+             self.disabledView.alpha    = 0.0f;
          }
                          completion:
          ^(BOOL finished)
          {
              [self.activityIndicatorView stopAnimating];
-             self.activityIndicatorView.alpha   = 0.0f;
-             self.activityIndicatorView.hidden  = YES;
          }];
     }
 }
