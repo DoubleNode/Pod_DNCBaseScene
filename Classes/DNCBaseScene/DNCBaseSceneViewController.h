@@ -22,6 +22,7 @@
 @property (strong, nonatomic) DNCCoordinator*           coordinatorDelegate;
 @property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
 @property (strong, nonatomic) NSString*                 sceneTitle;
+@property (strong, nonatomic) NSString*                 sceneBackTitle;
 
 @property (strong, nonatomic) id<DNCBaseSceneViewControllerOutput> output;
 

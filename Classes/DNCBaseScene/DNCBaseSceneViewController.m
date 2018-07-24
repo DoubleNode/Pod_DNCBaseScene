@@ -67,9 +67,18 @@
     [DNCUIThread run:
      ^()
      {
-         self.title                         = self->_sceneTitle;
-         self.navigationController.title    = self->_sceneTitle;
-         self.titleLabel.text               = self->_sceneTitle;
+         self.title                 = self->_sceneTitle;
+         self.navigationItem.title  = self->_sceneTitle;
+         self.titleLabel.text       = self->_sceneTitle;
+     }];
+}
+
+- (void)updateSceneBackTitle
+{
+    [DNCUIThread run:
+     ^()
+     {
+         self.navigationItem.title  = self->_sceneBackTitle;
      }];
 }
 
@@ -105,9 +114,13 @@
     [self sceneDidLoad];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
+    
+    [self updateSceneTitle];
+
+    [self setNeedsStatusBarAppearanceUpdate];
     
     [self sceneDidAppear];
 }
@@ -128,15 +141,6 @@
     }
     
     [self sceneDidClose];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self setNeedsStatusBarAppearanceUpdate];
-    
-    [self sceneWillAppear];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -243,6 +247,7 @@
                      return;
                  }
                  
+                 [self updateSceneBackTitle];
                  [self.configurator.navigationController pushViewController:self
                                                                    animated:animated];
              }];
