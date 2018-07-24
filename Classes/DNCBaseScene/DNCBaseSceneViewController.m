@@ -53,6 +53,12 @@
         return;
     }
     
+    if (!_sceneBackTitle ||
+        [_sceneBackTitle isEqualToString:_sceneTitle])
+    {
+        _sceneBackTitle = sceneTitle;
+    }
+    
     _sceneTitle = sceneTitle;
     if (!_sceneTitle)
     {
@@ -64,12 +70,31 @@
 
 - (void)updateSceneTitle
 {
+    if (!self->_sceneTitle)
+    {
+        return;
+    }
+    
     [DNCUIThread run:
      ^()
      {
-         self.title                         = self->_sceneTitle;
-         self.navigationController.title    = self->_sceneTitle;
-         self.titleLabel.text               = self->_sceneTitle;
+         self.title                 = self->_sceneTitle;
+         self.navigationItem.title  = self->_sceneTitle;
+         self.titleLabel.text       = self->_sceneTitle;
+     }];
+}
+
+- (void)updateSceneBackTitle
+{
+    if (!self->_sceneBackTitle)
+    {
+        return;
+    }
+    
+    [DNCUIThread run:
+     ^()
+     {
+         self.navigationItem.title  = self->_sceneBackTitle;
      }];
 }
 
@@ -105,9 +130,13 @@
     [self sceneDidLoad];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
+    
+    [self updateSceneTitle];
+    
+    [self setNeedsStatusBarAppearanceUpdate];
     
     [self sceneDidAppear];
 }
@@ -130,20 +159,13 @@
     [self sceneDidClose];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self setNeedsStatusBarAppearanceUpdate];
-    
-    [self sceneWillAppear];
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
     [self sceneWillDisappear];
+    
+    [self updateSceneBackTitle];
 }
 
 #pragma mark - Scene Lifecycle
@@ -241,6 +263,13 @@
                  if (self.configurator.navigationController.viewControllers.lastObject == self)
                  {
                      return;
+                 }
+                 
+                 id lastViewController  = self.configurator.navigationController.viewControllers.lastObject;
+                 if ([lastViewController isKindOfClass:DNCBaseSceneViewController.class])
+                 {
+                     DNCBaseSceneViewController* baseSceneViewController = lastViewController;
+                     [baseSceneViewController updateSceneBackTitle];
                  }
                  
                  [self.configurator.navigationController pushViewController:self
@@ -386,7 +415,7 @@
                                        }];
              [alertController addAction:button4];
          }
-
+         
          [self presentViewController:alertController
                             animated:YES
                           completion:nil];
