@@ -33,6 +33,7 @@
     _spinnerCount = 0;
     
     DNCBaseSceneStartViewModel* viewModel = DNCBaseSceneStartViewModel.viewModel;
+    viewModel.animated      = YES;
     viewModel.displayType   = response.displayType;
     [self.output startScene:viewModel];
 }
