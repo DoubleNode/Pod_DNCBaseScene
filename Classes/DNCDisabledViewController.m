@@ -49,9 +49,18 @@
 
 - (void)displaySpinnerActivityIndicator:(BOOL)show
 {
+    CGFloat headerHeight    = self.navigationController.navigationBar.y + self.navigationController.navigationBar.height;
+    if (headerHeight &&
+        (self.disabledViewTopConstraint.constant >= 0))
+    {
+        self.disabledViewTopConstraint.constant = 0 - headerHeight;
+    }
+    
     if (show)
     {
         [self.activityIndicatorView startAnimating];
+        
+        self.navigationController.navigationBar.layer.zPosition = -1;
         
         [UIView animateWithDuration:0.3f
                               delay:0.0f
@@ -76,6 +85,8 @@
                          completion:
          ^(BOOL finished)
          {
+             self.navigationController.navigationBar.layer.zPosition = 0;
+             
              [self.activityIndicatorView stopAnimating];
          }];
     }

@@ -10,6 +10,7 @@
 
 @interface DNCDisabledViewController : DNCVisibleViewController
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint*        disabledViewTopConstraint;
 @property (weak, nonatomic) IBOutlet UIView*                    disabledView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView*   activityIndicatorView;
 
