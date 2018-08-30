@@ -38,6 +38,18 @@
     [self.output startScene:viewModel];
 }
 
+- (void)endScene:(DNCBaseSceneEndResponse*)response
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    _spinnerCount = 0;
+    
+    DNCBaseSceneEndViewModel*   viewModel = DNCBaseSceneEndViewModel.viewModel;
+    viewModel.animated      = YES;
+    viewModel.displayType   = response.displayType;
+    [self.output endScene:viewModel];
+}
+
 #pragma mark - Palette Colors
 
 - (UIColor*)paletteToastTitleColor

@@ -29,6 +29,7 @@
 - (BOOL)shouldEndScene;
 - (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
                      andDataChanged:(BOOL)dataChanged;
+- (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
 
 #pragma mark - Scene Lifecycle
 

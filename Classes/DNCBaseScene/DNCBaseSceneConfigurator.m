@@ -119,6 +119,11 @@
     _coordinatorEndBlock ? _coordinatorEndBlock(suggestedAction, dataChanged) : (void)nil;
 }
 
+- (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
+{
+    [self.interactor removeSceneWithDisplayType:displayType];
+}
+
 #pragma mark - Configuration
 
 - (UINavigationController*)navigationController

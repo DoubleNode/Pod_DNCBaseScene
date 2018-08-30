@@ -49,6 +49,8 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* suggestedAction, BOOL da
 - (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
                      andDataChanged:(BOOL)dataChanged;
 
+- (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
+
 #pragma mark - Configuration
 
 - (UINavigationController*)navigationController;
