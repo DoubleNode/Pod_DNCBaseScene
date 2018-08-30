@@ -10,6 +10,8 @@
 
 @interface DNCBaseSceneInteractor ()
 {
+    DNCBaseSceneDisplayType _displayType;
+    
     BOOL    _sceneEnded;
 }
 
@@ -35,6 +37,8 @@
 - (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    _displayType    = displayType;
     
     DNCBaseSceneStartResponse*  response = DNCBaseSceneStartResponse.response;
     response.displayType    = displayType;
@@ -74,6 +78,15 @@
     
     [self.configurator endSceneWithSuggestedAction:suggestedAction
                                     andDataChanged:dataChanged];
+}
+
+- (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    DNCBaseSceneEndResponse*    response = DNCBaseSceneEndResponse.response;
+    response.displayType    = displayType;
+    [self.output endScene:response];
 }
 
 #pragma mark - Scene Lifecycle

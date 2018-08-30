@@ -13,6 +13,7 @@
 #pragma mark - Lifecycle Methods
 
 - (void)startScene:(DNCBaseSceneStartResponse*)response;
+- (void)endScene:(DNCBaseSceneEndResponse*)response;
 
 #pragma mark - Presentation logic
 
@@ -32,6 +33,7 @@
 #pragma mark - Lifecycle Methods
 
 - (void)startScene:(DNCBaseSceneStartViewModel*)viewModel;
+- (void)endScene:(DNCBaseSceneEndViewModel*)viewModel;
 
 #pragma mark - Display logic
 

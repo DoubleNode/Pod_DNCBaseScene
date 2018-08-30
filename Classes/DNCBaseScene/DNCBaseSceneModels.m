@@ -59,6 +59,9 @@
 @implementation DNCBaseSceneStartResponse
 @end
 
+@implementation DNCBaseSceneEndResponse
+@end
+
 @implementation DNCBaseSceneConfirmationResponse
 @end
 

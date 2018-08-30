@@ -26,6 +26,7 @@
 #pragma mark - Lifecycle Methods
 
 - (void)startScene:(DNCBaseSceneStartResponse*)response;
+- (void)endScene:(DNCBaseSceneEndResponse*)response;
 
 #pragma mark - Palette Colors
 

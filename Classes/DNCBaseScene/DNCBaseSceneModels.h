@@ -76,6 +76,12 @@
 
 @end
 
+@interface DNCBaseSceneEndResponse : __DNCBaseSceneResponse
+
+@property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
+
+@end
+
 @interface DNCBaseSceneConfirmationResponse : __DNCBaseSceneResponse
 
 @property (copy, nonatomic) NSString*               title;

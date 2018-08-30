@@ -221,7 +221,7 @@
 
 #pragma mark - Lifecycle Methods
 
-- (void)startScene:(DNCBaseSceneStartViewModel*)viewModel
+- (void)startScene:(DNCBaseSceneStartViewModel*)viewModel;
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     

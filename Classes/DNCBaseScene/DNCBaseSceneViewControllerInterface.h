@@ -13,6 +13,7 @@
 #pragma mark - Lifecycle Methods
 
 - (void)startScene:(DNCBaseSceneStartViewModel*)viewModel;
+- (void)endScene:(DNCBaseSceneEndViewModel*)viewModel;
 
 #pragma mark - Display logic
 
