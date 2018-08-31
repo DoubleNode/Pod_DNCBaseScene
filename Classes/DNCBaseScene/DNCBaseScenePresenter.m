@@ -54,17 +54,17 @@
 
 - (UIColor*)paletteToastTitleColor
 {
-    return [UIColor hexString:@"353131"];
+    return UIColor.whiteColor;
 }
 
 - (UIColor*)paletteToastMessageColor
 {
-    return [UIColor hexString:@"353131"];
+    return UIColor.whiteColor;
 }
 
 - (UIColor*)paletteToastBackgroundColor
 {
-    return [UIColor hexString:@"E6D98E"];
+    return UIColor.redColor;
 }
 
 - (UIColor*)paletteToastErrorTitleColor
@@ -86,22 +86,22 @@
 
 - (UIFont*)paletteToastTitleFont
 {
-    return [UIFont fontWithName:@"ProximaNova-Semibold" size:16];
+    return [UIFont boldSystemFontOfSize:16];
 }
 
 - (UIFont*)paletteToastMessageFont
 {
-    return [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    return [UIFont systemFontOfSize:14];
 }
 
 - (UIFont*)paletteToastErrorTitleFont
 {
-    return [UIFont fontWithName:@"ProximaNova-Semibold" size:16];
+    return [UIFont boldSystemFontOfSize:16];
 }
 
 - (UIFont*)paletteToastErrorMessageFont
 {
-    return [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    return [UIFont systemFontOfSize:14];
 }
 
 #pragma mark - Presentation logic
