@@ -42,5 +42,8 @@
 
 - (void)doConfirmation:(DNCBaseSceneConfirmationRequest*)request;
 - (void)doErrorOccurred:(DNCBaseSceneErrorRequest*)request;
+- (void)doWebStartNavigation:(DNCBaseSceneWebRequest*)request;
+- (void)doWebFinishNavigation:(DNCBaseSceneWebRequest*)request;
+- (void)doWebErrorNavigation:(DNCBaseSceneWebErrorRequest*)request;
 
 @end

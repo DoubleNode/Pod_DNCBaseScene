@@ -155,4 +155,26 @@
     [self.output presentError:response];
 }
 
+- (void)doWebStartNavigation:(DNCBaseSceneWebRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+}
+
+- (void)doWebFinishNavigation:(DNCBaseSceneWebRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+}
+
+- (void)doWebErrorNavigation:(DNCBaseSceneWebErrorRequest*)request
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    DNCBaseSceneErrorResponse*  response = DNCBaseSceneErrorResponse.response;
+    response.title  = @"Web Error";
+    response.error  = request.error;
+    [self.output presentError:response];
+}
+
 @end

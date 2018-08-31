@@ -8,10 +8,11 @@
 
 @import CRToast;
 @import DNCore;
+@import WebKit;
 
 #import "DNCBaseSceneViewController.h"
 
-@interface DNCBaseSceneViewController ()
+@interface DNCBaseSceneViewController ()<WKNavigationDelegate>
 
 @end
 
@@ -504,6 +505,34 @@
          [CRToastManager showNotificationWithOptions:options
                                      completionBlock:nil];
      }];
+}
+
+#pragma mark - WKNavigationDelegate methods
+
+- (void)webView:(WKWebView*)webView
+didCommitNavigation:(null_unspecified WKNavigation*)navigation
+{
+    DNCBaseSceneWebRequest* request = DNCBaseSceneWebRequest.request;
+    request.url = webView.URL;
+    [self.output doWebStartNavigation:request];
+}
+
+- (void)webView:(WKWebView*)webView
+didFinishNavigation:(null_unspecified WKNavigation*)navigation
+{
+    DNCBaseSceneWebRequest* request = DNCBaseSceneWebRequest.request;
+    request.url = webView.URL;
+    [self.output doWebFinishNavigation:request];
+}
+
+- (void)webView:(WKWebView*)webView
+didFailNavigation:(null_unspecified WKNavigation*)navigation
+      withError:(NSError*)error
+{
+    DNCBaseSceneWebErrorRequest*    request = DNCBaseSceneWebErrorRequest.request;
+    request.url     = webView.URL;
+    request.error   = error;
+    [self.output doWebErrorNavigation:request];
 }
 
 #pragma mark - Actions

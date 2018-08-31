@@ -38,18 +38,31 @@
 
 @end
 
-@interface DNCBaseSceneErrorRequest : __DNCBaseSceneRequest
+@interface DNCBaseSceneErrorRequest : DNCBaseSceneRequest
 
 @property (strong, nonatomic)   NSString*   title;
 @property (strong, nonatomic)   NSError*    error;
 
 @end
 
-@interface DNCBaseSceneConfirmationRequest : __DNCBaseSceneRequest
+@interface DNCBaseSceneConfirmationRequest : DNCBaseSceneRequest
 
 @property (strong, nonatomic)   NSString*   selection;
 
 @property (strong, nonatomic)   id  userData;
+
+@end
+
+@interface DNCBaseSceneWebRequest : DNCBaseSceneRequest
+
+@property (strong, nonatomic)   NSURL*  url;
+
+@end
+
+@interface DNCBaseSceneWebErrorRequest : DNCBaseSceneRequest
+
+@property (strong, nonatomic)   NSURL*      url;
+@property (strong, nonatomic)   NSError*    error;
 
 @end
 
@@ -70,19 +83,19 @@
 
 @end
 
-@interface DNCBaseSceneStartResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneStartResponse : DNCBaseSceneResponse
 
 @property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
 
 @end
 
-@interface DNCBaseSceneEndResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneEndResponse : DNCBaseSceneResponse
 
 @property (assign, nonatomic) DNCBaseSceneDisplayType   displayType;
 
 @end
 
-@interface DNCBaseSceneConfirmationResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneConfirmationResponse : DNCBaseSceneResponse
 
 @property (copy, nonatomic) NSString*               title;
 @property (copy, nonatomic) NSString*               message;
@@ -108,34 +121,34 @@
 
 @end
 
-@interface DNCBaseSceneDismissResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneDismissResponse : DNCBaseSceneResponse
 
 @property (assign, atomic)  BOOL            animated;
 @property (copy, nonatomic) NSDictionary*   sendData;
 
 @end
 
-@interface DNCBaseSceneErrorResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneErrorResponse : DNCBaseSceneResponse
 
 @property (strong, nonatomic)   NSString*   title;
 @property (strong, nonatomic)   NSError*    error;
 
 @end
 
-@interface DNCBaseSceneMessageResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneMessageResponse : DNCBaseSceneResponse
 
 @property (strong, nonatomic)   NSString*   title;
 @property (strong, nonatomic)   NSString*   message;
 
 @end
 
-@interface DNCBaseSceneSpinnerResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneSpinnerResponse : DNCBaseSceneResponse
 
 @property (assign, atomic)  BOOL    show;
 
 @end
 
-@interface DNCBaseSceneTitleResponse : __DNCBaseSceneResponse
+@interface DNCBaseSceneTitleResponse : DNCBaseSceneResponse
 
 @property (strong, nonatomic)   NSString*   title;
 
@@ -159,21 +172,21 @@
 
 @end
 
-@interface DNCBaseSceneStartViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneStartViewModel : DNCBaseSceneViewModel
 
 @property (assign, nonatomic)   DNCBaseSceneDisplayType     displayType;
 @property (assign, atomic)      BOOL                        animated;
 
 @end
 
-@interface DNCBaseSceneEndViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneEndViewModel : DNCBaseSceneViewModel
 
 @property (assign, nonatomic)   DNCBaseSceneDisplayType     displayType;
 @property (assign, atomic)      BOOL                        animated;
 
 @end
 
-@interface DNCBaseSceneConfirmationViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneConfirmationViewModel : DNCBaseSceneViewModel
 
 @property (copy, nonatomic) NSString*               title;
 @property (copy, nonatomic) NSString*               message;
@@ -199,33 +212,33 @@
 
 @end
 
-@interface DNCBaseSceneDismissViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneDismissViewModel : DNCBaseSceneViewModel
 
 @property (assign, atomic)  BOOL            animated;
 @property (copy, nonatomic) NSDictionary*   sendData;
 
 @end
 
-@interface DNCBaseSceneMessageViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneMessageViewModel : DNCBaseSceneViewModel
 
 @property (copy, nonatomic)   NSString*   title;
 @property (copy, nonatomic)   NSString*   message;
 
 @end
 
-@interface DNCBaseSceneSpinnerViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneSpinnerViewModel : DNCBaseSceneViewModel
 
 @property (assign, atomic)  BOOL    show;
 
 @end
 
-@interface DNCBaseSceneTitleViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneTitleViewModel : DNCBaseSceneViewModel
 
 @property (strong, nonatomic)   NSString*   title;
 
 @end
 
-@interface DNCBaseSceneToastViewModel : __DNCBaseSceneViewModel
+@interface DNCBaseSceneToastViewModel : DNCBaseSceneViewModel
 
 @property (copy, nonatomic)   NSString*     title;
 @property (copy, nonatomic)   NSString*     message;

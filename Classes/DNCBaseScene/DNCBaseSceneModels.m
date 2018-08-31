@@ -42,6 +42,12 @@
 @implementation DNCBaseSceneConfirmationRequest
 @end
 
+@implementation DNCBaseSceneWebRequest
+@end
+
+@implementation DNCBaseSceneWebErrorRequest
+@end
+
 //
 // Response Models
 //
