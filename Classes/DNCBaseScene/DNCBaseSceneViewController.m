@@ -312,7 +312,8 @@
             
         case DNCBaseSceneDisplayTypeModal:
         {
-            [DNCUIThread run:
+            [DNCUIThread afterDelay:1.0f
+                                run:
              ^()
              {
                  [self dismissViewControllerAnimated:viewModel.animated
@@ -326,7 +327,8 @@
         {
             BOOL    animated = viewModel.animated && (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
             
-            [DNCUIThread run:
+            [DNCUIThread afterDelay:1.0f
+                                run:
              ^()
              {
                  [self.configurator.navigationController popViewControllerAnimated:animated];
