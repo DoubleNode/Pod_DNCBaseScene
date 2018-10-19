@@ -150,7 +150,17 @@
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self utilityDisplayMessage:response.error.localizedDescription
+    NSString*   errorMessage    = response.error.localizedDescription;
+    if (response.error.localizedFailureReason.length)
+    {
+        if (errorMessage.length)
+        {
+            errorMessage = [NSString stringWithFormat:@"%@\n\n", errorMessage];
+        }
+        errorMessage = [NSString stringWithFormat:@"%@%@", errorMessage, response.error.localizedFailureReason];
+    }
+    
+    [self utilityDisplayMessage:errorMessage
                       withTitle:response.title];
 }
 
