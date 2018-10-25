@@ -327,6 +327,15 @@
         {
             BOOL    animated = viewModel.animated && (_displayType == DNCBaseSceneDisplayTypeNavBarPush);
             
+            if (![self.configurator.navigationController.viewControllers containsObject:self])
+            {
+                break;
+            }
+            if (self.configurator.navigationController.viewControllers.count <= 1)
+            {
+                break;
+            }
+            
             [DNCUIThread afterDelay:1.0f
                                 run:
              ^()
