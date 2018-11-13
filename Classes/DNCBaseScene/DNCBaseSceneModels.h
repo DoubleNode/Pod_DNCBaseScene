@@ -214,8 +214,7 @@
 
 @interface DNCBaseSceneDismissViewModel : DNCBaseSceneViewModel
 
-@property (assign, atomic)  BOOL            animated;
-@property (copy, nonatomic) NSDictionary*   sendData;
+@property (assign, atomic)  BOOL    animated;
 
 @end
 
