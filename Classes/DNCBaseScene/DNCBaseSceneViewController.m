@@ -142,6 +142,13 @@
     [self sceneDidAppear];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.analyticsWorker doScreen:NSStringFromClass(self.class)];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
