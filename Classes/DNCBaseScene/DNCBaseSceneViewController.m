@@ -139,7 +139,7 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    [self sceneDidAppear];
+    [self sceneWillAppear];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -147,6 +147,8 @@
     [super viewDidAppear:animated];
     
     [self.analyticsWorker doScreen:NSStringFromClass(self.class)];
+    
+    [self sceneDidAppear];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
