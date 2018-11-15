@@ -13,8 +13,6 @@
 @interface DNCCoordinator()
 {
     NSMutableDictionary<NSString*, DNCCoordinator*>*    _childCoordinators;
-    
-    NSArray<UIViewController*>* _savedViewControllers;
 }
 
 @end
@@ -42,14 +40,14 @@
             self.runState   = DNCCoordinatorStateStarted;
             break;
         }
-
+            
         case DNCCoordinatorStateStarted:
         case DNCCoordinatorStateTerminated:
         {
             [self reset];
             break;
         }
-
+            
         default:
         {
             NSAssert(NO, @"%@ : Coordinator in invalid state and cannot be restarted", NSStringFromClass(self.class));
@@ -60,7 +58,7 @@
     [DNCUIThread run:
      ^()
      {
-         self->_savedViewControllers   = self.navigationController.viewControllers;
+         self.savedViewControllers   = self.navigationController.viewControllers;
      }];
     
 }
@@ -69,8 +67,8 @@
 {
     self.runState   = DNCCoordinatorStateNotStarted;
     
-    _savedViewControllers = nil;
-
+    self.savedViewControllers = nil;
+    
     [self forAllChildCoordinatorsRunBlock:
      ^(DNCCoordinator* block)
      {
@@ -83,15 +81,15 @@
 - (void)stop
 {
     self.runState   = DNCCoordinatorStateNotStarted;
-
+    
     [DNCUIThread run:
      ^()
      {
-         [self.navigationController setViewControllers:self->_savedViewControllers
+         [self.navigationController setViewControllers:self.savedViewControllers
                                               animated:YES];
      }];
-
-    _savedViewControllers = nil;
+    
+    self.savedViewControllers = nil;
 }
 
 - (void)addChildCoordinator:(nonnull DNCCoordinator*)childCoordinator
@@ -99,14 +97,14 @@
 {
     NSAssert([childCoordinator isKindOfClass:DNCCoordinator.class], @"childCoordinator is NOT a DNCCoordinator.class!");
     NSAssert([key isKindOfClass:NSString.class], @"key is NOT a NSString.class!");
-
+    
     _childCoordinators[key] = childCoordinator;
 }
 
 - (void)removeChildCoordinatorForKey:(nonnull NSString*)key
 {
     NSAssert([key isKindOfClass:NSString.class], @"key is NOT a NSString.class!");
-
+    
     [_childCoordinators removeObjectForKey:key];
 }
 
@@ -116,7 +114,7 @@
      ^(NSString* _Nonnull key, DNCCoordinator* _Nonnull childCoordinator, BOOL* _Nonnull stop)
      {
          NSAssert([childCoordinator isKindOfClass:DNCCoordinator.class], @"childCoordinator is NOT a DNCCoordinator.class!");
-
+         
          block ? block(childCoordinator) : (void)nil;
      }];
 }

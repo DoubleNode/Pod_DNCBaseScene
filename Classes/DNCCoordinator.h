@@ -32,6 +32,8 @@ typedef void (^DNCCoordinatorChildCoordinatorBlock)(DNCCoordinator* block);
 
 @property (strong, nonatomic)   UINavigationController* _Nullable navigationController;
 
+@property (strong, nonatomic)   NSArray<UIViewController*>* _Nullable   savedViewControllers;
+
 - (nullable instancetype)initWithNavigationController:(nonnull UINavigationController*)navigationController;
 
 - (void)start;
