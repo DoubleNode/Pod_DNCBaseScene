@@ -373,9 +373,15 @@
     [DNCUIThread run:
      ^()
      {
+         UIAlertControllerStyle alertStyle  = viewModel.alertStyle;
+         if (DNCUtilities.isDeviceIPad)
+         {
+             alertStyle = UIAlertControllerStyleAlert;
+         }
+         
          UIAlertController* alertController = [UIAlertController alertControllerWithTitle:viewModel.title
                                                                                   message:viewModel.message
-                                                                           preferredStyle:viewModel.alertStyle];
+                                                                           preferredStyle:alertStyle];
          
          if (viewModel.button1.length)
          {
