@@ -99,6 +99,11 @@
      }];
 }
 
+- (void)doScreenAnalytics
+{
+    [self.analyticsWorker doScreen:NSStringFromClass(self.class)];
+}
+
 #pragma mark - Object lifecycle
 
 - (void)awakeFromNib
@@ -146,8 +151,8 @@
 {
     [super viewDidAppear:animated];
     
-    [self.analyticsWorker doScreen:NSStringFromClass(self.class)];
-    
+    [self doScreenAnalytics];
+
     [self sceneDidAppear];
 }
 

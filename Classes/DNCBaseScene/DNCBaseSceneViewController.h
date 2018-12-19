@@ -39,6 +39,7 @@
 #pragma mark - Object settings
 
 - (void)configure;
+- (void)doScreenAnalytics;
 
 #pragma mark - Object lifecycle
 
