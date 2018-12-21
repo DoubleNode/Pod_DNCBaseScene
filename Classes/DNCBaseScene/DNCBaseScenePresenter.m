@@ -114,7 +114,10 @@
     viewModel.alertStyle    = response.alertStyle;
     viewModel.title         = response.title;
     viewModel.message       = response.message;
-    
+
+    viewModel.textField1Placeholder = response.textField1Placeholder;
+    viewModel.textField2Placeholder = response.textField2Placeholder;
+
     viewModel.button1       = response.button1;
     viewModel.button1Code   = response.button1Code;
     viewModel.button1Style  = response.button1Style;

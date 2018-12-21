@@ -48,6 +48,8 @@
 @interface DNCBaseSceneConfirmationRequest : DNCBaseSceneRequest
 
 @property (strong, nonatomic)   NSString*   selection;
+@property (strong, nonatomic)   NSString*   textField1Value;
+@property (strong, nonatomic)   NSString*   textField2Value;
 
 @property (strong, nonatomic)   id  userData;
 
@@ -100,6 +102,9 @@
 @property (copy, nonatomic) NSString*               title;
 @property (copy, nonatomic) NSString*               message;
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
+
+@property (copy, nonatomic) NSString*               textField1Placeholder;
+@property (copy, nonatomic) NSString*               textField2Placeholder;
 
 @property (copy, nonatomic) NSString*               button1;
 @property (copy, nonatomic) NSString*               button1Code;
@@ -191,6 +196,9 @@
 @property (copy, nonatomic) NSString*               title;
 @property (copy, nonatomic) NSString*               message;
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
+
+@property (copy, nonatomic) NSString*               textField1Placeholder;
+@property (copy, nonatomic) NSString*               textField2Placeholder;
 
 @property (copy, nonatomic) NSString*               button1;
 @property (copy, nonatomic) NSString*               button1Code;

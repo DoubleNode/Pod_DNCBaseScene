@@ -387,6 +387,23 @@
          UIAlertController* alertController = [UIAlertController alertControllerWithTitle:viewModel.title
                                                                                   message:viewModel.message
                                                                            preferredStyle:alertStyle];
+         if (viewModel.textField1Placeholder.length)
+         {
+             [alertController addTextFieldWithConfigurationHandler:
+              ^(UITextField* _Nonnull textField)
+              {
+                  textField.placeholder = viewModel.textField1Placeholder;
+              }];
+         }
+         
+         if (viewModel.textField2Placeholder.length)
+         {
+             [alertController addTextFieldWithConfigurationHandler:
+              ^(UITextField* _Nonnull textField)
+              {
+                  textField.placeholder = viewModel.textField2Placeholder;
+              }];
+         }
          
          if (viewModel.button1.length)
          {
@@ -395,9 +412,31 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
+                                           NSString*    textField1Value;
+                                           NSString*    textField2Value;
+
+                                           if (alertController.textFields.count)
+                                           {
+                                               UITextField* textField = alertController.textFields.firstObject;
+                                               if (textField)
+                                               {
+                                                   textField1Value  = textField.text;
+                                               }
+                                           }
+                                           if (alertController.textFields.count >= 2)
+                                           {
+                                               UITextField* textField = alertController.textFields[1];
+                                               if (textField)
+                                               {
+                                                   textField2Value  = textField.text;
+                                               }
+                                           }
+
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
-                                           request.selection   = viewModel.button1Code;
-                                           request.userData    = viewModel.userData;
+                                           request.selection        = viewModel.button1Code;
+                                           request.textField1Value  = textField1Value;
+                                           request.textField2Value  = textField2Value;
+                                           request.userData         = viewModel.userData;
                                            [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button1];
@@ -410,9 +449,31 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
+                                           NSString*    textField1Value;
+                                           NSString*    textField2Value;
+                                           
+                                           if (alertController.textFields.count)
+                                           {
+                                               UITextField* textField = alertController.textFields.firstObject;
+                                               if (textField)
+                                               {
+                                                   textField1Value  = textField.text;
+                                               }
+                                           }
+                                           if (alertController.textFields.count >= 2)
+                                           {
+                                               UITextField* textField = alertController.textFields[1];
+                                               if (textField)
+                                               {
+                                                   textField2Value  = textField.text;
+                                               }
+                                           }
+
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
-                                           request.selection   = viewModel.button2Code;
-                                           request.userData    = viewModel.userData;
+                                           request.selection        = viewModel.button2Code;
+                                           request.textField1Value  = textField1Value;
+                                           request.textField2Value  = textField2Value;
+                                           request.userData         = viewModel.userData;
                                            [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button2];
@@ -425,9 +486,31 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
+                                           NSString*    textField1Value;
+                                           NSString*    textField2Value;
+                                           
+                                           if (alertController.textFields.count)
+                                           {
+                                               UITextField* textField = alertController.textFields.firstObject;
+                                               if (textField)
+                                               {
+                                                   textField1Value  = textField.text;
+                                               }
+                                           }
+                                           if (alertController.textFields.count >= 2)
+                                           {
+                                               UITextField* textField = alertController.textFields[1];
+                                               if (textField)
+                                               {
+                                                   textField2Value  = textField.text;
+                                               }
+                                           }
+
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
-                                           request.selection   = viewModel.button3Code;
-                                           request.userData    = viewModel.userData;
+                                           request.selection        = viewModel.button3Code;
+                                           request.textField1Value  = textField1Value;
+                                           request.textField2Value  = textField2Value;
+                                           request.userData         = viewModel.userData;
                                            [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button3];
@@ -440,9 +523,31 @@
                                                              handler:
                                        ^(UIAlertAction *action)
                                        {
+                                           NSString*    textField1Value;
+                                           NSString*    textField2Value;
+                                           
+                                           if (alertController.textFields.count)
+                                           {
+                                               UITextField* textField = alertController.textFields.firstObject;
+                                               if (textField)
+                                               {
+                                                   textField1Value  = textField.text;
+                                               }
+                                           }
+                                           if (alertController.textFields.count >= 2)
+                                           {
+                                               UITextField* textField = alertController.textFields[1];
+                                               if (textField)
+                                               {
+                                                   textField2Value  = textField.text;
+                                               }
+                                           }
+
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
-                                           request.selection   = viewModel.button4Code;
-                                           request.userData    = viewModel.userData;
+                                           request.selection        = viewModel.button4Code;
+                                           request.textField1Value  = textField1Value;
+                                           request.textField2Value  = textField2Value;
+                                           request.userData         = viewModel.userData;
                                            [self.output doConfirmation:request];
                                        }];
              [alertController addAction:button4];
