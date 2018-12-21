@@ -392,7 +392,7 @@
              [alertController addTextFieldWithConfigurationHandler:
               ^(UITextField* _Nonnull textField)
               {
-                  textField.placeholder = viewModel.textField1Placeholder;
+                  textField.placeholder = (viewModel.textField1Placeholder ?: @"");
               }];
          }
          
@@ -401,7 +401,7 @@
              [alertController addTextFieldWithConfigurationHandler:
               ^(UITextField* _Nonnull textField)
               {
-                  textField.placeholder = viewModel.textField2Placeholder;
+                  textField.placeholder = (viewModel.textField2Placeholder ?: @"");
               }];
          }
          
