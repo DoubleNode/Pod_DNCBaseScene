@@ -384,6 +384,12 @@
              alertStyle = UIAlertControllerStyleAlert;
          }
          
+         if (viewModel.textField1Placeholder.length ||
+             viewModel.textField2Placeholder.length)
+         {
+             alertStyle = UIAlertControllerStyleAlert;
+         }
+         
          UIAlertController* alertController = [UIAlertController alertControllerWithTitle:viewModel.title
                                                                                   message:viewModel.message
                                                                            preferredStyle:alertStyle];
