@@ -115,8 +115,10 @@
     viewModel.title         = response.title;
     viewModel.message       = response.message;
 
-    viewModel.textField1Placeholder = response.textField1Placeholder;
-    viewModel.textField2Placeholder = response.textField2Placeholder;
+    viewModel.textField1KeyboardType    = response.textField1KeyboardType;
+    viewModel.textField1Placeholder     = response.textField1Placeholder;
+    viewModel.textField2KeyboardType    = response.textField2KeyboardType;
+    viewModel.textField2Placeholder     = response.textField2Placeholder;
 
     viewModel.button1       = response.button1;
     viewModel.button1Code   = response.button1Code;

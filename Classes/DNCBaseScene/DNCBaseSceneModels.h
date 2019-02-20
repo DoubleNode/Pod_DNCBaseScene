@@ -103,7 +103,9 @@
 @property (copy, nonatomic) NSString*               message;
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
 
+@property (assign, atomic)  UIKeyboardType          textField1KeyboardType;
 @property (copy, nonatomic) NSString*               textField1Placeholder;
+@property (assign, atomic)  UIKeyboardType          textField2KeyboardType;
 @property (copy, nonatomic) NSString*               textField2Placeholder;
 
 @property (copy, nonatomic) NSString*               button1;
@@ -197,7 +199,9 @@
 @property (copy, nonatomic) NSString*               message;
 @property (assign, atomic)  UIAlertControllerStyle  alertStyle;
 
+@property (assign, atomic)  UIKeyboardType          textField1KeyboardType;
 @property (copy, nonatomic) NSString*               textField1Placeholder;
+@property (assign, atomic)  UIKeyboardType          textField2KeyboardType;
 @property (copy, nonatomic) NSString*               textField2Placeholder;
 
 @property (copy, nonatomic) NSString*               button1;
