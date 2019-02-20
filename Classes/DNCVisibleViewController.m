@@ -37,7 +37,7 @@
         UITapGestureRecognizer* tapRecognizer = [UITapGestureRecognizer.alloc initWithTarget:self
                                                                                       action:@selector(tapToDismiss:)];
         tapRecognizer.cancelsTouchesInView  = NO;
-
+        
         [self.tapToDismissView addGestureRecognizer:tapRecognizer];
     }
 }
@@ -75,7 +75,7 @@
     NSNumber*   duration    = @(0.2f);
     NSNumber*   curve       = @(UIViewAnimationCurveEaseInOut);
     
-    if (!_keyboardShowing)
+    if (_keyboardShowing)
     {
         [self animateView:self.keyboardBounds
              withDuration:duration
