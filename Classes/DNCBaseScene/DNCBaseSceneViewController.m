@@ -152,7 +152,7 @@
     [super viewDidAppear:animated];
     
     [self doScreenAnalytics];
-
+    
     [self sceneDidAppear];
 }
 
@@ -400,6 +400,10 @@
               {
                   textField.keyboardType    = viewModel.textField1KeyboardType;
                   textField.placeholder     = (viewModel.textField1Placeholder ?: @"");
+                  if (viewModel.textField1TextContentType.length)
+                  {
+                      textField.textContentType = viewModel.textField1TextContentType;
+                  }
               }];
          }
          
@@ -410,6 +414,10 @@
               {
                   textField.keyboardType    = viewModel.textField2KeyboardType;
                   textField.placeholder     = (viewModel.textField2Placeholder ?: @"");
+                  if (viewModel.textField2TextContentType.length)
+                  {
+                      textField.textContentType = viewModel.textField2TextContentType;
+                  }
               }];
          }
          
@@ -422,7 +430,7 @@
                                        {
                                            NSString*    textField1Value;
                                            NSString*    textField2Value;
-
+                                           
                                            if (alertController.textFields.count)
                                            {
                                                UITextField* textField = alertController.textFields.firstObject;
@@ -439,7 +447,7 @@
                                                    textField2Value  = textField.text;
                                                }
                                            }
-
+                                           
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
                                            request.selection        = viewModel.button1Code;
                                            request.textField1Value  = textField1Value;
@@ -476,7 +484,7 @@
                                                    textField2Value  = textField.text;
                                                }
                                            }
-
+                                           
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
                                            request.selection        = viewModel.button2Code;
                                            request.textField1Value  = textField1Value;
@@ -513,7 +521,7 @@
                                                    textField2Value  = textField.text;
                                                }
                                            }
-
+                                           
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
                                            request.selection        = viewModel.button3Code;
                                            request.textField1Value  = textField1Value;
@@ -550,7 +558,7 @@
                                                    textField2Value  = textField.text;
                                                }
                                            }
-
+                                           
                                            DNCBaseSceneConfirmationRequest*    request = DNCBaseSceneConfirmationRequest.request;
                                            request.selection        = viewModel.button4Code;
                                            request.textField1Value  = textField1Value;

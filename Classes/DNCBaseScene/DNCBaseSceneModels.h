@@ -105,8 +105,11 @@
 
 @property (assign, atomic)  UIKeyboardType          textField1KeyboardType;
 @property (copy, nonatomic) NSString*               textField1Placeholder;
+@property (copy, nonatomic) NSString*               textField1TextContentType;
+
 @property (assign, atomic)  UIKeyboardType          textField2KeyboardType;
 @property (copy, nonatomic) NSString*               textField2Placeholder;
+@property (copy, nonatomic) NSString*               textField2TextContentType;
 
 @property (copy, nonatomic) NSString*               button1;
 @property (copy, nonatomic) NSString*               button1Code;
@@ -201,8 +204,11 @@
 
 @property (assign, atomic)  UIKeyboardType          textField1KeyboardType;
 @property (copy, nonatomic) NSString*               textField1Placeholder;
+@property (copy, nonatomic) NSString*               textField1TextContentType;
+
 @property (assign, atomic)  UIKeyboardType          textField2KeyboardType;
 @property (copy, nonatomic) NSString*               textField2Placeholder;
+@property (copy, nonatomic) NSString*               textField2TextContentType;
 
 @property (copy, nonatomic) NSString*               button1;
 @property (copy, nonatomic) NSString*               button1Code;

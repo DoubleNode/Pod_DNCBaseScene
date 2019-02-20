@@ -114,24 +114,26 @@
     viewModel.alertStyle    = response.alertStyle;
     viewModel.title         = response.title;
     viewModel.message       = response.message;
-
+    
     viewModel.textField1KeyboardType    = response.textField1KeyboardType;
     viewModel.textField1Placeholder     = response.textField1Placeholder;
+    viewModel.textField1TextContentType = response.textField1TextContentType;
     viewModel.textField2KeyboardType    = response.textField2KeyboardType;
     viewModel.textField2Placeholder     = response.textField2Placeholder;
-
+    viewModel.textField2TextContentType = response.textField2TextContentType;
+    
     viewModel.button1       = response.button1;
     viewModel.button1Code   = response.button1Code;
     viewModel.button1Style  = response.button1Style;
-
+    
     viewModel.button2       = response.button2;
     viewModel.button2Code   = response.button2Code;
     viewModel.button2Style  = response.button2Style;
-
+    
     viewModel.button3       = response.button3;
     viewModel.button3Code   = response.button3Code;
     viewModel.button3Style  = response.button3Style;
-
+    
     viewModel.button4       = response.button4;
     viewModel.button4Code   = response.button4Code;
     viewModel.button4Style  = response.button4Style;
@@ -274,7 +276,7 @@
     
     viewModel.titleFont         = titleFont;
     viewModel.messageFont       = messageFont;
-
+    
     [self.output displayToast:viewModel];
 }
 @end
