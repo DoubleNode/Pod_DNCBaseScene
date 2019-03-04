@@ -412,7 +412,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BFKit/BFKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CRToast/CRToast.framework",
@@ -441,7 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DNCBaseScene/Pods-DNCBaseScene-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		68ABB524D9154FAC9BCE54E2 /* [CP] Check Pods Manifest.lock */ = {
@@ -468,7 +468,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Gizou/Gizou.framework",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 			);
@@ -479,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DNCBaseSceneTests/Pods-DNCBaseSceneTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD60B8545FF22772038D9CEF /* [CP] Check Pods Manifest.lock */ = {

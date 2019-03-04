@@ -280,6 +280,13 @@
                      return;
                  }
                  
+                 if ([self.configurator.navigationController.viewControllers containsObject:self])
+                 {
+                     NSMutableArray<UIViewController*>* allViewControllers  = self.configurator.navigationController.viewControllers.mutableCopy;
+                     [allViewControllers removeObject:self];
+                     self.configurator.navigationController.viewControllers = allViewControllers;
+                 }
+                 
                  id lastViewController  = self.configurator.navigationController.viewControllers.lastObject;
                  if ([lastViewController isKindOfClass:DNCBaseSceneViewController.class])
                  {
