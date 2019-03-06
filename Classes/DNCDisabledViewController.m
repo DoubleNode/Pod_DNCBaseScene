@@ -29,11 +29,14 @@
     {
         return;
     }
-    
+    if (self.activityIndicatorView.isAnimating)
+    {
+        return;
+    }
+
     self.activityIndicatorView.tintColor    = UIColor.whiteColor;
-    
-    self.activityIndicatorView.alpha    = 1.0f;
-    self.activityIndicatorView.hidden   = NO;
+    self.activityIndicatorView.alpha        = 1.0f;
+    self.activityIndicatorView.hidden       = NO;
     [self.activityIndicatorView stopAnimating];
 }
 
