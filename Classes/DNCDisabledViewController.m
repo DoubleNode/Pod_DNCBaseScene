@@ -34,6 +34,8 @@
         return;
     }
 
+    self.disabledView.hidden    = NO;
+    
     self.activityIndicatorView.tintColor    = UIColor.whiteColor;
     self.activityIndicatorView.alpha        = 1.0f;
     self.activityIndicatorView.hidden       = NO;
