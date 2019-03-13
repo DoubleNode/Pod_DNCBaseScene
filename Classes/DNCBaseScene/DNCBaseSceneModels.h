@@ -145,6 +145,14 @@
 
 @end
 
+@interface DNCBaseSceneHudResponse : DNCBaseSceneResponse
+
+@property (assign, atomic)  BOOL    show;
+
+@property (copy, nonatomic)   NSString*   title;
+
+@end
+
 @interface DNCBaseSceneMessageResponse : DNCBaseSceneResponse
 
 @property (strong, nonatomic)   NSString*   title;
@@ -233,6 +241,14 @@
 @interface DNCBaseSceneDismissViewModel : DNCBaseSceneViewModel
 
 @property (assign, atomic)  BOOL    animated;
+
+@end
+
+@interface DNCBaseSceneHudViewModel : DNCBaseSceneViewModel
+
+@property (assign, atomic)  BOOL    show;
+
+@property (copy, nonatomic)   NSString*   title;
 
 @end
 

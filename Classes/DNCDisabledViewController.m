@@ -8,6 +8,8 @@
 
 #import "DNCDisabledViewController.h"
 
+#import "ERProgressHud.h"
+
 @interface DNCDisabledViewController ()
 
 @end
@@ -43,6 +45,21 @@
 }
 
 #pragma mark - Display logic
+
+- (void)displayHud:(BOOL)show
+         withTitle:(NSString*)title
+{
+    ERProgressHud*  hud = ERProgressHud.sharedInstance;
+    
+    if (hud.isShowing)
+    {
+        [hud updateProgressTitle:title];
+    }
+    else
+    {
+        [hud showBlurViewWithTitle:title];
+    }
+}
 
 - (void)displaySpinner:(BOOL)show
 {

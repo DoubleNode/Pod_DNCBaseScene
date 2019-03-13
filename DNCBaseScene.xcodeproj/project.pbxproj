@@ -18,6 +18,7 @@
 		6A18441D1DEA385F00D3D254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A18441B1DEA385F00D3D254 /* LaunchScreen.storyboard */; };
 		6A1844281DEA386000D3D254 /* DNCBaseSceneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844271DEA386000D3D254 /* DNCBaseSceneTests.m */; };
 		6A1844331DEA386000D3D254 /* DNCBaseSceneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1844321DEA386000D3D254 /* DNCBaseSceneUITests.m */; };
+		6AAFB27622397743005D6D7D /* ERProgressHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAFB27522397743005D6D7D /* ERProgressHud.m */; };
 		6ACAC381207D830D00160740 /* DNCCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACAC37D207D830D00160740 /* DNCCoordinator.m */; };
 		6ACAC382207D830D00160740 /* DNCVisibleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACAC37E207D830D00160740 /* DNCVisibleViewController.m */; };
 		6ACAC383207D830D00160740 /* DNCDisabledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACAC37F207D830D00160740 /* DNCDisabledViewController.m */; };
@@ -76,6 +77,9 @@
 		6A1844341DEA386000D3D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A18445E1DEA397300D3D254 /* DNCBaseScene.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DNCBaseScene.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6A1844601DEA397300D3D254 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6AAFB27422397743005D6D7D /* ERProgressHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ERProgressHud.h; path = Classes/ERProgressHub/ERProgressHud.h; sourceTree = SOURCE_ROOT; };
+		6AAFB27522397743005D6D7D /* ERProgressHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ERProgressHud.m; path = Classes/ERProgressHub/ERProgressHud.m; sourceTree = SOURCE_ROOT; };
+		6AAFB27722397C1A005D6D7D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6ACAC378207D830C00160740 /* DNCBaseScene-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNCBaseScene-Bridging-Header.h"; sourceTree = "<group>"; };
 		6ACAC379207D830D00160740 /* DNCDisabledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCDisabledViewController.h; path = Classes/DNCDisabledViewController.h; sourceTree = "<group>"; };
 		6ACAC37A207D830D00160740 /* DNCCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCCoordinator.h; path = Classes/DNCCoordinator.h; sourceTree = "<group>"; };
@@ -221,9 +225,21 @@
 				6ACAC37C207D830D00160740 /* DNCVisibleViewController.h */,
 				6ACAC37E207D830D00160740 /* DNCVisibleViewController.m */,
 				6ACAC384207D831200160740 /* DNCBaseScene */,
+				6AAFB2732239770E005D6D7D /* ERProgressHud */,
 				6ACAC378207D830C00160740 /* DNCBaseScene-Bridging-Header.h */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		6AAFB2732239770E005D6D7D /* ERProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				6AAFB27422397743005D6D7D /* ERProgressHud.h */,
+				6AAFB27522397743005D6D7D /* ERProgressHud.m */,
+				6AAFB27722397C1A005D6D7D /* LICENSE */,
+			);
+			name = ERProgressHud;
+			path = Classes/ERProgressHub;
 			sourceTree = "<group>";
 		};
 		6ACAC384207D831200160740 /* DNCBaseScene */ = {
@@ -362,6 +378,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -515,6 +532,7 @@
 				6AFC3C9F21276DC500D7A780 /* DNCDisabledCollectionReusableView.m in Sources */,
 				6A1844151DEA385F00D3D254 /* ViewController.m in Sources */,
 				6ACAC39E207D832C00160740 /* DNCBaseSceneConfigurator.m in Sources */,
+				6AAFB27622397743005D6D7D /* ERProgressHud.m in Sources */,
 				6A1844121DEA385F00D3D254 /* AppDelegate.m in Sources */,
 				6ACAC3A0207D832C00160740 /* DNCBaseSceneInteractor.m in Sources */,
 				6A18440F1DEA385F00D3D254 /* main.m in Sources */,

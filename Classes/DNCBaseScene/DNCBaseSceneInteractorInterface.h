@@ -42,6 +42,7 @@
 - (void)presentConfirmation:(DNCBaseSceneConfirmationResponse*)response;
 - (void)presentDismiss:(DNCBaseSceneDismissResponse*)response;
 - (void)presentError:(DNCBaseSceneErrorResponse*)response;
+- (void)presentHud:(DNCBaseSceneHudResponse*)response;
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response;
 - (void)presentSpinner:(DNCBaseSceneSpinnerResponse*)response;
 - (void)presentTitle:(DNCBaseSceneTitleResponse*)response;

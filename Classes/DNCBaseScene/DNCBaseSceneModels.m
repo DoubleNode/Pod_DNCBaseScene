@@ -77,6 +77,9 @@
 @implementation DNCBaseSceneErrorResponse
 @end
 
+@implementation DNCBaseSceneHudResponse
+@end
+
 @implementation DNCBaseSceneMessageResponse
 @end
 
@@ -110,6 +113,9 @@
 @end
 
 @implementation DNCBaseSceneDismissViewModel
+@end
+
+@implementation DNCBaseSceneHudViewModel
 @end
 
 @implementation DNCBaseSceneMessageViewModel

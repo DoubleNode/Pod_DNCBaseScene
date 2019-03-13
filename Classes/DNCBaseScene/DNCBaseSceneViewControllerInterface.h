@@ -19,6 +19,7 @@
 
 - (void)displayConfirmation:(DNCBaseSceneConfirmationViewModel*)viewModel;
 - (void)displayDismiss:(DNCBaseSceneDismissViewModel*)viewModel;
+- (void)displayHud:(DNCBaseSceneHudViewModel*)viewModel;
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel;
 - (void)displaySpinner:(DNCBaseSceneSpinnerViewModel*)viewModel;
 - (void)displayTitle:(DNCBaseSceneTitleViewModel*)viewModel;

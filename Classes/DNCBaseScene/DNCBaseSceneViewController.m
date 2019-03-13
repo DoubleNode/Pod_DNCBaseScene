@@ -592,6 +592,18 @@
     [self endScene:endViewModel];
 }
 
+- (void)displayHud:(DNCBaseSceneHudViewModel*)viewModel
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    [DNCUIThread run:
+     ^()
+     {
+         [super displayHud:viewModel.show
+                 withTitle:viewModel.title];
+     }];
+}
+
 - (void)displayMessage:(DNCBaseSceneMessageViewModel*)viewModel
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];

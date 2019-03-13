@@ -171,6 +171,18 @@
                       withTitle:response.title];
 }
 
+- (void)presentHud:(DNCBaseSceneHudResponse*)response
+{
+    [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
+    
+    DNCBaseSceneHudViewModel*   viewModel = DNCBaseSceneHudViewModel.viewModel;
+    
+    viewModel.show  = response.show;
+    viewModel.title = response.title;
+    
+    [self.output displayHud:viewModel];
+}
+
 - (void)presentMessage:(DNCBaseSceneMessageResponse*)response
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];

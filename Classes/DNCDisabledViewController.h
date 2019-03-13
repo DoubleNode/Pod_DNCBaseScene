@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView*                    disabledView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView*   activityIndicatorView;
 
+- (void)displayHud:(BOOL)show
+         withTitle:(NSString*)title;
 - (void)displaySpinner:(BOOL)show;
 
 @end
