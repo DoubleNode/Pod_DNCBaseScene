@@ -41,6 +41,8 @@
         subContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/3.0, SCREEN_WIDTH/4.0)];
         subContainer.layer.cornerRadius = 5.0;
         subContainer.layer.masksToBounds = YES;
+        subContainer.layer.borderWidth = 1.0f;
+        subContainer.layer.borderColor = [UIColor darkGrayColor].CGColor;
         subContainer.backgroundColor = [UIColor clearColor];
         
         //Activity Indicator

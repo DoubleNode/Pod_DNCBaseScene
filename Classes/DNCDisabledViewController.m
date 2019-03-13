@@ -73,7 +73,7 @@
         if (title.length)
         {
             [hud updateProgressTitle:title];
-            [DNCUIThread afterDelay:3.0f
+            [DNCUIThread afterDelay:2.0f
                                 run:
              ^()
              {
