@@ -121,7 +121,7 @@
 
 - (BOOL)isShowing
 {
-    return (BOOL)(container.alpha);
+    return (BOOL)(container.superview && container.alpha);
 }
 
 - (void)showWithTitle:(NSString *)title {
