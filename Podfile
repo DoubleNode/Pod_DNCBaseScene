@@ -5,7 +5,7 @@ use_frameworks!
 
 inhibit_all_warnings!
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'DNCBaseScene' do
   # Pods for DNCBaseScene

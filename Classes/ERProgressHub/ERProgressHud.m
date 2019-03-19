@@ -80,7 +80,7 @@
     [[UIApplication sharedApplication].keyWindow addSubview:container];
     container.alpha = 0.0;
     [UIView animateWithDuration:0.5 animations:^{
-        container.alpha = 1.0;
+        self->container.alpha = 1.0;
     }];
 }
 
@@ -102,22 +102,22 @@
     [[UIApplication sharedApplication].keyWindow addSubview:container];
     container.alpha = 0.0;
     [UIView animateWithDuration:0.5 animations:^{
-        container.alpha = 1.0;
+        self->container.alpha = 1.0;
     }];
 }
 
 - (void)hide {
     
     [UIView animateWithDuration:0.5 animations:^{
-        container.alpha = 0.0;
+        self->container.alpha = 0.0;
     } completion:^(BOOL finished) {
-        [activityIndicatorView stopAnimating];
+        [self->activityIndicatorView stopAnimating];
         
-        [activityIndicatorView removeFromSuperview];
-        [textLabel removeFromSuperview];
-        [subContainer removeFromSuperview];
-        [blurEffectView removeFromSuperview];
-        [container removeFromSuperview];
+        [self->activityIndicatorView removeFromSuperview];
+        [self->textLabel removeFromSuperview];
+        [self->subContainer removeFromSuperview];
+        [self->blurEffectView removeFromSuperview];
+        [self->container removeFromSuperview];
     }];
 }
 
@@ -148,7 +148,7 @@
     [[UIApplication sharedApplication].keyWindow addSubview:container];
     container.alpha = 0.0;
     [UIView animateWithDuration:0.5 animations:^{
-        container.alpha = 1.0;
+        self->container.alpha = 1.0;
     }];
 }
 
@@ -175,7 +175,7 @@
     [[UIApplication sharedApplication].keyWindow addSubview:container];
     container.alpha = 0.0;
     [UIView animateWithDuration:0.5 animations:^{
-        container.alpha = 1.0;
+        self->container.alpha = 1.0;
     }];
 }
 
@@ -207,7 +207,7 @@
     [[UIApplication sharedApplication].keyWindow addSubview:container];
     container.alpha = 0.0;
     [UIView animateWithDuration:0.5 animations:^{
-        container.alpha = 1.0;
+        self->container.alpha = 1.0;
     }];
 }
 
