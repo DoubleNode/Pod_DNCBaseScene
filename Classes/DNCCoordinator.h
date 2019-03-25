@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, DNCCoordinatorState)
     DNCCoordinatorStateNotStarted = 0,
     DNCCoordinatorStateStarted,
     DNCCoordinatorStateTerminated,
-
+    
     DNCCoordinatorState_Count
 };
 
@@ -51,5 +51,18 @@ typedef NSDictionary<NSString*, DNCUtilitiesBlock>  DNCCoordinatorActions;
        runBlockFromActions:(const DNCCoordinatorActions*)actions
                unlessBlank:(DNCUtilitiesBlock)blankBlock
                  orNoMatch:(DNCUtilitiesBlock)noMatchBlock;
+
+#pragma mark - Utility methods
+
+- (void)utilityShouldAllowSectionStatusWithStatus:(DNCAppConstantsStatus)status
+                                  andSectionTitle:(NSString*)sectionTitle
+                                       andMessage:(NSString*)message
+                                   andCancelBlock:(DNCUtilitiesBlock)cancelBlock
+                                 andContinueBlock:(DNCUtilitiesBlock)continueBlock;
+
+- (void)utilityShowSectionStatusMessageForSectionTitle:(NSString*)title
+                                           withMessage:(NSString*)message
+                                        andCancelBlock:(DNCUtilitiesBlock)cancelBlock
+                                      andContinueBlock:(DNCUtilitiesBlock)continueBlock;
 
 @end

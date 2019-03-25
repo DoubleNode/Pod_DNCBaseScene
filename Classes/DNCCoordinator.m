@@ -153,5 +153,96 @@
     noMatchBlock ? noMatchBlock() : (void)nil;
 }
 
+#pragma mark - Utility methods
+
+- (void)utilityShouldAllowSectionStatusWithStatus:(DNCAppConstantsStatus)status
+                                  andSectionTitle:(NSString*)sectionTitle
+                                       andMessage:(NSString*)message
+                                   andCancelBlock:(DNCUtilitiesBlock)cancelBlock
+                                 andContinueBlock:(DNCUtilitiesBlock)continueBlock
+{
+    switch (status)
+    {
+        case DNCAppConstantsStatusYellow:
+        {
+            if (!message.length)
+            {
+                message = [NSString stringWithFormat:NSLocalizedString(@"We apologize, but our %@ is currently experiencing occasional issues.  We are working quickly to find and correct the problem.\n\nYou can continue, or check back later.", nil), sectionTitle];
+            }
+            [self utilityShowSectionStatusMessageForSectionTitle:sectionTitle
+                                                     withMessage:message
+                                                  andCancelBlock:cancelBlock
+                                                andContinueBlock:continueBlock];
+            break;
+        }
+        case DNCAppConstantsStatusRed:
+        {
+            if (!message.length)
+            {
+                message = [NSString stringWithFormat:NSLocalizedString(@"We apologize, but our %@ is temporarily down.  We are working quickly to find and correct the problem.\n\nPlease check back later.", nil), sectionTitle];
+            }
+            [self utilityShowSectionStatusMessageForSectionTitle:sectionTitle
+                                                     withMessage:message
+                                                  andCancelBlock:cancelBlock
+                                                andContinueBlock:nil];
+            break;
+        }
+            
+        case DNCAppConstantsStatusGreen:
+        case DNCAppConstantsStatusUnknown:
+        default:
+        {
+            continueBlock ? continueBlock() : (void)nil;
+            break;
+        }
+    }
+}
+
+- (void)utilityShowSectionStatusMessageForSectionTitle:(NSString*)title
+                                           withMessage:(NSString*)message
+                                        andCancelBlock:(DNCUtilitiesBlock)cancelBlock
+                                      andContinueBlock:(DNCUtilitiesBlock)continueBlock
+{
+    if (!title)
+    {
+        continueBlock ? continueBlock() : (cancelBlock ? cancelBlock() : (void)nil);
+        return;
+    }
+    
+    [DNCUIThread run:
+     ^()
+     {
+         UIAlertController* alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                  message:message
+                                                                           preferredStyle:UIAlertControllerStyleAlert];
+         
+         if (continueBlock)
+         {
+             UIAlertAction* okayAction = [UIAlertAction actionWithTitle:@"Continue"
+                                                                  style:UIAlertActionStyleDefault
+                                                                handler:
+                                          ^(UIAlertAction* _Nonnull action)
+                                          {
+                                              continueBlock ? continueBlock() : (void)nil;
+                                          }];
+             [alertController addAction:okayAction];
+         }
+         
+         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                                style:UIAlertActionStyleCancel
+                                                              handler:
+                                        ^(UIAlertAction* _Nonnull action)
+                                        {
+                                            cancelBlock ? cancelBlock() : (void)nil;
+                                        }];
+         
+         [alertController addAction:cancelAction];
+         
+         [DNCUtilities.appDelegate.rootViewController presentViewController:alertController
+                                                                   animated:YES
+                                                                 completion:nil];
+     }];
+}
+
 @end
 
