@@ -58,7 +58,8 @@ typedef NSDictionary<NSString*, DNCUtilitiesBlock>  DNCCoordinatorActions;
                                   andSectionTitle:(NSString*)sectionTitle
                                        andMessage:(NSString*)message
                                    andCancelBlock:(DNCUtilitiesBlock)cancelBlock
-                                 andContinueBlock:(DNCUtilitiesBlock)continueBlock;
+                                 andContinueBlock:(DNCUtilitiesBlock)continueBlock
+                                     andBuildType:(DNCAppConstantsBuildType)buildType;
 
 - (void)utilityShowSectionStatusMessageForSectionTitle:(NSString*)title
                                            withMessage:(NSString*)message

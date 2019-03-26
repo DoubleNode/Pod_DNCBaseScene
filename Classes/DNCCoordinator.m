@@ -160,6 +160,7 @@
                                        andMessage:(NSString*)message
                                    andCancelBlock:(DNCUtilitiesBlock)cancelBlock
                                  andContinueBlock:(DNCUtilitiesBlock)continueBlock
+                                     andBuildType:(DNCAppConstantsBuildType)buildType
 {
     switch (status)
     {
@@ -181,10 +182,14 @@
             {
                 message = [NSString stringWithFormat:NSLocalizedString(@"We apologize, but our %@ is temporarily down.  We are working quickly to find and correct the problem.\n\nPlease check back later.", nil), sectionTitle];
             }
+            
+
+            DNCUtilitiesBlock   actualContinueBlock = ((buildType == DNCAppConstantsBuildTypeDEV) ? continueBlock : nil);
+            
             [self utilityShowSectionStatusMessageForSectionTitle:sectionTitle
                                                      withMessage:message
                                                   andCancelBlock:cancelBlock
-                                                andContinueBlock:nil];
+                                                andContinueBlock:actualContinueBlock];
             break;
         }
             
