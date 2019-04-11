@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, DNCCoordinatorState)
 
 @class DNCCoordinator;
 
-typedef void (^DNCCoordinatorChildCoordinatorBlock)(DNCCoordinator* block);
+typedef void (^DNCCoordinatorChildCoordinatorBlock)(DNCCoordinator* _Nonnull block);
 
 @class DNCBaseSceneViewController;
 
@@ -43,27 +43,27 @@ typedef void (^DNCCoordinatorChildCoordinatorBlock)(DNCCoordinator* block);
 - (void)addChildCoordinator:(nonnull DNCCoordinator*)childCoordinator
                      forKey:(nonnull NSString*)key;
 - (void)removeChildCoordinatorForKey:(nonnull NSString*)key;
-- (void)forAllChildCoordinatorsRunBlock:(DNCCoordinatorChildCoordinatorBlock)block;
+- (void)forAllChildCoordinatorsRunBlock:(nullable DNCCoordinatorChildCoordinatorBlock)block;
 
 typedef NSDictionary<NSString*, DNCUtilitiesBlock>  DNCCoordinatorActions;
 
-- (void)forSuggestedAction:(NSString*)suggestedAction
-       runBlockFromActions:(const DNCCoordinatorActions*)actions
-               unlessBlank:(DNCUtilitiesBlock)blankBlock
-                 orNoMatch:(DNCUtilitiesBlock)noMatchBlock;
+- (void)forSuggestedAction:(nullable NSString*)suggestedAction
+       runBlockFromActions:(nullable const DNCCoordinatorActions*)actions
+               unlessBlank:(nullable DNCUtilitiesBlock)blankBlock
+                 orNoMatch:(nullable DNCUtilitiesBlock)noMatchBlock;
 
 #pragma mark - Utility methods
 
 - (void)utilityShouldAllowSectionStatusWithStatus:(DNCAppConstantsStatus)status
-                                  andSectionTitle:(NSString*)sectionTitle
-                                       andMessage:(NSString*)message
-                                   andCancelBlock:(DNCUtilitiesBlock)cancelBlock
-                                 andContinueBlock:(DNCUtilitiesBlock)continueBlock
+                                  andSectionTitle:(nullable NSString*)sectionTitle
+                                       andMessage:(nullable NSString*)message
+                                   andCancelBlock:(nullable DNCUtilitiesBlock)cancelBlock
+                                 andContinueBlock:(nullable DNCUtilitiesBlock)continueBlock
                                      andBuildType:(DNCAppConstantsBuildType)buildType;
 
-- (void)utilityShowSectionStatusMessageForSectionTitle:(NSString*)title
-                                           withMessage:(NSString*)message
-                                        andCancelBlock:(DNCUtilitiesBlock)cancelBlock
-                                      andContinueBlock:(DNCUtilitiesBlock)continueBlock;
+- (void)utilityShowSectionStatusMessageForSectionTitle:(nullable NSString*)title
+                                           withMessage:(nullable NSString*)message
+                                        andCancelBlock:(nullable DNCUtilitiesBlock)cancelBlock
+                                      andContinueBlock:(nullable DNCUtilitiesBlock)continueBlock;
 
 @end
