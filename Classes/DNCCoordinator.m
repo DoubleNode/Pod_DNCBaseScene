@@ -120,7 +120,7 @@
 }
 
 - (void)forIntent:(NSString*)intent
-  runActionsBlock:(const DNCCoordinatorActions*)actions
+       runActions:(const DNCCoordinatorActions*)actions
       unlessBlank:(DNCUtilitiesBlock)blankBlock
         orNoMatch:(DNCUtilitiesBlock)noMatchBlock
 {
