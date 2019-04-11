@@ -113,10 +113,10 @@
     return viewController;
 }
 
-- (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
-                     andDataChanged:(BOOL)dataChanged
+- (void)endSceneWithIntent:(NSString*)intent
+            andDataChanged:(BOOL)dataChanged
 {
-    _coordinatorEndBlock ? _coordinatorEndBlock(suggestedAction, dataChanged) : (void)nil;
+    _coordinatorEndBlock ? _coordinatorEndBlock(intent, dataChanged) : (void)nil;
 }
 
 - (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType

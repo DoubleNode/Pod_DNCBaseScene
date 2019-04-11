@@ -119,12 +119,12 @@
      }];
 }
 
-- (void)forSuggestedAction:(NSString*)suggestedAction
-       runBlockFromActions:(const DNCCoordinatorActions*)actions
-               unlessBlank:(DNCUtilitiesBlock)blankBlock
-                 orNoMatch:(DNCUtilitiesBlock)noMatchBlock
+- (void)forIntent:(NSString*)intent
+  runActionsBlock:(const DNCCoordinatorActions*)actions
+      unlessBlank:(DNCUtilitiesBlock)blankBlock
+        orNoMatch:(DNCUtilitiesBlock)noMatchBlock
 {
-    if (!suggestedAction.length)
+    if (!intent.length)
     {
         blankBlock ? blankBlock() : (void)nil;
         return;
@@ -135,7 +135,7 @@
     [actions enumerateKeysAndObjectsUsingBlock:
      ^(NSString* _Nonnull key, DNCUtilitiesBlock _Nonnull block, BOOL* _Nonnull stop)
      {
-         if ([suggestedAction isEqualToString:key])
+         if ([intent isEqualToString:key])
          {
              matchFound = YES;
              

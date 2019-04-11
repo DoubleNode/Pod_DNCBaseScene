@@ -47,10 +47,10 @@ typedef void (^DNCCoordinatorChildCoordinatorBlock)(DNCCoordinator* _Nonnull blo
 
 typedef NSDictionary<NSString*, DNCUtilitiesBlock>  DNCCoordinatorActions;
 
-- (void)forSuggestedAction:(nullable NSString*)suggestedAction
-       runBlockFromActions:(nullable const DNCCoordinatorActions*)actions
-               unlessBlank:(nullable DNCUtilitiesBlock)blankBlock
-                 orNoMatch:(nullable DNCUtilitiesBlock)noMatchBlock;
+- (void)forIntent:(nullable NSString*)intent
+  runActionsBlock:(nullable const DNCCoordinatorActions*)actions
+      unlessBlank:(nullable DNCUtilitiesBlock)blankBlock
+        orNoMatch:(nullable DNCUtilitiesBlock)noMatchBlock;
 
 #pragma mark - Utility methods
 

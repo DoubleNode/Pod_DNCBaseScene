@@ -54,16 +54,16 @@
     return shouldEndSceneFlag;
 }
 
-- (void)endSceneWithSuggestedAction:(NSString*)suggestedAction
-                     andDataChanged:(BOOL)dataChanged
+- (void)endSceneWithIntent:(NSString*)intent
+            andDataChanged:(BOOL)dataChanged
 {
     [self endSceneConditionally:NO
-            withSuggestedAction:suggestedAction
+                     withIntent:intent
                  andDataChanged:dataChanged];
 }
 
 - (void)endSceneConditionally:(BOOL)conditionally
-          withSuggestedAction:(NSString*)suggestedAction
+                   withIntent:(NSString*)intent
                andDataChanged:(BOOL)dataChanged
 {
     if (!self.shouldEndScene)
@@ -76,7 +76,7 @@
     
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self.configurator endSceneWithSuggestedAction:suggestedAction
+    [self.configurator endSceneWithIntent:intent
                                     andDataChanged:dataChanged];
 }
 
@@ -103,7 +103,7 @@
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     [self endSceneConditionally:YES
-            withSuggestedAction:@""
+            withIntent:@""
                  andDataChanged:NO];
 }
 
