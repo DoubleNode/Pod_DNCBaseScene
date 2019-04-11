@@ -7,6 +7,7 @@
 //
 
 @import DNCProtocols;
+@import WebKit;
 
 #import "DNCDisabledViewController.h"
 #import "DNCCoordinator.h"
@@ -16,7 +17,7 @@
 #import "DNCBaseScenePresenterInterface.h"
 #import "DNCBaseSceneViewControllerInterface.h"
 
-@interface DNCBaseSceneViewController : DNCDisabledViewController<DNCBaseSceneViewControllerInput, DNCBaseScenePresenterOutput>
+@interface DNCBaseSceneViewController : DNCDisabledViewController<WKNavigationDelegate, DNCBaseSceneViewControllerInput, DNCBaseScenePresenterOutput>
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
 @property (strong, nonatomic) DNCCoordinator*           coordinatorDelegate;

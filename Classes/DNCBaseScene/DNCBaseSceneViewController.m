@@ -8,11 +8,10 @@
 
 @import CRToast;
 @import DNCore;
-@import WebKit;
 
 #import "DNCBaseSceneViewController.h"
 
-@interface DNCBaseSceneViewController ()<WKNavigationDelegate>
+@interface DNCBaseSceneViewController ()
 
 @end
 
