@@ -10,16 +10,17 @@
 
 #import "DNCBaseSceneCommon.h"
 #import "DNCBaseSceneConfigurator.h"
-#import "DNCBaseSceneInteractorInterface.h"
-#import "DNCBaseScenePresenterInterface.h"
 
-@interface DNCBaseScenePresenter : NSObject<DNCBaseScenePresenterInput, DNCBaseSceneInteractorOutput>
+#import "DNCBaseScenePresenterProtocol.h"
+#import "DNCBaseSceneViewControllerProtocol.h"
+
+@interface DNCBaseScenePresenter : NSObject<DNCBaseScenePresenterProtocol>
 
 + (instancetype)presenter;
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
 
-@property (weak, nonatomic) id<DNCBaseScenePresenterOutput> output;
+@property (weak, nonatomic) id<DNCBaseSceneViewControllerProtocol> output;
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
 
