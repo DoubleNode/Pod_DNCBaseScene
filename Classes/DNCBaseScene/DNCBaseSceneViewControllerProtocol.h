@@ -1,5 +1,5 @@
 //
-//  DNCBaseSceneViewControllerInterface.h
+//  DNCBaseSceneViewControllerProtocol.h
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,7 +8,7 @@
 
 #import "DNCBaseSceneModels.h"
 
-@protocol DNCBaseSceneViewControllerProtocol<CleanViewControllerInput>
+@protocol DNCBaseSceneViewControllerProtocol<CleanViewControllerProtocol>
 
 #pragma mark - Lifecycle Methods
 

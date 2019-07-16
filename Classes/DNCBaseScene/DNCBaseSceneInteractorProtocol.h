@@ -1,5 +1,5 @@
 //
-//  DNCBaseSceneInteractorInterface.h
+//  DNCBaseSceneInteractorProtocol.h
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
