@@ -52,10 +52,14 @@
 {
     NSString*   classRoot   = self.classBaseViewController;
     
-    NSBundle*   viewControllerBundle    = [PodAsset bundleForPod:classRoot];
     NSString*   viewControllerClassName = [NSString stringWithFormat:@"%@ViewController", classRoot];
     Class       ViewControllerClass     = NSClassFromString(viewControllerClassName);
-    
+    NSBundle*   viewControllerBundle    = [PodAsset bundleForPod:classRoot];
+    if (!viewControllerBundle)
+    {
+        viewControllerBundle    = [NSBundle bundleForClass:ViewControllerClass];
+    }
+
     __block DNCBaseSceneViewController* retval;
     
     [DNCUIThread run:
