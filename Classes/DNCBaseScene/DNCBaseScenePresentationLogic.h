@@ -1,5 +1,5 @@
 //
-//  DNCBaseScenePresenterProtocol.h
+//  DNCBaseScenePresentationLogic.h
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,7 +8,7 @@
 
 #import "DNCBaseSceneModels.h"
 
-@protocol DNCBaseScenePresenterProtocol
+@protocol DNCBaseScenePresentationLogic<DNCBasePresentationLogic>
 
 #pragma mark - Lifecycle Methods
 

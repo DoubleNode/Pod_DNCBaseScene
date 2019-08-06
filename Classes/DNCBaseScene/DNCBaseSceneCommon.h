@@ -28,13 +28,25 @@ typedef NS_ENUM(NSUInteger, DNCBaseSceneDisplayType)
     DNCBaseSceneDisplayType_Count
 };
 
-@protocol CleanViewControllerProtocol
+@protocol DNCBaseBusinessLogic;
+@protocol DNCBasePresentationLogic;
+@protocol DNCBaseDisplayLogic;
+
+@protocol DNCBaseBusinessLogic
+
+@property (strong, nonatomic) id<DNCBasePresentationLogic>  output;
 
 @end
 
-@protocol CleanPresenterProtocol
+@protocol DNCBasePresentationLogic
 
-@property (weak, nonatomic) id<CleanViewControllerProtocol>    output;
+@property (weak, nonatomic) id<DNCBaseDisplayLogic> output;
+
+@end
+
+@protocol DNCBaseDisplayLogic
+
+@property (strong, nonatomic) id<DNCBaseBusinessLogic>  output;
 
 @end
 

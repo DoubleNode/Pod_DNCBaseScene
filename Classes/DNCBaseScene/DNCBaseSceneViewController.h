@@ -15,10 +15,10 @@
 #import "DNCBaseSceneCommon.h"
 #import "DNCBaseSceneConfigurator.h"
 
-#import "DNCBaseSceneInteractorProtocol.h"
-#import "DNCBaseSceneViewControllerProtocol.h"
+#import "DNCBaseSceneBusinessLogic.h"
+#import "DNCBaseSceneDisplayLogic.h"
 
-@interface DNCBaseSceneViewController : DNCDisabledViewController<WKNavigationDelegate, DNCBaseSceneViewControllerProtocol>
+@interface DNCBaseSceneViewController : DNCDisabledViewController<WKNavigationDelegate, DNCBaseSceneDisplayLogic>
 
 @property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
 @property (strong, nonatomic) DNCCoordinator*           coordinatorDelegate;
@@ -26,7 +26,7 @@
 @property (strong, nonatomic) NSString*                 sceneTitle;
 @property (strong, nonatomic) NSString*                 sceneBackTitle;
 
-@property (strong, nonatomic) id<DNCBaseSceneInteractorProtocol>    output;
+@property (strong, nonatomic) id<DNCBaseSceneBusinessLogic>    output;
 
 @property (strong, nonatomic)   id<PTCLAnalytics_Protocol>  analyticsWorker;
 

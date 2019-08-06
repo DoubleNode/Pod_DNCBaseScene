@@ -1,5 +1,5 @@
 //
-//  DNCBaseSceneInteractorProtocol.h
+//  DNCBaseSceneBusinessLogic.h
 //  DoubleNode Core
 //
 //  Created by Darren Ehlers on 2016/10/16.
@@ -8,7 +8,7 @@
 
 #import "DNCBaseSceneModels.h"
 
-@protocol DNCBaseSceneInteractorProtocol
+@protocol DNCBaseSceneBusinessLogic<DNCBaseBusinessLogic>
 
 #pragma mark - Scene Lifecycle
 

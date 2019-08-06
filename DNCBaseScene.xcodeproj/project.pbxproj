@@ -92,11 +92,11 @@
 		6ACAC387207D832C00160740 /* DNCBaseSceneModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseSceneModels.m; path = Classes/DNCBaseScene/DNCBaseSceneModels.m; sourceTree = "<group>"; };
 		6ACAC389207D832C00160740 /* DNCBaseSceneConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneConfigurator.h; path = Classes/DNCBaseScene/DNCBaseSceneConfigurator.h; sourceTree = "<group>"; };
 		6ACAC38A207D832C00160740 /* DNCBaseSceneInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneInteractor.h; path = Classes/DNCBaseScene/DNCBaseSceneInteractor.h; sourceTree = "<group>"; };
-		6ACAC38B207D832C00160740 /* DNCBaseSceneInteractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneInteractorProtocol.h; path = Classes/DNCBaseScene/DNCBaseSceneInteractorProtocol.h; sourceTree = "<group>"; };
+		6ACAC38B207D832C00160740 /* DNCBaseSceneBusinessLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneBusinessLogic.h; path = Classes/DNCBaseScene/DNCBaseSceneBusinessLogic.h; sourceTree = "<group>"; };
 		6ACAC38C207D832C00160740 /* DNCBaseSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseSceneViewController.m; path = Classes/DNCBaseScene/DNCBaseSceneViewController.m; sourceTree = "<group>"; };
 		6ACAC38D207D832C00160740 /* DNCBaseSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DNCBaseSceneViewController.xib; path = Classes/DNCBaseScene/DNCBaseSceneViewController.xib; sourceTree = "<group>"; };
-		6ACAC38E207D832C00160740 /* DNCBaseSceneViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneViewControllerProtocol.h; path = Classes/DNCBaseScene/DNCBaseSceneViewControllerProtocol.h; sourceTree = "<group>"; };
-		6ACAC38F207D832C00160740 /* DNCBaseScenePresenterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseScenePresenterProtocol.h; path = Classes/DNCBaseScene/DNCBaseScenePresenterProtocol.h; sourceTree = "<group>"; };
+		6ACAC38E207D832C00160740 /* DNCBaseSceneDisplayLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneDisplayLogic.h; path = Classes/DNCBaseScene/DNCBaseSceneDisplayLogic.h; sourceTree = "<group>"; };
+		6ACAC38F207D832C00160740 /* DNCBaseScenePresentationLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseScenePresentationLogic.h; path = Classes/DNCBaseScene/DNCBaseScenePresentationLogic.h; sourceTree = "<group>"; };
 		6ACAC391207D832C00160740 /* DNCBaseSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneViewController.h; path = Classes/DNCBaseScene/DNCBaseSceneViewController.h; sourceTree = "<group>"; };
 		6ACAC392207D832C00160740 /* DNCBaseSceneConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNCBaseSceneConfigurator.m; path = Classes/DNCBaseScene/DNCBaseSceneConfigurator.m; sourceTree = "<group>"; };
 		6ACAC394207D832C00160740 /* DNCBaseSceneModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCBaseSceneModels.h; path = Classes/DNCBaseScene/DNCBaseSceneModels.h; sourceTree = "<group>"; };
@@ -246,19 +246,19 @@
 			isa = PBXGroup;
 			children = (
 				6ACAC385207D832C00160740 /* DNCBaseSceneCommon.h */,
+				6ACAC38B207D832C00160740 /* DNCBaseSceneBusinessLogic.h */,
+				6ACAC38F207D832C00160740 /* DNCBaseScenePresentationLogic.h */,
+				6ACAC38E207D832C00160740 /* DNCBaseSceneDisplayLogic.h */,
 				6ACAC389207D832C00160740 /* DNCBaseSceneConfigurator.h */,
 				6ACAC392207D832C00160740 /* DNCBaseSceneConfigurator.m */,
 				6ACAC38A207D832C00160740 /* DNCBaseSceneInteractor.h */,
 				6ACAC398207D832C00160740 /* DNCBaseSceneInteractor.m */,
-				6ACAC38B207D832C00160740 /* DNCBaseSceneInteractorProtocol.h */,
 				6ACAC394207D832C00160740 /* DNCBaseSceneModels.h */,
 				6ACAC387207D832C00160740 /* DNCBaseSceneModels.m */,
 				6ACAC396207D832C00160740 /* DNCBaseScenePresenter.h */,
 				6ACAC386207D832C00160740 /* DNCBaseScenePresenter.m */,
-				6ACAC38F207D832C00160740 /* DNCBaseScenePresenterProtocol.h */,
 				6ACAC391207D832C00160740 /* DNCBaseSceneViewController.h */,
 				6ACAC38C207D832C00160740 /* DNCBaseSceneViewController.m */,
-				6ACAC38E207D832C00160740 /* DNCBaseSceneViewControllerProtocol.h */,
 				6ACAC38D207D832C00160740 /* DNCBaseSceneViewController.xib */,
 			);
 			name = DNCBaseScene;
