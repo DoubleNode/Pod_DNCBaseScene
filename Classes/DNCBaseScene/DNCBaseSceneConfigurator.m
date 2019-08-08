@@ -115,9 +115,9 @@
 - (void)endSceneWithIntent:(NSString*)intent
             andDataChanged:(BOOL)dataChanged
 {
-    [self endSceneWithResultsObject:nil
-                          andIntent:intent
-                     andDataChanged:dataChanged];
+    [self endSceneWithIntent:intent
+              andDataChanged:dataChanged
+            andResultsObject:nil];
 }
 // **
 // *******************************
@@ -153,9 +153,9 @@
     return viewController;
 }
 
-- (void)endSceneWithResultsObject:(DNCBaseSceneResultsObject*)resultsObject
-                        andIntent:(NSString*)intent
-                   andDataChanged:(BOOL)dataChanged
+- (void)endSceneWithIntent:(NSString*)intent
+            andDataChanged:(BOOL)dataChanged
+          andResultsObject:(DNCBaseSceneResultsObject*)resultsObject
 {
     _coordinatorEndBlock ? _coordinatorEndBlock(intent, dataChanged) : (void)nil;
 }

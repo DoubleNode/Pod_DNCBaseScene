@@ -66,9 +66,9 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* intent, BOOL dataChanged
                                andInitializationObject:(DNCBaseSceneInitializationObject*)initializationObject
                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
 
-- (void)endSceneWithResultsObject:(DNCBaseSceneResultsObject*)resultsObject
-                        andIntent:(NSString*)intent
-                   andDataChanged:(BOOL)dataChanged;
+- (void)endSceneWithIntent:(NSString*)intent
+            andDataChanged:(BOOL)dataChanged
+          andResultsObject:(DNCBaseSceneResultsObject*)resultsObject;
 
 - (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
 

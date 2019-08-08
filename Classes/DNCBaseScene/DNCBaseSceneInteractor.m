@@ -45,9 +45,9 @@
 - (void)endSceneWithIntent:(NSString*)intent
             andDataChanged:(BOOL)dataChanged
 {
-    [self endSceneWithResultsObject:nil
-                          andIntent:intent
-                     andDataChanged:dataChanged];
+    [self endSceneWithIntent:intent
+              andDataChanged:dataChanged
+            andResultsObject:nil];
 }
 // **
 // *******************************
@@ -73,20 +73,20 @@
     return shouldEndSceneFlag;
 }
 
-- (void)endSceneWithResultsObject:(DNCBaseSceneResultsObject*)resultsObject
-                        andIntent:(NSString*)intent
-                   andDataChanged:(BOOL)dataChanged
+- (void)endSceneWithIntent:(NSString*)intent
+            andDataChanged:(BOOL)dataChanged
+          andResultsObject:(DNCBaseSceneResultsObject*)resultsObject
 {
     [self endSceneConditionally:NO
-              withResultsObject:resultsObject
-                      andIntent:intent
-                 andDataChanged:dataChanged];
+                     withIntent:intent
+                 andDataChanged:dataChanged
+               andResultsObject:resultsObject];
 }
 
 - (void)endSceneConditionally:(BOOL)conditionally
-            withResultsObject:(DNCBaseSceneResultsObject*)resultsObject
-                    andIntent:(NSString*)intent
+                   withIntent:(NSString*)intent
                andDataChanged:(BOOL)dataChanged
+             andResultsObject:(DNCBaseSceneResultsObject*)resultsObject
 {
     if (!self.shouldEndScene)
     {
@@ -98,9 +98,9 @@
     
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self.configurator endSceneWithResultsObject:resultsObject
-                                       andIntent:intent
-                                  andDataChanged:dataChanged];
+    [self.configurator endSceneWithIntent:intent
+                           andDataChanged:dataChanged
+                         andResultsObject:resultsObject];
 }
 
 - (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
@@ -126,9 +126,9 @@
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     [self endSceneConditionally:YES
-              withResultsObject:nil
-                      andIntent:@""
-                 andDataChanged:NO];
+                     withIntent:@""
+                 andDataChanged:NO
+               andResultsObject:nil];
 }
 
 - (void)sceneDidDisappear:(DNCBaseSceneRequest*)request
