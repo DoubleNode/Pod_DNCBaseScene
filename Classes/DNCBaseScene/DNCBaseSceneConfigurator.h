@@ -17,7 +17,7 @@
 @class DNCBaseScenePresenter;
 @class DNCBaseSceneViewController;
 
-typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* intent, BOOL dataChanged);
+typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* intent, BOOL dataChanged, DNCBaseSceneResultsObject* resultsObject);
 
 @interface DNCBaseSceneConfigurator : NSObject
 

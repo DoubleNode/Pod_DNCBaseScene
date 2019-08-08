@@ -157,7 +157,7 @@
             andDataChanged:(BOOL)dataChanged
           andResultsObject:(DNCBaseSceneResultsObject*)resultsObject
 {
-    _coordinatorEndBlock ? _coordinatorEndBlock(intent, dataChanged) : (void)nil;
+    _coordinatorEndBlock ? _coordinatorEndBlock(intent, dataChanged, resultsObject) : (void)nil;
 }
 
 - (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType

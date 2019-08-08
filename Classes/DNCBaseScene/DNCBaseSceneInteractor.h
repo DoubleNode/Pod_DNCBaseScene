@@ -21,7 +21,8 @@
 
 + (instancetype)interactor;
 
-@property (strong, nonatomic) DNCBaseSceneConfigurator* configurator;
+@property (strong, nonatomic) DNCBaseSceneConfigurator*         configurator;
+@property (strong, nonatomic) DNCBaseSceneInitializationObject* initializationObject;
 
 @property (strong, nonatomic)   id<DNCBaseScenePresentationLogic>   output;
 

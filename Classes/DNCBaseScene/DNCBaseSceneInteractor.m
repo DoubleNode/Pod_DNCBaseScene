@@ -59,6 +59,8 @@
     
     _displayType    = displayType;
     
+    self.initializationObject   = initializationObject;
+    
     DNCBaseSceneStartResponse*  response = DNCBaseSceneStartResponse.response;
     response.displayType    = displayType;
     [self.output startScene:response];
