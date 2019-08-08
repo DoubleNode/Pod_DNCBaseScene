@@ -9,6 +9,34 @@
 #import "DNCBaseSceneModels.h"
 
 //
+// InitializationObject Models
+//
+#pragma mark - InitializationObject Models
+
+@implementation __DNCBaseSceneInitializationObject
+
++ (instancetype)initializationObject    {   return [[self.class alloc] init]; }
+
+@end
+
+@implementation DNCBaseSceneInitializationObject
+@end
+
+//
+// ResultsObject Models
+//
+#pragma mark - ResultsObject Models
+
+@implementation __DNCBaseSceneResultsObject
+
++ (instancetype)resultsObject   {   return [[self.class alloc] init]; }
+
+@end
+
+@implementation DNCBaseSceneResultsObject
+@end
+
+//
 // DataObject Models
 //
 #pragma mark - DataObject Models

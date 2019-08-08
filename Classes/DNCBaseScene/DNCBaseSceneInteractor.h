@@ -14,6 +14,9 @@
 #import "DNCBaseSceneBusinessLogic.h"
 #import "DNCBaseScenePresentationLogic.h"
 
+@class DNCBaseSceneInitializationObject;
+@class DNCBaseSceneResultsObject;
+
 @interface DNCBaseSceneInteractor : NSObject<DNCBaseSceneBusinessLogic>
 
 + (instancetype)interactor;
@@ -26,10 +29,24 @@
 
 #pragma mark - Lifecycle Methods
 
-- (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
-- (BOOL)shouldEndScene;
+// *******************************
+// ** Deprecated Methods
+- (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType DEPRECATED_MSG_ATTRIBUTE("Use -endSceneWithResultsObject:andIntent:andDataChanged:");
+
 - (void)endSceneWithIntent:(NSString*)intent
-            andDataChanged:(BOOL)dataChanged;
+            andDataChanged:(BOOL)dataChanged DEPRECATED_MSG_ATTRIBUTE("Use -endSceneWithResultsObject:andIntent:andDataChanged:");
+// **
+// *******************************
+
+- (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
+          andInitializationObject:(DNCBaseSceneInitializationObject*)initializationObject;
+
+- (BOOL)shouldEndScene;
+
+- (void)endSceneWithResultsObject:(DNCBaseSceneResultsObject*)resultsObject
+                        andIntent:(NSString*)intent
+                   andDataChanged:(BOOL)dataChanged;
+
 - (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
 
 #pragma mark - Scene Lifecycle

@@ -9,6 +9,36 @@
 #import "DNCBaseSceneCommon.h"
 
 //
+// InitializationObject Models
+//
+#pragma mark - InitializationObject Models
+
+@interface __DNCBaseSceneInitializationObject : NSObject
+
++ (instancetype)initializationObject;
+
+@end
+
+@interface DNCBaseSceneInitializationObject : __DNCBaseSceneInitializationObject
+
+@end
+
+//
+// ResultsObject Models
+//
+#pragma mark - ResultsObject Models
+
+@interface __DNCBaseSceneResultsObject : NSObject
+
++ (instancetype)resultsObject;
+
+@end
+
+@interface DNCBaseSceneResultsObject : __DNCBaseSceneResultsObject
+
+@end
+
+//
 // DataObject Models
 //
 #pragma mark - DataObject Models

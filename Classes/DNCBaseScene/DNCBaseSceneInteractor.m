@@ -34,7 +34,26 @@
 
 #pragma mark - Lifecycle Methods
 
+// *******************************
+// ** Deprecated Methods
 - (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
+{
+    [self startSceneWithDisplayType:displayType
+            andInitializationObject:nil];
+}
+
+- (void)endSceneWithIntent:(NSString*)intent
+            andDataChanged:(BOOL)dataChanged
+{
+    [self endSceneWithResultsObject:nil
+                          andIntent:intent
+                     andDataChanged:dataChanged];
+}
+// **
+// *******************************
+
+- (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
+          andInitializationObject:(DNCBaseSceneInitializationObject*)initializationObject
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
@@ -54,16 +73,19 @@
     return shouldEndSceneFlag;
 }
 
-- (void)endSceneWithIntent:(NSString*)intent
-            andDataChanged:(BOOL)dataChanged
+- (void)endSceneWithResultsObject:(DNCBaseSceneResultsObject*)resultsObject
+                        andIntent:(NSString*)intent
+                   andDataChanged:(BOOL)dataChanged
 {
     [self endSceneConditionally:NO
-                     withIntent:intent
+              withResultsObject:resultsObject
+                      andIntent:intent
                  andDataChanged:dataChanged];
 }
 
 - (void)endSceneConditionally:(BOOL)conditionally
-                   withIntent:(NSString*)intent
+            withResultsObject:(DNCBaseSceneResultsObject*)resultsObject
+                    andIntent:(NSString*)intent
                andDataChanged:(BOOL)dataChanged
 {
     if (!self.shouldEndScene)
@@ -76,8 +98,9 @@
     
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
-    [self.configurator endSceneWithIntent:intent
-                                    andDataChanged:dataChanged];
+    [self.configurator endSceneWithResultsObject:resultsObject
+                                       andIntent:intent
+                                  andDataChanged:dataChanged];
 }
 
 - (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType
@@ -103,7 +126,8 @@
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
     
     [self endSceneConditionally:YES
-            withIntent:@""
+              withResultsObject:nil
+                      andIntent:@""
                  andDataChanged:NO];
 }
 
@@ -148,7 +172,7 @@
 - (void)doErrorOccurred:(DNCBaseSceneErrorRequest*)request
 {
     [self.analyticsWorker doTrack:NS_PRETTY_FUNCTION];
-
+    
     DNCBaseSceneErrorResponse*  response = DNCBaseSceneErrorResponse.response;
     response.title  = request.title;
     response.error  = request.error;

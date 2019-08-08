@@ -90,8 +90,41 @@
 
 #pragma mark - Scene lifecycle
 
+// *******************************
+// ** Deprecated Methods
 - (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
                                          andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+{
+    return [self loadSceneWithCoordinator:coordinator
+                           andDisplayType:displayType
+                  andInitializationObject:nil
+                                  thenRun:endBlock];
+}
+
+- (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                        andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
+{
+    return [self runSceneWithCoordinator:coordinator
+                          andDisplayType:displayType
+                 andInitializationObject:nil
+                                 thenRun:endBlock];
+}
+
+- (void)endSceneWithIntent:(NSString*)intent
+            andDataChanged:(BOOL)dataChanged
+{
+    [self endSceneWithResultsObject:nil
+                          andIntent:intent
+                     andDataChanged:dataChanged];
+}
+// **
+// *******************************
+
+- (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                andInitializationObject:(DNCBaseSceneInitializationObject*)initializationObject
                                                 thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
 {
     _coordinatorEndBlock    = endBlock;
@@ -106,19 +139,23 @@
 
 - (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
+                               andInitializationObject:(DNCBaseSceneInitializationObject*)initializationObject
                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock
 {
     DNCBaseSceneViewController* viewController = [self loadSceneWithCoordinator:coordinator
                                                                  andDisplayType:displayType
+                                                        andInitializationObject:initializationObject
                                                                         thenRun:endBlock];
 
-    [self.interactor startSceneWithDisplayType:displayType];
+    [self.interactor startSceneWithDisplayType:displayType
+                       andInitializationObject:initializationObject];
     
     return viewController;
 }
 
-- (void)endSceneWithIntent:(NSString*)intent
-            andDataChanged:(BOOL)dataChanged
+- (void)endSceneWithResultsObject:(DNCBaseSceneResultsObject*)resultsObject
+                        andIntent:(NSString*)intent
+                   andDataChanged:(BOOL)dataChanged
 {
     _coordinatorEndBlock ? _coordinatorEndBlock(intent, dataChanged) : (void)nil;
 }

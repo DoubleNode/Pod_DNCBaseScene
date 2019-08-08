@@ -10,9 +10,11 @@
 
 @class DNCCoordinator;
 
+@class DNCBaseSceneInitializationObject;
+@class DNCBaseSceneResultsObject;
+
 @class DNCBaseSceneInteractor;
 @class DNCBaseScenePresenter;
-
 @class DNCBaseSceneViewController;
 
 typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* intent, BOOL dataChanged);
@@ -39,15 +41,34 @@ typedef void (^DNCBaseSceneConfiguratorBlock)(NSString* intent, BOOL dataChanged
 
 #pragma mark - Lifecycle Methods
 
+// *******************************
+// ** Deprecated Methods
 - (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
                                          andDisplayType:(DNCBaseSceneDisplayType)displayType
-                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock DEPRECATED_MSG_ATTRIBUTE("Use -loadSceneWithCoordinator:andDisplayType:andInitializationObject:thenRun:");
+
 - (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
-                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock DEPRECATED_MSG_ATTRIBUTE("Use -runSceneWithCoordinator:andDisplayType:andInitializationObject:thenRun:");
 
 - (void)endSceneWithIntent:(NSString*)intent
-                     andDataChanged:(BOOL)dataChanged;
+            andDataChanged:(BOOL)dataChanged DEPRECATED_MSG_ATTRIBUTE("Use -endSceneWithResultsObject:andIntent:andDataChanged:");
+// **
+// *******************************
+
+- (DNCBaseSceneViewController*)loadSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                         andDisplayType:(DNCBaseSceneDisplayType)displayType
+                                andInitializationObject:(DNCBaseSceneInitializationObject*)initializationObject
+                                                thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+
+- (DNCBaseSceneViewController*)runSceneWithCoordinator:(DNCCoordinator*)coordinator
+                                        andDisplayType:(DNCBaseSceneDisplayType)displayType
+                               andInitializationObject:(DNCBaseSceneInitializationObject*)initializationObject
+                                               thenRun:(DNCBaseSceneConfiguratorBlock)endBlock;
+
+- (void)endSceneWithResultsObject:(DNCBaseSceneResultsObject*)resultsObject
+                        andIntent:(NSString*)intent
+                   andDataChanged:(BOOL)dataChanged;
 
 - (void)removeSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType;
 
