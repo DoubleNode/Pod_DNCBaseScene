@@ -31,7 +31,7 @@
 
 // *******************************
 // ** Deprecated Methods
-- (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType DEPRECATED_MSG_ATTRIBUTE("Use -endSceneWithResultsObject:andIntent:andDataChanged:");
+- (void)startSceneWithDisplayType:(DNCBaseSceneDisplayType)displayType DEPRECATED_MSG_ATTRIBUTE("Use -startSceneWithDisplayType:andInitializationObject:");
 
 - (void)endSceneWithIntent:(NSString*)intent
             andDataChanged:(BOOL)dataChanged DEPRECATED_MSG_ATTRIBUTE("Use -endSceneWithResultsObject:andIntent:andDataChanged:");
