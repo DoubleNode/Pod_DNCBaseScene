@@ -80,6 +80,7 @@
 		6AAFB27422397743005D6D7D /* ERProgressHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ERProgressHud.h; path = Classes/ERProgressHub/ERProgressHud.h; sourceTree = SOURCE_ROOT; };
 		6AAFB27522397743005D6D7D /* ERProgressHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ERProgressHud.m; path = Classes/ERProgressHub/ERProgressHud.m; sourceTree = SOURCE_ROOT; };
 		6AAFB27722397C1A005D6D7D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6AC77C612318626F004EF336 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6ACAC378207D830C00160740 /* DNCBaseScene-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNCBaseScene-Bridging-Header.h"; sourceTree = "<group>"; };
 		6ACAC379207D830D00160740 /* DNCDisabledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCDisabledViewController.h; path = Classes/DNCDisabledViewController.h; sourceTree = "<group>"; };
 		6ACAC37A207D830D00160740 /* DNCCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNCCoordinator.h; path = Classes/DNCCoordinator.h; sourceTree = "<group>"; };
@@ -202,6 +203,7 @@
 		6A1844401DEA386700D3D254 /* Cocoapod */ = {
 			isa = PBXGroup;
 			children = (
+				6AC77C612318626F004EF336 /* LICENSE */,
 				6A1844601DEA397300D3D254 /* README.md */,
 				6A18445E1DEA397300D3D254 /* DNCBaseScene.podspec */,
 				6A1844411DEA387000D3D254 /* Classes */,
